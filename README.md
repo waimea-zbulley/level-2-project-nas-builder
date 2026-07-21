@@ -1,16 +1,17 @@
-# Flask Project Template
 
-This is a simple [Flask web app](https://flask.palletsprojects.com/) project, built using [Python](https://www.python.org/), that using a [SQLite database](https://sqlite.org/), and [Jinja2 templates](https://jinja.palletsprojects.com/templates/).
 
-See the [docs folder](docs) for a quick-start and guides to usage. In particular:
+## Project Description
 
-- [Setup](docs/guides/setup.md)
-- [Routes](docs/guides/routes.md) in Flask
-- [Jinja](docs/guides/jinja.md) templates
-- [DB Schema](docs/guides/schema.md)
-- [SQL Queries](docs/guides/sqlite.md)
+This is an app that ...
 
-*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-dt.github.io/flask-project-level-2/)*
+The app has the following key features:
+
+    Feature one
+    Feature two
+    Feature three
+    ...
+
+*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-zbulley.github.io/level-2-project-nas-builder/)*
 
 
 ## Project Structure
