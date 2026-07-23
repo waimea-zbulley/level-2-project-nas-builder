@@ -29,15 +29,22 @@ I will make a website which takes you through the processes of selecting the rig
 
 ## End-User
 
-End-user implication means that your program apeals and is apporipriate to the right demographic of people. This means that the experince for the intended user should be simple and seamless. While allowing for more advanced configuration also.
+End-user implication means that your program apeals and is apporipriate to the right demographic of people. This means that the experince for the intended user should be simple and seamless. While allowing for more advanced configuration also. My target will likely be 
 
 ### Relevance to the System
 
-Replace this text with 
+This is important to my system as my software needs to be applicable to the people actually using it. If my software isn't applicable to the people using it they will be detered from using it entirely. It is very important to consider the users of my system when designing it.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+I will need to make sure that my software is accesable to any users that may want to use it, this means that it needs to be easy to use with a simple interface, it also needs to allow complexity so that more profecient users don't find it far too simple. My language should be simple and have plenty of explanation/depth, my target audiance is likely old teenagers-adult, however there will be quite a variance of technological capeabilities so having well explained content is important. My site is likely to be accessed on desktop, tablet and phone so it needs to be easily usable on all of these platforms.
+
+I need to:
+ - Ensure my website is usable on phone, tablet and desktop.
+ - Make sure my language is simple and has adiquate explanation on more complicated things.
+ - Have simpler and more complex things to cater to users of all technological capeability.
+ - It needs to be accesable to anyone with any imparement.
+ - Tasks need to be able to be completed quickly and effectively to not waste user's time.
 
 
 
@@ -54,6 +61,13 @@ If my product does not work well users will become frustrated with the process a
 I need to do through bug testing (including valid, boundary and invalid testing) to ensure users can't accidently mess up while picking parts. If the user messes up and my software doesn't stop them they could end up buying incompatable hardware, this would be very dissapointing and infurating to the user.
 
 "Would be good to ensure it supports and runs smoothly on all moajor browsers (with feature parity across borwsers), it also needs to work ipad/tablet form factor. Needs to be accurates as you don't want a build that acutally works, with readly avalible parts in New Zealand (parts currently production/supported hardware)." -Gareth 21/07/26
+
+I need to:
+ - Do thoughrough testing to ensure that my website provides a good experience
+ - Ensure that my website works to the same functionality on all major web browsers (feature parity between browsers)
+ - Ensure that my websitr works to the same functionality on all the major types of devices my website is likely to be used on (desktop/laptop, tablet, phone)
+ - Make sure my website gives relevent information in regards to hardware as it is important that my users cannot build a system that won't work.
+ - Ensure that my parts are currently buyablr (currently in production), so that you can't pick a part that is not buyable.
 
 
 ## Usability
@@ -85,7 +99,15 @@ This is relevant to my system as people with imparements or people using, phones
 
 ### Impact / Considerations
 
-"Clean easy to read fonts and colours (can access from tablet as well as pc, and phone). Simple clean menu's and entry fields and logical input fields."
+"Clean easy to read fonts and colours (can access from tablet as well as pc, and phone). Simple clean menu's and entry fields and logical input fields." -Gareth 21/07/2026 
+
+I need to: 
+ - Ensure that all people can use my website regardless of disability.
+  - For users who are colourblind I need to ensure that the website either has enough contrast or has a high contrast mode.
+  - For users that can't use a website I need to have my website be keybaord navigatable
+  - For users with vision imparment i need to ensure i have suffecent alt text etc... so that they can properly use my website
+ - My website needs to be accessable on all major devices
+ - My website needs to use logical input fields and UI so that it is more accesable to less experinced users.
 
 
 
