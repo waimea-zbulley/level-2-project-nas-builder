@@ -103,9 +103,9 @@ This is relevant to my system as people with imparements or people using, phones
 
 I need to: 
  - Ensure that all people can use my website regardless of disability.
-  - For users who are colourblind I need to ensure that the website either has enough contrast or has a high contrast mode.
-  - For users that can't use a website I need to have my website be keybaord navigatable
-  - For users with vision imparment i need to ensure i have suffecent alt text etc... so that they can properly use my website
+    - For users who are colourblind I need to ensure that the website either has enough contrast or has a high contrast mode.
+    - For users that can't use a website I need to have my website be keybaord navigatable
+    - For users with vision imparment i need to ensure i have suffecent alt text etc... so that they can properly use my website
  - My website needs to be accessable on all major devices
  - My website needs to use logical input fields and UI so that it is more accesable to less experinced users.
 
