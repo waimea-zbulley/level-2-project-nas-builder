@@ -46,6 +46,8 @@ I need to:
  - It needs to be accesable to anyone with any imparement.
  - Tasks need to be able to be completed quickly and effectively to not waste user's time.
 
+Gareth agrees with all these points and thinks the most important thing is a clean simple to use interface. - 24/07/2026
+
 
 
 ## Functionality
@@ -111,16 +113,19 @@ I need to:
 
 
 
-## Aesthetics
+## Privacy
 
-Replace this text with a clear explanation of what the implication means.
+Privacy means keeping user data safe and secure and ensuring users feel safe using your service.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+This is relevent to my system because if I am keeping data that is not relevant I am putting users personal information in jeporday. This is bad because it can both be a legal problem and also ruins trust for the user and deters them from using my service.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+I will:
+ - Not be collect personally identifyable information (all I will be storing is presaved builds)
+ - Allow people to download the build information (maybe in csv form)
+ - Allow people to delete made content/builds
 
-
+"As a security proffesional - It is very important that consideration is given to any personal identifialble information(PII) that you collect, any information that you collect that relates to individual must be relavent to the service provided and can not be reused for other purposes. If it is nesaccary to store data this must be done in a secure fashion, and an individual should always have the ability to ask for a copy of stored data and request the 'right to be forgotten' which means removing any data collected."
