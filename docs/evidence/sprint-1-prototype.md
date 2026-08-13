@@ -89,7 +89,7 @@ I added a save button and also moved it down to one form for compents. I also ad
 
 "The ability to save and come back in 2 days time to make changes" -Gareth 9/8
 
-![First UI Flow](screenshots/ui-flow-2.png)
+![Second UI Flow](screenshots/ui-flow-2.png)
 https://design.penpot.app/#/view?file-id=81f57451-85cc-819d-8008-76d2b50d68ee&page-id=ddb7145f-a1be-80bb-8008-6c66e6a5af37&section=interactions&index=0&share-id=81f57451-85cc-819d-8008-76dd91f797d4
 
 
@@ -100,8 +100,8 @@ https://design.penpot.app/#/view?file-id=81f57451-85cc-819d-8008-76d2b50d68ee&pa
 The next stage of prototyping was to develop the layout for each screen of the UI.
 
 This Figma demo shows the initial layout design for the UI:
-
-*FIGMA PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+![First Prototype UI Flow](screenshots/ui-prototype-1.png)
+https://design.penpot.app/#/view?file-id=81f57451-85cc-819d-8008-76eaa95d78e5&page-id=ddb7145f-a1be-80bb-8008-6c66e6a5af37&section=interactions&frame-id=e3c6c87b-c84b-8035-8008-6c670b350cbb&index=0&zoom=fit&share-id=81f57451-85cc-819d-8008-7960de20a8b7 
 
 ### Testing
 
