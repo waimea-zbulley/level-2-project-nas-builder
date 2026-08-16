@@ -111,16 +111,27 @@ Replace this text with notes about what you did to test the UI flow and the outc
 
 Replace this text with notes any improvements you made as a result of the testing.
 
-*FIGMA IMPROVED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+![](image.png)
+https://design.penpot.app/#/view?file-id=81f57451-85cc-819d-8008-79d22adc5c63&page-id=ddb7145f-a1be-80bb-8008-6c66e6a5af37&section=interactions&frame-id=3e0d9397-6e2f-8074-8008-7a70525d97a3&index=0&zoom=fit&share-id=3be9e5e1-190f-8090-8008-7d92214a5dba 
+
+(has desktop and mobile flow)
 
 
 ## Refined UI Prototype
+I asked my stakeholder to pick between 3 colour pallets
 
-Having established the layout of the UI screens, the prototype was refined visually, in terms of colour, fonts, etc.
+1:
+![colour pallet 1](colour-pallet-1.png)
+2:
+![colour pallet 2](colour-pallet-2.png)
+3:
+![colour pallet 3](colour-pallet-3.png)
+My stakeholder picked colour pallet 2
 
+![alt text](image-1.png)
 This Figma demo shows the UI with refinements applied:
 
-*FIGMA REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+
 
 ### Testing
 
