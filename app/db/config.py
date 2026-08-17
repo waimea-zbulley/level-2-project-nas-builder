@@ -101,8 +101,8 @@ class HardDrives:
     SEED_DATA = """
         INSERT INTO harddrives (name, powerdraw, cost, url, capacity, rpm)
         VALUES
-            ("Seagate BarraCuda 2TB", 5, 282 .97, "https://www.pbtech.co.nz/product/HDDSE2206/Seagate-BarraCuda-2TB-35-Internal-HDD-SATA3-6Gbs?qr=product_option", 2, 7200)
-            ("WD Red Plus 4TB", 5, 481 .37, "https://www.pbtech.co.nz/product/HDDWD22403/WD-Red-Plus-4TB-35-Internal-HDD-SATA3---128MB-Cach", 4, 5400)
+            ("Seagate BarraCuda 2TB", 5, 282 .97, "https://www.pbtech.co.nz/product/HDDSE2206/Seagate-BarraCuda-2TB-35-Internal-HDD-SATA3-6Gbs?qr=product_option", 2000, 7200)
+            ("WD Red Plus 4TB", 5, 481 .37, "https://www.pbtech.co.nz/product/HDDWD22403/WD-Red-Plus-4TB-35-Internal-HDD-SATA3---128MB-Cach", 4000, 5400)
     """
 class Cpus:
 
@@ -144,7 +144,13 @@ class SolidDrives:
             image TEXT NOT NULL
         )
     """
-
+    SEED_DATA = """
+        INSERT INTO soliddrives (name, powerdraw, cost, url, capacity, speed)
+        VALUES
+            ("Acer FA100 256gb", 4, 90.85, "https://www.pbtech.co.nz/product/HDDACN1050/Acer-FA100-256GB-M2-PCIe-Gen3-x-4-NVME-SSD-Read-up", 256, 1300)
+            ("Crucial E100 2TB", 5, 456.30, "https://www.pbtech.co.nz/product/HDDCRU30130/Crucial-E100-2TB-NVMe-M2-Gen4-Internal-2280-SSD-PC", 2000, 4500)
+            ("Kingston Fury Renegade 4TB", 10, 1148.85, "https://www.pbtech.co.nz/product/HDDKIN24300/Kingston-Fury-Renegade-4TB-M2-NVMe-Internal-SSD-wi", 4000, 7000)
+    """
 class Ram:
 
     NAME = "ram"
@@ -155,12 +161,18 @@ class Ram:
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
+            capacity INTEGER NOT NULL,
             generation TEXT NOT NULL,
             speed INTEGER NOT NULL,
             image TEXT NOT NULL
         )
     """
-
+    SEED_DATA = """
+        INSERT INTO ram (name, cost, url, capacity, generation, speed)
+        VALUES
+            ("PNY XLR8 8GB DDR4", 125.35, "https://www.pbtech.co.nz/product/MEMPNY11013/PNY-XLR8-8GB-DDR4-3200MTs-Desktop-UDIMM-Gaming-RAM", 8, "DDR4", 3200)
+            ("PNY 16GB DDR5", 412.85, "https://www.pbtech.co.nz/product/MEMPNY0003/PNY-16GB-DDR5-Desktop-RAM-5600MTs---11V---CL46", 16, "DDR5", 5600)
+    """
 class Gpus:
 
     NAME = "gpus"
@@ -174,6 +186,13 @@ class Gpus:
             powerdraw INTEGER NOT NULL,
             image TEXT NOT NULL
         )
+    """
+
+    SEED_DATA = """
+        INSERT INTO ram (name, cost, url, powerdraw)
+        VALUES
+            ("NVIDIA GeForce RTX 5080", "2701.35, "https://www.pbtech.co.nz/product/VGAZTC15084/Zotac-GAMING-NVIDIA-GeForce-RTX-5080-SOLID-Core-OC", 360)
+            ("AMD Radeon RX 9060 XT", 746.35, "https://www.pbtech.co.nz/product/VGASAP390611/Sapphire-PULSE-AMD-Radeon-RX-9060-XT-Gaming-8GB-GD", 150)
     """
 
 class Case:
@@ -246,6 +265,13 @@ class OS:
             url  TEXT NOT NULL,
             image TEXT NOT NULL
         )
+    """
+
+    SEED_DATA = """
+        INSERT INTO ram (name, cost, url)
+        VALUES
+            ("Truenas Scale", 0, "https://www.truenas.com")
+            ("Unraid", 83, "https://account.unraid.net/buy")
     """
 #----------------------------------------------------------------------------
 # Table registry
