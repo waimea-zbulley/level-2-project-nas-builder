@@ -51,8 +51,6 @@ class Configurations:
     #         ("Important!",    1, "Remember to backup your database regularly.")
     # """
 
-# Add more table classes here...
-
 class Motherboards:
 
     NAME = "motherboards"
@@ -70,15 +68,16 @@ class Motherboards:
             ram-gen TEXT NOT NULL,
             ram-slots INTEGER NOT NULL,
             ram-qty INTEGER NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
 
     SEED_DATA = """
-        INSERT INTO motherboards (name, cost, url, platform, sata-ports, pcie-ports, m2-ports, ram-gen, ram-slots, ram-qty)
+        INSERT INTO motherboards (name, cost, url, platform, sata-ports, pcie-ports, m2-ports, ram-gen, ram-slots, size)
         VALUES
-            ("MSI B550M", 201.25, "https://www.pbtech.co.nz/product/MBDMSI4904278/MSI-B550M-PRO-VDH-WIFI-mATX-Motherboard-For-AMD-3r", "AM4", 4, 1, 2, "DDR4", 4)
-            ("ASUS B860M-PLUS", 378.35, "https://www.pbtech.co.nz/product/MBDASU62412/ASUS-TUF-GAMING-B860M-PLUS-WIFI-MATX-Motherboard-S", "LGA1851", 4, 1, 3, "DDR5", 4)
+            ("MSI B550M", 201.25, "https://www.pbtech.co.nz/product/MBDMSI4904278/MSI-B550M-PRO-VDH-WIFI-mATX-Motherboard-For-AMD-3r", "AM4", 4, 1, 2, "DDR4", 4,)
+            ("ASUS B860M-PLUS", 378.35, "https://www.pbtech.co.nz/product/MBDASU62412/ASUS-TUF-GAMING-B860M-PLUS-WIFI-MATX-Motherboard-S", "LGA1851", 4, 1, 3, "DDR5", 4,)
+            ("ASUS Z890 AYW", 516 .35, "https://www.pbtech.co.nz/product/MBDASU62521/ASUS-Z890-AYW-GAMING-WIFI-W-ATX-Motherboard-Suppor", "LGA1851", 4, 4, 4, "DDR5", 4,)
     """
 
 class HardDrives:
@@ -94,7 +93,7 @@ class HardDrives:
             url  TEXT NOT NULL,
             capacity INTEGER NOT NULL,
             rpm INTEGER NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
 
@@ -117,7 +116,7 @@ class Cpus:
             url  TEXT NOT NULL,
             platform TEXT NOT NULL,
             maxram INTEGER NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
 
@@ -141,7 +140,7 @@ class SolidDrives:
             url  TEXT NOT NULL,
             capacity TEXT NOT NULL,
             speed INTEGER NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
     SEED_DATA = """
@@ -164,7 +163,7 @@ class Ram:
             capacity INTEGER NOT NULL,
             generation TEXT NOT NULL,
             speed INTEGER NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
     SEED_DATA = """
@@ -184,7 +183,7 @@ class Gpus:
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
             powerdraw INTEGER NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
 
@@ -195,9 +194,9 @@ class Gpus:
             ("AMD Radeon RX 9060 XT", 746.35, "https://www.pbtech.co.nz/product/VGASAP390611/Sapphire-PULSE-AMD-Radeon-RX-9060-XT-Gaming-8GB-GD", 150)
     """
 
-class Case:
+class Cases:
 
-    NAME = "case"
+    NAME = "cases"
 
     SCHEMA = """
         CREATE TABLE note (
@@ -206,10 +205,16 @@ class Case:
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
             hard-drive-trays INTEGER NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
-
+    SEED_DATA = """
+        INSERT INTO cases (name, cost, url, hard-drive-trays)
+        VALUES
+            ("Thermaltake Core P6 TG", 299.00, "https://computerlounge.co.nz/products/thermaltake-core-p6-tempered-glass-mid-tower-case-snow-edition", 4)
+            ("Phanteks Enthoo Pro", 214.95, "https://www.pbtech.co.nz/product/CHAPHA6145/Phanteks-Enthoo-Pro-Tempered-Glass-Window-Full-Tow", 6)
+            ("Phanteks XT PRO", 84.95, "https://www.pbtech.co.nz/product/CHAPHA0101/Phanteks-XT-PRO-Tempered-Glass-ATX-Case-1x-120mm-F", 2)
+    """
 class Cooler:
 
     NAME = "cooler"
@@ -223,9 +228,15 @@ class Cooler:
         )
     """
 
+    SEED_DATA = """
+        INSERT INTO cooler (name, cost, url)
+        VALUES
+            ("NZXT Air Cooler T120", 56.35, "https://www.pbtech.co.nz/product/FANNZX1021/NZXT-Air-Cooler-T120-RGB-CPU-Cooler-White-For-Inte")
+            ("DEEPCOOL AG620 G2", 79.35, "https://www.pbtech.co.nz/product/FANDPC3070/DEEPCOOL-AG620-G2-CPU-Cooler-2-x-120mm-Fans-6-heat")
+    """
 class NetworkCard:
 
-    NAME = "networdcard"
+    NAME = "networkcard"
 
     SCHEMA = """
         CREATE TABLE note (
@@ -233,9 +244,16 @@ class NetworkCard:
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            speed INTEGER NOT NULL,
-            image TEXT NOT NULL
+            speed REAL NOT NULL,
+            image TEXT
         )
+    """
+
+SEED_DATA = """
+        INSERT INTO networkcard (name, cost, url, speed)
+        VALUES
+            ("TP-Link TX401 10Gbps", 139, "https://www.pbtech.co.nz/product/NICTPL1001/TP-Link-TX401-10Gbps-PCI-E-Ethernet-Adapter-1-x-RJ", 10)
+            ("ST2GPEX PCIe NIC Card", 68.99, "https://www.pbtech.co.nz/product/ADPSTT4643990/StarTechcom-ST2GPEX-PCIe-NIC-Card---1-Port-25GbE-2", 2.5)
     """
 
 class PowerSupply:
@@ -246,13 +264,19 @@ class PowerSupply:
         CREATE TABLE note (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
             name   TEXT NOT NULL,
-            power INTEGER NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            image TEXT NOT NULL
+            power INTEGER NOT NULL,
+            image TEXT
         )
     """
 
+SEED_DATA = """
+        INSERT INTO powersupply (name, cost, url, power)
+        VALUES
+            ("DEEPCOOL Gamer Storm PF600x 600W", 79.35, "https://www.pbtech.co.nz/product/PSUDPC0006/DEEPCOOL-Gamer-Storm-PF600x-600W-80PLUS-230V-Bronz", 600)
+            ("DEEPCOOL PQ1000G Black 1000W", 205.85, "https://www.pbtech.co.nz/product/PSUDPC10130/DEEPCOOL-PQ1000G-Black-1000W-ATX-31-Power-Supply-8", 1000)
+    """
 class OS:
 
     NAME = "os"
@@ -263,7 +287,7 @@ class OS:
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            image TEXT NOT NULL
+            image TEXT
         )
     """
 
@@ -296,7 +320,7 @@ TABLES = [
     SolidDrives,
     Ram,
     Gpus,
-    Case,
+    Cases,
     Cooler,
     NetwordCard,
     PowerSupply,
