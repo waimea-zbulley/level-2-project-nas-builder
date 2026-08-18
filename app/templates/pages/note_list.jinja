@@ -13,10 +13,12 @@
 
         {% for note in notes %}
 
-            <div class="note {{ 'pinned' if note.pinned }}">
+            <h3>{{ note.name }}</h3>
+
+            {# <div class="note {{ 'pinned' if note.pinned }}">
 
                 <header>
-                    <h3>{{ note.title }}</h3>
+                    <h3>{{ note.name }}</h3>
                     {{ "📌" if note.pinned }}
                 </header>
 
@@ -26,7 +28,7 @@
                     Created on {{ note.created | local | format }}
                 </footer>
 
-            </div>
+            </div> #}
 
         {% else %}
 

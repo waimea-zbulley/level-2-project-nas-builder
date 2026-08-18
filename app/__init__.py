@@ -24,12 +24,11 @@ app = Flask(__name__)
 # Home page - Show all notes
 #-----------------------------------------------------------
 @app.get("/")
-def show_notes():
+def show_config():
     with connect_db() as db:
         sql = """
-            SELECT id, title, body, pinned, created
-            FROM note
-            ORDER BY pinned DESC, created DESC
+            SELECT id, name, cost, motherboard, cpu, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, gpu, `case`, cooler, network_card, psu, os
+            FROM configurations
         """
         params = ()
         notes = db.execute(sql, params).fetchall()
