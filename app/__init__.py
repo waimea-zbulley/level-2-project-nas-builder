@@ -31,7 +31,7 @@ def show_config():
             FROM configurations
         """
         params = ()
-        notes = db.execute(sql, params).fetchall()
+        configs = db.execute(sql, params).fetchall()
 
         flash("Test message")
         flash("Test SUCCESS message", "success")
@@ -39,7 +39,7 @@ def show_config():
         flash("Test WARNING message", "warning")
         flash("Test ERROR message", "error")
 
-        return render_template("pages/note_list.jinja", notes=notes)
+        return render_template("pages/note_list.jinja", configs=configs)
 
 
 #===========================================================
