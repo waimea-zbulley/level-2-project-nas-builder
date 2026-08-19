@@ -11,20 +11,15 @@
 
     <section id="notes">
 
-        {% for note in notes %}
+        {% for config in configs %}
 
             <div class="note {{ 'pinned' if note.pinned }}">
 
                 <header>
-                    <h3>{{ note.title }}</h3>
-                    {{ "📌" if note.pinned }}
+                    <h3>{{ config.name }}</h3>
+                    <p>{{ config.motherboard }}</h3>
                 </header>
 
-                <p>{{ note.body | paragraphs }}</p>
-
-                <footer>
-                    Created on {{ note.created | local | format }}
-                </footer>
 
             </div>
 

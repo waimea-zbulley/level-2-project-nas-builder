@@ -38,6 +38,19 @@ class Configurations:
             network_card INTEGER,
             psu INTEGER,
             os INTEGER
+
+
+            FOREIGN KEY(motherboard) REFERENCES motherboards(id)
+            FOREIGN KEY(cpu) REFERENCES cpus(id)
+            FOREIGN KEY(hard_drive) REFERENCES harddrives(id)
+            FOREIGN KEY(solid_drive) REFERENCES soliddrives(id)
+            FOREIGN KEY(ram) REFERENCES ram(id)
+            FOREIGN KEY(gpu) REFERENCES gpus(id)
+            FOREIGN KEY(`case`) REFERENCES cases(id)
+            FOREIGN KEY(cooler) REFERENCES coolers(id)
+            FOREIGN KEY(network_card) REFERENCES networkcard(id)
+            FOREIGN KEY(psu) REFERENCES powesupply(id)
+            FOREIGN KEY(os) REFERENCES os(id)
         )
     """
 
@@ -212,10 +225,10 @@ class Cases:
     """
 class Cooler:
 
-    NAME = "cooler"
+    NAME = "coolers"
 
     SCHEMA = """
-        CREATE TABLE cooler (
+        CREATE TABLE coolers (
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
