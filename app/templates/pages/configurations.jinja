@@ -1,0 +1,44 @@
+{#=====================================================
+  Home page  SELECT *
+            FROM cpus
+=====================================================#}
+
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>Configurations</h2>
+
+    <section id="configurations">
+
+        {% for config in configs %}
+
+                <header>
+                    <h3>Name: {{ config.con_name }}</h3>
+                    <p>Cost: ${{ config.con_cost }}</p>
+                    <p>Cpu: {{ config.cpu_name }}</p>
+                    <p>Motherboard: {{ config.motherboard_name }}</p>
+                    <p>Hard Drive: {{ config.harddrive_name }}</p>
+                    <p>Solid Drive: {{ config.soliddrive_name }}</p>
+                    <p>Ram: {{ config.ram_name }}</p>
+                    <p>Graphics Card: {{ config.gpu_name }}</p>
+                    <p>Case: {{ config.case_name }}</p>
+                    <p>Cpu Cooler: {{ config.cooler_name }}</p>
+                    <p>Power Supply: {{ config.psu_name }}</p>
+                    <p>Operating System: {{ config.os_name }}</p>
+                </header>
+
+
+            </div>
+
+        {% else %}
+
+            <p>No Notes!</p>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
+

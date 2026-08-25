@@ -38,19 +38,6 @@ class Configurations:
             network_card INTEGER,
             psu INTEGER,
             os INTEGER
-
-
-            FOREIGN KEY(motherboard) REFERENCES motherboards(id)
-            FOREIGN KEY(cpu) REFERENCES cpus(id)
-            FOREIGN KEY(hard_drive) REFERENCES harddrives(id)
-            FOREIGN KEY(solid_drive) REFERENCES soliddrives(id)
-            FOREIGN KEY(ram) REFERENCES ram(id)
-            FOREIGN KEY(gpu) REFERENCES gpus(id)
-            FOREIGN KEY(`case`) REFERENCES cases(id)
-            FOREIGN KEY(cooler) REFERENCES coolers(id)
-            FOREIGN KEY(network_card) REFERENCES networkcard(id)
-            FOREIGN KEY(psu) REFERENCES powesupply(id)
-            FOREIGN KEY(os) REFERENCES os(id)
         )
     """
 
@@ -59,7 +46,17 @@ class Configurations:
         VALUES
             ("My epic NAS", 1500, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 1, 1, 1)
     """
-
+# FOREIGN KEY(motherboard) REFERENCES motherboards(id)
+#             FOREIGN KEY(cpu) REFERENCES cpus(id)
+#             FOREIGN KEY(hard_drive) REFERENCES harddrives(id)
+#             FOREIGN KEY(solid_drive) REFERENCES soliddrives(id)
+#             FOREIGN KEY(ram) REFERENCES ram(id)
+#             FOREIGN KEY(gpu) REFERENCES gpus(id)
+#             FOREIGN KEY(`case`) REFERENCES cases(id)
+#             FOREIGN KEY(cooler) REFERENCES coolers(id)
+#             FOREIGN KEY(network_card) REFERENCES networkcard(id)
+#             FOREIGN KEY(psu) REFERENCES powesupply(id)
+#             FOREIGN KEY(os) REFERENCES os(id)
 class Motherboards:
 
     NAME = "motherboards"
@@ -237,7 +234,7 @@ class Cooler:
     """
 
     SEED_DATA = """
-        INSERT INTO cooler (name, cost, url)
+        INSERT INTO coolers (name, cost, url)
         VALUES
             ("NZXT Air Cooler T120", 56.35, "https://www.pbtech.co.nz/product/FANNZX1021/NZXT-Air-Cooler-T120-RGB-CPU-Cooler-White-For-Inte"),
             ("DEEPCOOL AG620 G2", 79.35, "https://www.pbtech.co.nz/product/FANDPC3070/DEEPCOOL-AG620-G2-CPU-Cooler-2-x-120mm-Fans-6-heat")
