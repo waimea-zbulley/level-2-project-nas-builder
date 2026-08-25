@@ -105,11 +105,11 @@ https://design.penpot.app/#/view?file-id=81f57451-85cc-819d-8008-76eaa95d78e5&pa
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+
 
 ![](image.png)
 https://design.penpot.app/#/view?file-id=81f57451-85cc-819d-8008-79d22adc5c63&page-id=ddb7145f-a1be-80bb-8008-6c66e6a5af37&section=interactions&frame-id=3e0d9397-6e2f-8074-8008-7a70525d97a3&index=0&zoom=fit&share-id=3be9e5e1-190f-8090-8008-7d92214a5dba 
@@ -130,21 +130,14 @@ My stakeholder picked colour pallet 2
 
 ![alt text](image-1.png)
 This Figma demo shows the UI with refinements applied:
-
+https://design.penpot.app/#/view?file-id=3be9e5e1-190f-8090-8008-7d965a797a51&page-id=ddb7145f-a1be-80bb-8008-6c66e6a5af37&section=interactions&frame-id=e3c6c87b-c84b-8035-8008-6c670b350cbb&index=0&zoom=fit&share-id=c269caa0-e456-818c-8008-89ff0ca1c8b1 
 
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-*FIGMA IMPROVED REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
-
+My stakeholder was happy with the colour design shown in the aboce image, and does not require any further modification.
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+This sprint went quite well, I have developed a design and colour scheme that fits the need of my end user/stakeholder by having back and fourth conversations to come to a design.
 
