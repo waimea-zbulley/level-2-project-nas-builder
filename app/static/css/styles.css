@@ -66,6 +66,13 @@ main > h2 {
 }
 
 
+/* Component form */
+
+.componentForm {
+    display: flex;
+    flex-direction: column;
+}
+
 /* configurations --------------------------------------------------*/
 
 #configurations {
