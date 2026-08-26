@@ -1,0 +1,102 @@
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>Configuration Form</h2>
+
+<section class="componentForm">
+
+    {# Drop down selection for CPUs #}
+    <select id="cpu" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for cpu in cpus %}
+            <option value="{{ cpu.name }}" data_price="{{ cpu.cost }}">{{ cpu.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for Motherboards #}
+    <select id="motherboards" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for mb in mbs %}
+            <option value="{{ mb.name }} "  data_price="{{ mb.cost }}">{{ mb.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for HDDS #}
+    <select id="hdds" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for hdd in hdds %}
+            <option value="{{ hdd.name }} "  data_price="{{ hdd.cost }}">{{ hdd.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for SSDS #}
+    <select id="ssds" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for ssd in ssds %}
+            <option value="{{ ssd.name }} "  data_price="{{ ssd.cost }}">{{ ssd.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for RAM #}
+    <select id="ram" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for ram in ram %}
+            <option value="{{ ram.name }} "  data_price="{{ ram.cost }}">{{ ram.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for GPUS #}
+    <select id="gpus" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for gpu in gpus %}
+            <option value="{{ gpu.name }} "  data_price="{{ gpu.cost }}">{{ gpu.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for CASES #}
+    <select id="cases" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for case in cases %}
+            <option value="{{ case.name }} "  data_price="{{ case.cost }}">{{ case.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for CPU COOLERS #}
+    <select id="coolers" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for cooler in coolers %}
+            <option value="{{ cooler.name }} "  data_price="{{ cooler.cost }}">{{ cooler.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for CASES #}
+    <select id="nwcards" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for nwcard in nwcards %}
+            <option value="{{ nwcard.name }} "  data_price="{{ nwcard.cost }}">{{ nwcard.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for PSUS #}
+    <select id="psus" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for psu in psus %}
+            <option value="{{ psu.name }} "  data_price="{{ psu.cost }}">{{ psu.name }}</option>
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for OSES #}
+    <select id="os" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for os in os %}
+            <option value="{{ os.name }} "  data_price="{{ os.cost }}">{{ os.name }}</option>
+        {% endfor %}
+</select>
+
+</section>
+
+
+{% endblock %}
+

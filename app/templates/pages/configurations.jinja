@@ -1,8 +1,3 @@
-{#=====================================================
-  Home page  SELECT *
-            FROM cpus
-=====================================================#}
-
 {% extends 'pages/_base.jinja' %}
 
 
@@ -10,26 +5,17 @@
 
     <h2>configurations</h2>
 
-    <section id="configuration">
+    <section id="configurations">
 
+        {% for config in configs %}
+            <a href="/configuration/{{ config.id }}"><h3>Name: {{ config.name }}</h3></a>
+            <p>ID: {{ config.id }}</p>
+            <p>Cost {{ config.cost }}</p>
 
-                <header>
-                    <h3>Name: {{ config.con_name }}</h3>
-                    <p>Cost: ${{ config.con_cost }}</p>
-                    <p>Cpu: {{ config.cpu_name }}</p>
-                    <p>Motherboard: {{ config.motherboard_name }}</p>
-                    <p>Hard Drive: {{ config.harddrive_name }}</p>
-                    <p>Solid Drive: {{ config.soliddrive_name }}</p>
-                    <p>Ram: {{ config.ram_name }}</p>
-                    <p>Graphics Card: {{ config.gpu_name }}</p>
-                    <p>Case: {{ config.case_name }}</p>
-                    <p>Cpu Cooler: {{ config.cooler_name }}</p>
-                    <p>Power Supply: {{ config.psu_name }}</p>
-                    <p>Operating System: {{ config.os_name }}</p>
-                </header>
+        {% else %}
+            <h3>Not configurations</h3>
+        {% endfor %}
 
-
-            </div>
 
     </section>
 

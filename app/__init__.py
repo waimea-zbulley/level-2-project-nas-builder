@@ -81,6 +81,67 @@ def show_config(id):
 
         return render_template("pages/configuration.jinja", config=configs)
 
+@app.get("/configuration/new")
+def new_config():
+    with connect_db() as db:
+        sql_cpu = """
+            SELECT name, cost
+            FROM cpus
+        """
+        sql_mb = """
+            SELECT name, cost
+            FROM motherboards
+        """
+        sql_hdd = """
+            SELECT name, cost
+            FROM harddrives
+        """
+        sql_ssd = """
+            SELECT name, cost
+            FROM soliddrives
+        """
+        sql_ram = """
+            SELECT name, cost
+            FROM ram
+        """
+        sql_gpu = """
+            SELECT name, cost
+            FROM gpus
+        """
+        sql_case = """
+            SELECT name, cost
+            FROM cases
+        """
+        sql_cooler = """
+            SELECT name, cost
+            FROM coolers
+        """
+        sql_nwcard = """
+            SELECT name, cost
+            FROM networkcard
+        """
+        sql_psu = """
+            SELECT name, cost
+            FROM powersupply
+        """
+        sql_os = """
+            SELECT name, cost
+            FROM os
+        """
+
+        params = ()
+        cpus = db.execute(sql_cpu, params).fetchall()
+        mbs = db.execute(sql_mb, params).fetchall()
+        hdds = db.execute(sql_hdd, params).fetchall()
+        ssds = db.execute(sql_ssd, params).fetchall()
+        ram = db.execute(sql_ram, params).fetchall()
+        gpus = db.execute(sql_gpu, params).fetchall()
+        cases = db.execute(sql_case, params).fetchall()
+        coolers = db.execute(sql_cooler, params).fetchall()
+        nwcards = db.execute(sql_nwcard, params).fetchall()
+        psus = db.execute(sql_psu, params).fetchall()
+        os = db.execute(sql_os, params).fetchall()
+    return render_template("pages/new_configuration.jinja", cpus=cpus, mbs=mbs, hdds=hdds, ssds=ssds, ram=ram, gpus=gpus, cases=cases, coolers=coolers, nwcards=nwcards, psus=psus, os=os)
 
 #===========================================================
 # Configure the app
