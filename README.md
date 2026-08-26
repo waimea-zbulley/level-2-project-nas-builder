@@ -1,7 +1,7 @@
 
 ## Project Description
 
-This is an app that ...
+This is an app that assists the user in selecting the parts for a home use oriented NAS
 
 The app has the following key features:
 - Feature one
@@ -21,21 +21,6 @@ Project Evidence
 - [Sprint 2: MVP Development](docs/evidence/sprint-2-mvp.md)
 - [Sprint 3: Final System Development](docs/evidence/sprint-3-final.md)
 - [Review: Project Final Review](docs/evidence/system-review.md)
-
-
-## Test Accounts
-
-The following user accounts have been created to demonstrate the features of the system:
-
-Test User 1:
-- Username: xxxxx
-- Password: xxxxx
-
-Test User 2:
-- Username: xxxxx
-- Password: xxxxx
-
-...
 
 
 ## Technologies Used
