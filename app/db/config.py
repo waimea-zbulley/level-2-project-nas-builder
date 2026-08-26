@@ -44,7 +44,8 @@ class Configurations:
     SEED_DATA = """
         INSERT INTO configurations (name, cost, motherboard, cpu, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, `case`, cooler, network_card, psu, os)
         VALUES
-            ("My epic NAS", 1500, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 1, 1, 1)
+            ("My epic NAS", 1500, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 1, 1, 1),
+            ("Even more epic NAS", 2500, 2, 1, 2, 4, 2, 2, 1, 2, 1, 1, 1, 1, 1)
     """
 # FOREIGN KEY(motherboard) REFERENCES motherboards(id)
 #             FOREIGN KEY(cpu) REFERENCES cpus(id)
