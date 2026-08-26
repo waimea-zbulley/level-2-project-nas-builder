@@ -8,10 +8,11 @@
 
 {% block content %}
 
-    <h2>configurations</h2>
+    <h2>Configurations</h2>
 
     <section id="configuration">
 
+        {% for config in configs %}
 
                 <header>
                     <h3>Name: {{ config.con_name }}</h3>
@@ -30,6 +31,12 @@
 
 
             </div>
+
+        {% else %}
+
+            <p>No Notes!</p>
+
+        {% endfor %}
 
     </section>
 

@@ -23,11 +23,12 @@ app = Flask(__name__)
 #-----------------------------------------------------------
 # Home page - Show all notes
 #-----------------------------------------------------------
-@app.get("/configuration")
-def show_config():
+@app.get("/configuration/<int:id>")
+def show_config(id):
     with connect_db() as db:
         sql = """
             SELECT 
+                configurations.id   AS con_id,
                 configurations.name AS con_name,
                 configurations.cost AS con_cost,
                 cpus.name           AS cpu_name,
@@ -41,7 +42,7 @@ def show_config():
                 powersupply.name    AS psu_name,
                 os.name             AS os_name
 
-            FROM configurations WHERE id = 1
+            FROM configurations
             JOIN cpus ON configurations.cpu = cpus.id
             JOIN motherboards ON configurations.motherboard = motherboards.id
             LEFT JOIN harddrives ON configurations.hard_drive = harddrives.id
@@ -52,15 +53,15 @@ def show_config():
             JOIN coolers ON configurations.cooler = coolers.id
             JOIN networkcard ON configurations.network_card = networkcard.id
             JOIN powersupply ON configurations.psu = powersupply.id
-            JOIN os ON configurations.os = os.id
+            JOIN os ON configurations.os = os.id WHERE configurations.id = ?
 
         """
-        params = ()
-        configs = db.execute(sql, params).fetchall()
+        params = (id,)
+        configs = db.execute(sql, params).fetchone()
 
         
 
-        return render_template("pages/configurations.jinja", configs=configs)
+        return render_template("pages/configurations.jinja", config=configs)
 
 
 #===========================================================
