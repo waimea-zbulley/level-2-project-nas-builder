@@ -23,6 +23,26 @@ app = Flask(__name__)
 #-----------------------------------------------------------
 # Home page - Show all notes
 #-----------------------------------------------------------
+@app.get("/")
+def main_page():
+    return render_template("pages/homepage.jinja")
+
+@app.get("/configurations")
+def configurations():
+    with connect_db() as db:
+        sql = """
+            SELECT
+                configurations.name,
+                configurations.id,
+                configurations.cost
+            
+            FROM configurations
+        """
+        params = ()
+        configs = db.execute(sql, params).fetchall()
+        
+        return render_template("pages/configurations.jinja", configs=configs)
+
 @app.get("/configuration/<int:id>")
 def show_config(id):
     with connect_db() as db:
@@ -59,9 +79,7 @@ def show_config(id):
         params = (id,)
         configs = db.execute(sql, params).fetchone()
 
-        
-
-        return render_template("pages/configurations.jinja", config=configs)
+        return render_template("pages/configuration.jinja", config=configs)
 
 
 #===========================================================
