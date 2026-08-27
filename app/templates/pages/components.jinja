@@ -1,0 +1,28 @@
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>components</h2>
+
+    <section id="components">
+
+        {# need to add for if no component #}
+        <h3>Cpus</h3>
+        {% for cpu in cpus %}
+            <h4>Name: {{ cpu.name }}</h3></a>
+            <p>ID: {{ cpu.id }}</p>
+            <p>Cost {{ cpu.cost }}</p>
+            <a href="{{ cpu.url }}"><p>Link: {{ cpu.url }}</p></a>
+            <p>CPU Platform: {{ cpu.platform }}</p>
+            <p>Maximum Supported RAM: {{ cpu.maxram }}</p>
+
+        {% else %}
+            <h3>Not configurations</h3>
+        {% endfor %}
+
+
+    </section>
+
+{% endblock %}
+

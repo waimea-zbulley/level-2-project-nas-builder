@@ -141,6 +141,7 @@ def new_config():
         nwcards = db.execute(sql_nwcard, params).fetchall()
         psus = db.execute(sql_psu, params).fetchall()
         os = db.execute(sql_os, params).fetchall()
+
     return render_template("pages/new_configuration.jinja", cpus=cpus, mbs=mbs, hdds=hdds, ssds=ssds, ram=ram, gpus=gpus, cases=cases, coolers=coolers, nwcards=nwcards, psus=psus, os=os)
 
 @app.post("/configuration/new/finish")
@@ -176,6 +177,74 @@ def finish_config():
         db.execute(sql, params)
 
         return redirect("/configurations") 
+
+
+@app.get("/components")
+def compnents():
+    with connect_db() as db:
+
+        sql_cpu = """
+            SELECT *
+            FROM cpus
+        """
+        sql_mb = """
+            SELECT *
+            FROM motherboards
+        """
+        sql_hdd = """
+            SELECT *
+            FROM harddrives
+        """
+        sql_ssd = """
+            SELECT *
+            FROM soliddrives
+        """
+        sql_ram = """
+            SELECT *
+            FROM ram
+        """
+        sql_gpu = """
+            SELECT *
+            FROM gpus
+        """
+        sql_case = """
+            SELECT *
+            FROM cases
+        """
+        sql_cooler = """
+            SELECT *
+            FROM coolers
+        """
+        sql_nwcard = """
+            SELECT *
+            FROM networkcard
+        """
+        sql_psu = """
+            SELECT *
+            FROM powersupply
+        """
+        sql_os = """
+            SELECT *
+            FROM os
+        """
+
+        params = ()
+        cpus = db.execute(sql_cpu, params).fetchall()
+        mbs = db.execute(sql_mb, params).fetchall()
+        hdds = db.execute(sql_hdd, params).fetchall()
+        ssds = db.execute(sql_ssd, params).fetchall()
+        ram = db.execute(sql_ram, params).fetchall()
+        gpus = db.execute(sql_gpu, params).fetchall()
+        cases = db.execute(sql_case, params).fetchall()
+        coolers = db.execute(sql_cooler, params).fetchall()
+        nwcards = db.execute(sql_nwcard, params).fetchall()
+        psus = db.execute(sql_psu, params).fetchall()
+        os = db.execute(sql_os, params).fetchall()
+
+        # db.execute(sql, params)
+
+        return render_template("pages/components.jinja", cpus=cpus, mbs=mbs, hdds=hdds, ssds=ssds, ram=ram, gpus=gpus, cases=cases, coolers=coolers, nwcards=nwcards, psus=psus, os=os)
+
 
 #===========================================================
 # Configure the app
