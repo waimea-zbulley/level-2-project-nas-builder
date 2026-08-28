@@ -1,0 +1,173 @@
+{% extends 'pages/_base.jinja' %}
+
+
+{% block content %}
+
+    <h2>Configuration Form</h2>
+
+<form method="post" action="/configuration/edit/{{ config.con_id }}/finish" class="componentForm">
+
+    {# All select code blocks check the cpu id against the selected config to preload the html form #}
+    <p>Name</p>
+    <input type="text" name="name" value="{{ config.con_name }}">
+
+    <p>Cost</p>
+    <input type="number" name="cost" value="{{ config.con_cost }}">
+    {# Drop down selection for CPUs #}
+    <p>CPU</p>
+    <select id="cpu"  name="cpu" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for cpu in cpus %}
+            {% if cpu.id == config.cpu_id %}
+                <option value="{{ cpu.id }}" data_price="{{ cpu.cost }}" selected>{{ cpu.name }}</option>
+            {% else %}
+                <option value="{{ cpu.id }}" data_price="{{ cpu.cost }}">{{ cpu.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for Motherboards #}
+    <p>Motherboard</p>
+    <select id="motherboards" name="mb" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for mb in mbs %}
+            {% if mb.id == config.motherboard_id %}
+                <option value="{{ mb.id }} "  data_price="{{ mb.cost }}" selected>{{ mb.name }}</option>
+            {% else %}
+                <option value="{{ mb.id }} "  data_price="{{ mb.cost }}">{{ mb.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for HDDS #}
+    <p>HDD</p>
+    <select id="hdds" name="hdd" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for hdd in hdds %}
+            {% if hdd.id == config.harddrive_id%}
+                <option value="{{ hdd.id }} "  data_price="{{ hdd.cost }}" selected>{{ hdd.name }}</option>
+            {% else %}
+                <option value="{{ hdd.id }} "  data_price="{{ hdd.cost }}">{{ hdd.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    <p>Hard Drive Quantity</p>
+    <input type="number" name="hddqty" value="{{ config.hdd_qty }}">
+
+    {# Drop down selection for SSDS #}
+    <p>SSD</p>
+    <select id="ssds" name="ssd" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for ssd in ssds %}
+            {% if ssd.id == config.soliddrive_id %}
+                <option value="{{ ssd.id }}"  data_price="{{ ssd.cost }}" selected>{{ ssd.name }}</option>
+            {% else %}
+                <option value="{{ ssd.id }}"  data_price="{{ ssd.cost }}">{{ ssd.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    <p>Solid Drive Quantity</p>
+    <input type="number" name="ssdqty" value="{{ config.ssd_qty }}">
+
+    {# Drop down selection for RAM #}
+    <p>RAM</p>
+    <select id="ram" name="ram" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for ram in ram %}
+            {% if ram.id == config.ram_id%}
+                <option value="{{ ram.id }} "  data_price="{{ ram.cost }}" selected>{{ ram.name }}</option>
+            {% else %}
+                <option value="{{ ram.id }} "  data_price="{{ ram.cost }}">{{ ram.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    <p>RAM Quantity</p>
+    <input type="number" name="ramqty" value="{{ config.ram_qty }}">
+
+    {# Drop down selection for GPUS #}
+    <p>GPU</p>
+    <select id="gpus" name="gpu" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for gpu in gpus %}
+            {% if gpu.id == config.gpu_id %}
+                <option value="{{ gpu.id }} "  data_price="{{ gpu.cost }}" selected>{{ gpu.name }}</option>
+            {% else %}
+                <option value="{{ gpu.id }} "  data_price="{{ gpu.cost }}">{{ gpu.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for CASES #}
+    <p>Case</p>
+    <select id="cases" name="case" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for case in cases %}
+            {% if case.id == config.case_id%}
+                <option value="{{ case.id }} "  data_price="{{ case.cost }}" selected>{{ case.name }}</option>
+            {% else %}
+                <option value="{{ case.id }} "  data_price="{{ case.cost }}">{{ case.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for CPU COOLERS #}
+    <p>CPU Cooler</p>
+    <select id="coolers" name="cooler" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for cooler in coolers %}
+            {% if cooler.id == config.cooler_id %}
+                <option value="{{ cooler.id }} "  data_price="{{ cooler.cost }}" selected>{{ cooler.name }}</option>
+            {% else %}
+                <option value="{{ cooler.id }} "  data_price="{{ cooler.cost }}">{{ cooler.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for Network Cards #}
+    <p>Network Card</p>
+    <select id="nwcards" name="nwcard" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for nwcard in nwcards %}
+            {% if nwcard.id == config.networkcard_name %}
+                <option value="{{ nwcard.id }} "  data_price="{{ nwcard.cost }}" selected>{{ nwcard.name }}</option>
+            {% else %}
+                <option value="{{ nwcard.id }} "  data_price="{{ nwcard.cost }}" selected>{{ nwcard.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for PSUS #}
+    <p>Power Supply</p>
+    <select id="psus" name="psu" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for psu in psus %}
+            {% if psu.id == config.psu_id %}
+                <option value="{{ psu.id }} "  data_price="{{ psu.cost }}" selected>{{ psu.name }}</option>
+            {% else %}
+                <option value="{{ psu.id }} "  data_price="{{ psu.cost }}">{{ psu.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    {# Drop down selection for OSES #}
+    <p>Operating System</p>
+    <select id="os" name="os" class="priced">
+        <option value="" data_price="0">-- choose one --</option>
+        {% for os in os %}
+            {% if os.id == config.os_id %}
+                <option value="{{ os.id }} "  data_price="{{ os.cost }}" selected>{{ os.name }}</option>
+            {% else %}
+                <option value="{{ os.id }} "  data_price="{{ os.cost }}" selected>{{ os.name }}</option>
+            {% endif %}
+        {% endfor %}
+</select>
+
+<button>Finish Configuration</button>
+</form>
+
+
+{% endblock %}
+

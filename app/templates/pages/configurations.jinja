@@ -12,13 +12,15 @@
             <p>ID: {{ config.id }}</p>
             <p>Cost {{ config.cost }}</p>
             <p><a href="/configuration/{{ config.id }}/delete">Delete</a></p>
+            <p><a href="/configuration/{{ config.id }}/edit">Edit</a></p>
 
         {% else %}
-            <h3>Not configurations</h3>
+            <h3>No configurations</h3>
         {% endfor %}
 
 
     </section>
 
+    <p id="addconf"><a href="/configuration/new">Add Configuration</a></p>
 {% endblock %}
 
