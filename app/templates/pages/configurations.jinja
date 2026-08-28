@@ -11,6 +11,7 @@
             <a href="/configuration/{{ config.id }}"><h3>Name: {{ config.name }}</h3></a>
             <p>ID: {{ config.id }}</p>
             <p>Cost {{ config.cost }}</p>
+            <p><a href="/configuration/{{ config.id }}/delete">Delete</a></p>
 
         {% else %}
             <h3>Not configurations</h3>

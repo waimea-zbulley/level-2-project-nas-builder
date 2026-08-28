@@ -31,9 +31,13 @@ body {
 
 
 main {
-    max-width: 60rem;
+    max-width: 70rem;
     margin-inline: auto;
     padding: 1rem;
+}
+
+a, a:visited, a:active {
+  color: inherit;
 }
 
 
@@ -73,38 +77,39 @@ main > h2 {
     flex-direction: column;
 }
 
-.components {
-    display: flex;
-    flex-direction: column;
+#components {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    
+
+    @media (width >= 500px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (width >= 800px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    div {
+        margin: 0.5rem;
+        background-color: lightgray;
+        border: 2px solid black;
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        
+        .component {
+            background-color: rgb(165, 165, 165);
+        }
+        
+    }
+    
 }
 /* configurations --------------------------------------------------*/
 
 #configurations {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-    align-items: start;
-
-    .note {
-        padding: 1rem;
-        box-shadow: 0 0.5rem 1rem #0004;
-        border: 1px solid var(--border-col);
-        background-color: var(--back-col-panel);
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        footer {
-            font-size: 0.8rem;
-            font-style: italic;
-        }
-
-        &.pinned {
-            border-color: var(--accent-col);
-        }
-    }
+    display: flex;
+    flex-direction: column;
 }
 

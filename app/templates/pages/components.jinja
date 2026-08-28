@@ -7,21 +7,158 @@
 
     <section id="components">
 
-        {# need to add for if no component #}
-        <h3>Cpus</h3>
-        {% for cpu in cpus %}
-            <h4>Name: {{ cpu.name }}</h3></a>
-            <p>ID: {{ cpu.id }}</p>
-            <p>Cost {{ cpu.cost }}</p>
-            <a href="{{ cpu.url }}"><p>Link: {{ cpu.url }}</p></a>
-            <p>CPU Platform: {{ cpu.platform }}</p>
-            <p>Maximum Supported RAM: {{ cpu.maxram }}</p>
+        {# Section for CPUs #}
+        <div id="cpus">
+            <h2>Cpus</h2>
+            {% for cpu in cpus %}
+                <div class="component">
+                
+                
+                    <a href="{{ cpu.url }}" target="_blank"><h4>Name: {{ cpu.name }}</h3></a>
+                    <p>ID: {{ cpu.id }}</p>
+                    <p>Cost {{ cpu.cost }}</p>
+                    <p>CPU Platform: {{ cpu.platform }}</p>
+                    <p>Maximum Supported RAM: {{ cpu.maxram }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
+        
+        {# Section for Motherboards #}
+        <div id="motherboards">
+            <h2>Motherboards</h2>
+                {% for mb in mbs %}
+                <div class="component">
+                    <a target="_blank" href="{{ mb.url }}"><h4>Name: {{ mb.name }}</h3></a>
+                    <p>ID: {{ mb.id }}</p>
+                    <p>Cost {{ mb.cost }}</p>
+                    <p>Motherboard Platform: {{ mb.platform }}</p>
+                    <p>Sata Ports: {{ mb.sata_ports }}</p>
+                    <p>PCIE ports: {{ mb.pcie_ports }}</p>
+                    <p>m.2 slots: {{ mb.m2_ports }}</p>
+                    <p>RAM generation: {{ mb.ram_gen }}</p>
+                    <p>RAM Slots: {{ mb.ram_slots }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
 
-        {% else %}
-            <h3>Not configurations</h3>
-        {% endfor %}
+        {# Section for Hard Drives #}
+        <div id="hdds">
+            <h2>Hard Drives</h2>
+                {% for hdd in hdds %}
+                <div class="component">
+                    <a target="_blank" href="{{ hdd.url }}"><h4>Name: {{ hdd.name }}</h3></a>
+                    <p>ID: {{ hdd.id }}</p>
+                    <p>Cost {{ hdd.cost }}</p>
+                    <p>Powerdraw: {{ hdd.powerdraw }}</p>
+                    <p>Capacity: {{ hdd.capacity }}</p>
+                    <p>RPM: {{ hdd.rpm }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
 
+        <div id="ssds">
+            <h2>Solid State Drives</h2>
+                {% for ssd in ssds %}
+                <div class="component">
+                    <a target="_blank" href="{{ ssd.url }}"><h4>Name: {{ ssd.name }}</h3></a>
+                    <p>ID: {{ ssd.id }}</p>
+                    <p>Cost {{ ssd.cost }}</p>
+                    <p>Powerdraw: {{ ssd.powerdraw }}</p>
+                    <p>Capacity: {{ ssd.capacity }}</p>
+                    <p>Speed: {{ ssd.speed }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
 
+        <div id="gpus">
+            <h2>Graphics Cards</h2>
+                {% for gpu in gpus %}
+                <div class="component">
+                    <a target="_blank" href="{{ gpu.url }}"><h4>Name: {{ gpu.name }}</h3></a>
+                    <p>ID: {{ gpu.id }}</p>
+                    <p>Cost {{ gpu.cost }}</p>
+                    <p>Powerdraw: {{ gpu.powerdraw }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
+
+        <div id="ssds">
+            <h2>PC Cases</h2>
+                {% for case in cases %}
+                <div class="component">
+                    <a target="_blank" href="{{ case.url }}"><h4>Name: {{ case.name }}</h3></a>
+                    <p>ID: {{ case.id }}</p>
+                    <p>Cost {{ case.cost }}</p>
+                    <p>Capacity: {{ case.hard_drive_trays }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
+
+        <div id="coolers">
+            <h2>CPU Coolers</h2>
+                {% for cooler in coolers %}
+                <div class="component">
+                    <a target="_blank" href="{{ cooler.url }}"><h4>Name: {{ cooler.name }}</h3></a>
+                    <p>ID: {{ cooler.id }}</p>
+                    <p>Cost {{ cooler.cost }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
+
+        <div id="networkcards">
+            <h2>Network Cards</h2>
+                {% for nwcard in nwcards %}
+                <div class="component">
+                    <a target="_blank" href="{{ nwcard.url }}"><h4>Name: {{ nwcard.name }}</h3></a>
+                    <p>ID: {{ nwcard.id }}</p>
+                    <p>Cost {{ nwcard.cost }}</p>
+                    <p>Speed: {{ nwcard.speed }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
+
+        <div id="powersupply">
+            <h2>Powersupplys</h2>
+                {% for psu in psus %}
+                <div class="component">
+                    <a target="_blank" href="{{ psu.url }}"><h4>Name: {{ psu.name }}</h3></a>
+                    <p>ID: {{ psu.id }}</p>
+                    <p>Cost {{ psu.cost }}</p>
+                    <p>Powerdraw: {{ psu.power }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
+
+        <div id="os">
+            <h2>Operating Systems</h2>
+                {% for os in os %}
+                <div class="component">
+                    <a target="_blank" href="{{ os.url }}"><h4>Name: {{ os.name }}</h3></a>
+                    <p>ID: {{ os.id }}</p>
+                    <p>Cost {{ os.cost }}</p>
+                </div>
+            {% else %}
+                <h3>No configurations</h3>
+            {% endfor %}
+        </div>
     </section>
 
 {% endblock %}
