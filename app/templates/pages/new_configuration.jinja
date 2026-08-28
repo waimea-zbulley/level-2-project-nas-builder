@@ -8,13 +8,13 @@
 <form method="post" action="/configuration/new/finish" class="componentForm">
 
     <p>Name</p>
-    <input type="text" name="name">
+    <input type="text" name="name" required>
 
     <p>Cost</p>
     <input type="number" name="cost">
     {# Drop down selection for CPUs #}
     <p>CPU</p>
-    <select id="cpu"  name="cpu" class="priced">
+    <select id="cpu"  name="cpu" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for cpu in cpus %}
             <option value="{{ cpu.id }}" data_price="{{ cpu.cost }}">{{ cpu.name }}</option>
@@ -23,7 +23,7 @@
 
     {# Drop down selection for Motherboards #}
     <p>Motherboard</p>
-    <select id="motherboards" name="mb" class="priced">
+    <select id="motherboards" name="mb" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for mb in mbs %}
             <option value="{{ mb.id }} "  data_price="{{ mb.cost }}">{{ mb.name }}</option>
@@ -44,7 +44,7 @@
 
     {# Drop down selection for SSDS #}
     <p>SSD</p>
-    <select id="ssds" name="ssd" class="priced">
+    <select id="ssds" name="ssd" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for ssd in ssds %}
             <option value="{{ ssd.id }} "  data_price="{{ ssd.cost }}">{{ ssd.name }}</option>
@@ -52,11 +52,11 @@
     </select>
 
     <p>Solid Drive Quantity</p>
-    <input type="number" name="ssdqty">
+    <input type="number" name="ssdqty" required>
 
     {# Drop down selection for RAM #}
     <p>RAM</p>
-    <select id="ram" name="ram" class="priced">
+    <select id="ram" name="ram" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for ram in ram %}
             <option value="{{ ram.id }} "  data_price="{{ ram.cost }}">{{ ram.name }}</option>
@@ -64,7 +64,7 @@
     </select>
 
     <p>RAM Quantity</p>
-    <input type="number" name="ramqty">
+    <input type="number" name="ramqty" required>
 
     {# Drop down selection for GPUS #}
     <p>GPU</p>
@@ -77,7 +77,7 @@
 
     {# Drop down selection for CASES #}
     <p>Case</p>
-    <select id="cases" name="case" class="priced">
+    <select id="cases" name="case" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for case in cases %}
             <option value="{{ case.id }} "  data_price="{{ case.cost }}">{{ case.name }}</option>
@@ -86,7 +86,7 @@
 
     {# Drop down selection for CPU COOLERS #}
     <p>CPU Cooler</p>
-    <select id="coolers" name="cooler" class="priced">
+    <select id="coolers" name="cooler" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for cooler in coolers %}
             <option value="{{ cooler.id }} "  data_price="{{ cooler.cost }}">{{ cooler.name }}</option>
@@ -104,7 +104,7 @@
 
     {# Drop down selection for PSUS #}
     <p>Power Supply</p>
-    <select id="psus" name="psu" class="priced">
+    <select id="psus" name="psu" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for psu in psus %}
             <option value="{{ psu.id }} "  data_price="{{ psu.cost }}">{{ psu.name }}</option>
@@ -113,7 +113,7 @@
 
     {# Drop down selection for OSES #}
     <p>Operating System</p>
-    <select id="os" name="os" class="priced">
+    <select id="os" name="os" class="priced" required>
         <option value="" data_price="0">-- choose one --</option>
         {% for os in os %}
             <option value="{{ os.id }} "  data_price="{{ os.cost }}">{{ os.name }}</option>
