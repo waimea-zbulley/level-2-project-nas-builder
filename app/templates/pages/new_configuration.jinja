@@ -11,31 +11,31 @@
     <input type="text" name="name" required>
 
     <p>Cost</p>
-    <input type="number" name="cost">
+    <input id="totalNum" value="0" type="number" name="cost" readonly>
     {# Drop down selection for CPUs #}
     <p>CPU</p>
-    <select id="cpu"  name="cpu" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+    <select id="cpu"  name="cpu" class="priced" required >
+        <option value="" data-price="0">-- choose one --</option>
         {% for cpu in cpus %}
-            <option value="{{ cpu.id }}" data_price="{{ cpu.cost }}">{{ cpu.name }}</option>
+            <option value="{{ cpu.id }}" data-price="{{ cpu.cost }}">{{ cpu.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for Motherboards #}
     <p>Motherboard</p>
-    <select id="motherboards" name="mb" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+    <select id="motherboards" name="mb" class="priced">
+        <option value="" data-price="0">-- choose one --</option>
         {% for mb in mbs %}
-            <option value="{{ mb.id }} "  data_price="{{ mb.cost }}">{{ mb.name }}</option>
+            <option value="{{ mb.id }} "  data-price="{{ mb.cost }}">{{ mb.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for HDDS #}
     <p>HDD</p>
     <select id="hdds" name="hdd" class="priced">
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for hdd in hdds %}
-            <option value="{{ hdd.id }} "  data_price="{{ hdd.cost }}">{{ hdd.name }}</option>
+            <option value="{{ hdd.id }} "  data-price="{{ hdd.cost }}">{{ hdd.name }}</option>
         {% endfor %}
     </select>
 
@@ -45,9 +45,9 @@
     {# Drop down selection for SSDS #}
     <p>SSD</p>
     <select id="ssds" name="ssd" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for ssd in ssds %}
-            <option value="{{ ssd.id }} "  data_price="{{ ssd.cost }}">{{ ssd.name }}</option>
+            <option value="{{ ssd.id }} "  data-price="{{ ssd.cost }}">{{ ssd.name }}</option>
         {% endfor %}
     </select>
 
@@ -57,9 +57,9 @@
     {# Drop down selection for RAM #}
     <p>RAM</p>
     <select id="ram" name="ram" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for ram in ram %}
-            <option value="{{ ram.id }} "  data_price="{{ ram.cost }}">{{ ram.name }}</option>
+            <option value="{{ ram.id }} "  data-price="{{ ram.cost }}">{{ ram.name }}</option>
         {% endfor %}
     </select>
 
@@ -69,60 +69,64 @@
     {# Drop down selection for GPUS #}
     <p>GPU</p>
     <select id="gpus" name="gpu" class="priced">
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for gpu in gpus %}
-            <option value="{{ gpu.id }} "  data_price="{{ gpu.cost }}">{{ gpu.name }}</option>
+            <option value="{{ gpu.id }} "  data-price="{{ gpu.cost }}">{{ gpu.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for CASES #}
     <p>Case</p>
     <select id="cases" name="case" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for case in cases %}
-            <option value="{{ case.id }} "  data_price="{{ case.cost }}">{{ case.name }}</option>
+            <option value="{{ case.id }} "  data-price="{{ case.cost }}">{{ case.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for CPU COOLERS #}
     <p>CPU Cooler</p>
     <select id="coolers" name="cooler" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for cooler in coolers %}
-            <option value="{{ cooler.id }} "  data_price="{{ cooler.cost }}">{{ cooler.name }}</option>
+            <option value="{{ cooler.id }} "  data-price="{{ cooler.cost }}">{{ cooler.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for Network Cards #}
     <p>Network Card</p>
     <select id="nwcards" name="nwcard" class="priced">
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for nwcard in nwcards %}
-            <option value="{{ nwcard.id }} "  data_price="{{ nwcard.cost }}">{{ nwcard.name }}</option>
+            <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}">{{ nwcard.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for PSUS #}
     <p>Power Supply</p>
     <select id="psus" name="psu" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for psu in psus %}
-            <option value="{{ psu.id }} "  data_price="{{ psu.cost }}">{{ psu.name }}</option>
+            <option value="{{ psu.id }} "  data-price="{{ psu.cost }}">{{ psu.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for OSES #}
     <p>Operating System</p>
     <select id="os" name="os" class="priced" required>
-        <option value="" data_price="0">-- choose one --</option>
+        <option value="" data-price="0">-- choose one --</option>
         {% for os in os %}
-            <option value="{{ os.id }} "  data_price="{{ os.cost }}">{{ os.name }}</option>
+            <option value="{{ os.id }} "  data-price="{{ os.cost }}">{{ os.name }}</option>
         {% endfor %}
 </select>
 
 <button>Finish Configuration</button>
+{# <p id="total"> </p> #}
+
 </form>
 
+
+<script src="/static/js/cost_calculation.js"></script>
 
 {% endblock %}
 
