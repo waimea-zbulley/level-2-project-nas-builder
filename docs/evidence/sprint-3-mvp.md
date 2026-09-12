@@ -10,12 +10,16 @@ Continue to develop the web application to the point that it provides all key fu
 **Edit these goals as needed**
 
 - Create the following web pages:
-    - Form for ...
-    - Etc.
+    - Form for creating configurations which have compatable parts and accurate pricing.
+    - Fully functional components page
+    - Fully functional configurations page
+    - All links working
 - Develop SQL database queries to:
-    - Add a new ...
-    - Etc.
-
+    - Same as sprint-2 (already done)
+- Adding some colour as shown by ui prototyping to improve UX.
+- Make overall theming close to that of the mock ups
+- Preset configurations at least partially implemented
+- Make default mandatory boot drive rather than being part of solid drives
 
 ## Testing FEATURE NAME HERE
 
