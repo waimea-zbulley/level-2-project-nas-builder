@@ -177,6 +177,7 @@ def finish_config():
 
         db.execute(sql, params)
 
+        flash("Successfully added configuration", "success")
         return redirect("/configurations") 
 
 
@@ -327,6 +328,7 @@ def finish_edit_config(id):
 
         db.execute(sql, params)
 
+        flash("Successfully edited configuration", "success")
         return redirect("/configurations") 
 
 @app.get("/components")
@@ -406,6 +408,7 @@ def delete_config(id):
         """
 
         params = (id,)
+        flash("Successfully deleted configuration", "success")
         db.execute(sql, params)
         return redirect("/configurations")
 #===========================================================
