@@ -12,14 +12,28 @@ Implement the database, populated with test data. Create queries that retrieve t
 - Implement the database
 - Add test data to the database
 - Create the following web pages:
-    - Home pages showing...
-    - Details page for ...
-    - Etc.
+    - Page showing list of all components and their data
+    - Page for creating Configurations
+    - Page for adding Configurations
+    - General home page
 - Develop SQL database queries to:
-    - Retrieve all ...
-    - Retrieve specific ...
-    - Etc.
+    - Retrieve all Configurations and the parts inside of them
+    - Retrieve specific Configuration
+    - Show all components and all their parts
+- Be able to add, delete and edit data from the database (configurations)
 
+
+## Testing Deleting configuration
+
+This tests shows me deleting a configuration
+
+![Test deleting configuration without flash text](screenshots/delete_configuration_example_1.gif)
+
+### Changes / Improvements
+
+Added flash text to show that a configuration has been succsesfully deleted
+
+![Test deleting configuration with flash text](screenshots/delete_configuration_example_2.gif)
 
 ## Testing FEATURE NAME HERE
 
@@ -27,24 +41,11 @@ Replace this text with notes about what you are testing, how you tested it, and 
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-![Placeholder](screenshots/placeholder.png)
+![Test deleting configuration](screenshots/add_configuration_example.gif)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
-
-
-## Testing FEATURE NAME HERE
-
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
+Added flash text to show that a configuration has been succsesfully added
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
