@@ -24,6 +24,7 @@ Implement the database, populated with test data. Create queries that retrieve t
 
 I descussed with my stakeholder to come to these as the requirements for this sprint
 
+"For this sprint you should focus on getting the data loaded into the database, would be great if from the UI you could then show all the parts available and be able to create a shopping list for a possible NAS .  Doesn’t need to be pretty focus on quality of the data and the ability to see the data from the UI." - Gareth
 
 ## Testing Deleting configuration
 
@@ -95,6 +96,13 @@ My stakeholder suggested that I need to add a back button on the configuration p
 
 ![Test component page](screenshots/gifs-for-sprint2/testing_config_page_example_2.gif)
 
+
+## Evidince for queries and seed data
+
+### Seed Data For SSDs
+![Seed data evidence](screenshots/gifs-for-sprint2/seed_data.png)
+### Query for adding new configurations
+![Query for adding config evidence](screenshots/gifs-for-sprint2/add_query.png)
 
 ## Sprint Review
 
