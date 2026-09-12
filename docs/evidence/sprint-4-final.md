@@ -9,9 +9,11 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 
 **Edit these goals as needed**
 
+- Refining naming of components
 - Refine the design and UI of the website
 - Refine the user experience (UX) of the system
 - Perform final, full-system testing
+
 
 
 ## Testing FEATURE NAME HERE
