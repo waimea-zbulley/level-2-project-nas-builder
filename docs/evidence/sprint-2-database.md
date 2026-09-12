@@ -22,10 +22,12 @@ Implement the database, populated with test data. Create queries that retrieve t
     - Show all components and all their parts
 - Be able to add, delete and edit data from the database (configurations)
 
+I descussed with my stakeholder to come to these as the requirements for this sprint
+
 
 ## Testing Deleting configuration
 
-This tests shows me deleting a configuration
+This tests shows me deleting a configuration, this shows how one of my pages interacts with my database by removing data from the configuration table
 
 ![Test deleting configuration without flash text](screenshots/gifs-for-sprint2/delete_configuration_example_1.gif)
 
@@ -36,40 +38,65 @@ Added flash text to show that a configuration has been succsesfully deleted as s
 ![Test deleting configuration with flash text](screenshots/gifs-for-sprint2/delete_configuration_example_2.gif)
 
 
-## Testing FEATURE NAME HERE
+## Testing Adding configuration
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+This tests shows me adding a configuration, this shows how one of my pages interacts with my database by adding data to the configuration table
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-![Test deleting configuration](screenshots/gifs-for-sprint2/add_configuration_example_1.gif)
+![Test adding configuration](screenshots/gifs-for-sprint2/add_configuration_example_1.gif)
 
 ### Changes / Improvements
 
 Added flash text to show that a configuration has been succsesfully added as stakeholder suggested
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+![Test adding configuration with flash text](screenshots/gifs-for-sprint2/add_configuration_example_2.gif)
 
 
-## Testing FEATURE NAME HERE
+## Testing Editing configuration
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+This tests shows me adding a configuration, this shows how one of my pages interacts with my database by updating data in the configuration table
+![Test editing configuration](screenshots/gifs-for-sprint2/edit_configuration_example_1.gif)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+Added flash text to show that a configuration has been succsesfully edited as stakeholder suggested
+![Test adding configuration with flash text](screenshots/gifs-for-sprint2/add_configuration_example_2.gif)
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+
+## Testing component page
+
+This test shows me testing the component page of my site
+
+![Test component page](screenshots/gifs-for-sprint2/component_page_example_1.gif)
 
 
-## ETC...
+### Changes / Improvements
 
-High quality versions of the files can be found at
-[here](/screenshots/high_quality_videos/)
+My stakeholder suggested that when opening a link to a component it should take you to a new tab rather than replacing the current
+
+![Test component page with links defering to new tab rather than current](screenshots/gifs-for-sprint2/component_page_example_2.gif)
+
+
+## General home page testing
+
+This test shows some general testing of my home page
+
+![Test component page](screenshots/gifs-for-sprint2/home_page_testing_example.gif)
+
+
+## Testing configuration page
+
+Doing general testing of configuration page in regards to viewing configurations
+
+![Test component page](screenshots/gifs-for-sprint2/testing_config_page_example_1.gif)
+
+### Changes / Improvements
+
+My stakeholder suggested that I need to add a back button on the configuration pages.
+
+![Test component page](screenshots/gifs-for-sprint2/testing_config_page_example_2.gif)
+
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+This sprint has moved the project foward as I now have a database implemented with basic functionality and seed data, I have done this while talking to my stakeholder throughout to ensure that they are happy with the product. I still need to add a decent amount of functionallity and QOL these things are not related to the database and will be part of my MVP and final sprints (sprint 3 and 4).
 
