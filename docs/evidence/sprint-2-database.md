@@ -65,6 +65,8 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ## ETC...
 
+High quality versions of the files can be found at
+[here](/screenshots/high_quality_videos/)
 
 ## Sprint Review
 
