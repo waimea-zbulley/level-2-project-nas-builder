@@ -31,9 +31,10 @@ This tests shows me deleting a configuration
 
 ### Changes / Improvements
 
-Added flash text to show that a configuration has been succsesfully deleted
+Added flash text to show that a configuration has been succsesfully deleted as stakeholder suggested
 
 ![Test deleting configuration with flash text](screenshots/gifs-for-sprint2/delete_configuration_example_2.gif)
+
 
 ## Testing FEATURE NAME HERE
 
@@ -41,11 +42,11 @@ Replace this text with notes about what you are testing, how you tested it, and 
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-![Test deleting configuration](screenshots/gifs-for-sprint2/add_configuration_example.gif)
+![Test deleting configuration](screenshots/gifs-for-sprint2/add_configuration_example_1.gif)
 
 ### Changes / Improvements
 
-Added flash text to show that a configuration has been succsesfully added
+Added flash text to show that a configuration has been succsesfully added as stakeholder suggested
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
