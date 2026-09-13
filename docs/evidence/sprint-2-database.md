@@ -103,7 +103,8 @@ My stakeholder suggested that I need to add a back button on the configuration p
 ![Seed data evidence](screenshots/gifs-for-sprint2/seed_data.png)
 ### Query for adding new configurations
 ![Query for adding config evidence](screenshots/gifs-for-sprint2/add_query.png)
-
+### Full Seed data overview of all tables (terminal view)
+![Query for adding config evidence](screenshots/gifs-for-sprint2/seed_data_2.gif)
 ## Sprint Review
 
 This sprint has moved the project foward as I now have a database implemented with basic functionality and seed data, I have done this while talking to my stakeholder throughout to ensure that they are happy with the product. I still need to add a decent amount of functionallity and QOL these things are not related to the database and will be part of my MVP and final sprints (sprint 3 and 4).
