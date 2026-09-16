@@ -4,10 +4,17 @@
 ===========================================================*/
 
 :root {
-    --text-col:         #111;
+    --text-col:         #fff;
+    --text-col-secondary:#0f1315;
 
-    --back-col:         #eee;
-    --back-col-panel:   #fff;
+    --back-col:         #0f1315;
+    --back-col-sec:     #2f393c;
+    --back-col-panel:    #829ba2;
+    --back-col-panel-sec:    #a6babf;
+    --primary:          #829ba2;
+
+    --nav-bar-colour:    #3f3035;
+    
 
     --border-col:       #355;
 
@@ -34,6 +41,7 @@ main {
     max-width: 70rem;
     margin-inline: auto;
     padding: 1rem;
+    background-color: var(--back-col-sec);
 }
 
 a, a:visited, a:active {
@@ -45,10 +53,15 @@ a, a:visited, a:active {
 
 body > header {
     display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    background-color: var(--nav-bar-colour);
 
     nav {
         display: flex;
@@ -75,6 +88,25 @@ main > h2 {
 .componentForm {
     display: flex;
     flex-direction: column;
+    
+    select {
+        background-color: var(--back-col-panel-sec);
+        border-radius: 1rem;
+        color: var(--text-col-secondary);
+    }
+
+    input {
+        background-color: var(--back-col-panel-sec);
+        border-radius: 1rem;
+        color: var(--text-col-secondary);
+    }
+
+    button {
+        background-color: var(--back-col-panel-sec);
+        border-radius: 1rem;
+        color: var(--text-col-secondary);
+        margin-top: 1rem;
+    }
 }
 
 #components {
@@ -94,13 +126,16 @@ main > h2 {
 
     div {
         margin: 0.5rem;
-        background-color: lightgray;
+        background-color: var(--back-col-panel);
         border: 2px solid black;
         border-radius: 0.5rem;
         padding: 0.25rem;
+        color: var(--text-col-secondary);
+
         
         .component {
-            background-color: rgb(165, 165, 165);
+            background-color: var(--back-col-panel-sec);
+            color: var(--text-col-secondary);
         }
         
     }
@@ -115,5 +150,13 @@ main > h2 {
 
 #addconf {
     padding-top: 5rem;
+}
+
+#homepage {
+    background-color: var(--back-col-sec);
+    max-width: 70rem;
+    max-height: 50rem;
+    height: 50rem;
+    gap: 2rem;
 }
 
