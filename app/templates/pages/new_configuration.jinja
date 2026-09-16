@@ -10,8 +10,15 @@
     <p>Name</p>
     <input type="text" name="name" required>
 
+
     <p>Cost</p>
     <input id="totalNum" value="0" type="number" name="cost" readonly>
+
+    <p>Boot Drive</p>
+    <select class="priced" id="bootDrive" readonly>
+        <option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }}</option>
+    </select>
+
     {# Drop down selection for CPUs #}
     <p>CPU</p>
     <select id="cpu"  name="cpu" class="priced" required >
@@ -21,26 +28,28 @@
         {% endfor %}
     </select>
 
+
+
     {# Drop down selection for Motherboards #}
     <p>Motherboard</p>
     <select id="motherboards" name="mb" class="priced">
         <option value="" data-price="0">-- choose one --</option>
         {% for mb in mbs %}
-            <option value="{{ mb.id }} "  data-price="{{ mb.cost }}">{{ mb.name }}</option>
+            <option value="{{ mb.id }}"  data-price="{{ mb.cost }}">{{ mb.name }}</option>
         {% endfor %}
     </select>
 
     {# Drop down selection for HDDS #}
     <p>HDD</p>
     <select id="hdds" name="hdd" class="priced">
-        <option value="" data-price="0">-- choose one --</option>
+        <option value="" data-price="0">None</option>
         {% for hdd in hdds %}
-            <option value="{{ hdd.id }} "  data-price="{{ hdd.cost }}">{{ hdd.name }}</option>
+            <option value="{{ hdd.id }}"  data-price="{{ hdd.cost }}">{{ hdd.name }}</option>
         {% endfor %}
     </select>
 
     <p>Hard Drive Quantity</p>
-    <input type="number" name="hddqty">
+    <input type="number" name="hddqty" id="hddqty">
 
     {# Drop down selection for SSDS #}
     <p>SSD</p>
@@ -52,7 +61,7 @@
     </select>
 
     <p>Solid Drive Quantity</p>
-    <input type="number" name="ssdqty" required>
+    <input type="number" name="ssdqty" id="ssdqty" required>
 
     {# Drop down selection for RAM #}
     <p>RAM</p>
@@ -64,12 +73,12 @@
     </select>
 
     <p>RAM Quantity</p>
-    <input type="number" name="ramqty" required>
+    <input type="number" name="ramqty" id="ramqty" required>
 
     {# Drop down selection for GPUS #}
     <p>GPU</p>
     <select id="gpus" name="gpu" class="priced">
-        <option value="" data-price="0">-- choose one --</option>
+        <option value="" data-price="0">None</option>
         {% for gpu in gpus %}
             <option value="{{ gpu.id }} "  data-price="{{ gpu.cost }}">{{ gpu.name }}</option>
         {% endfor %}
@@ -96,7 +105,7 @@
     {# Drop down selection for Network Cards #}
     <p>Network Card</p>
     <select id="nwcards" name="nwcard" class="priced">
-        <option value="" data-price="0">-- choose one --</option>
+        <option value="" data-price="0">None</option>
         {% for nwcard in nwcards %}
             <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}">{{ nwcard.name }}</option>
         {% endfor %}

@@ -20,27 +20,13 @@ Continue to develop the web application to the point that it provides all key fu
 - Make overall theming close to that of the mock ups
 - Preset configurations at least partially implemented
 - Make default mandatory boot drive rather than being part of solid drives
+- General tidy up of some messy leftover parts.
 
-## Testing FEATURE NAME HERE
+## Testing price calculating
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+This is the initial price calculation which as shown in the video does not work with multiple of the same component
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-![Placeholder](screenshots/placeholder.png)
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
-
-
-## Testing FEATURE NAME HERE
-
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Cost calculation](screenshots/gifs-for-sprint3/cost_calc_1.gif)
 
 ### Changes / Improvements
 
@@ -48,6 +34,38 @@ Replace this text with notes any improvements you made as a result of the testin
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+
+## Testing mandatory boot drive
+
+I have now added a mandatory boot drive when making the NAS, this works and is incorperated into the price
+
+![Boot_drive](screenshots/gifs-for-sprint3/boot_drive.png)
+
+
+## Testing selection options for GPU & other optional items
+
+This is the initial testing for this style of item
+
+![GPU option select with choose one dialogue](screenshots/gifs-for-sprint3/GPU_select_1.png)
+
+### Changes / Improvements
+
+After talking with my stakeholder we decided that for optional items instead of displaying -- Choose Me -- it should display None as it is more clear that this is an optional component
+
+![GPU option select with None dialogye](screenshots/gifs-for-sprint3/GPU_select_2.png)
+
+
+## Testing FEATURE NAME HERE
+
+Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+### Changes / Improvements
+
+Replace this text with notes any improvements you made as a result of the testing.
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 ## Testing FEATURE NAME HERE
 
