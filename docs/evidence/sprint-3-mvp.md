@@ -54,6 +54,10 @@ After talking with my stakeholder we decided that for optional items instead of 
 
 ![GPU option select with None dialogye](screenshots/gifs-for-sprint3/GPU_select_2.png)
 
+# Important pivot point
+
+After discussing with my stakeholder and by attempting at methods of validiation, this current from style is not maintanable, i will be moving to a sessions based style for my component picking, which is step by step. I will be building my project with this is mind to still meet all of my other requirements of my stakeholder to make sure that the final product remains satisfactory.
+
 
 ## Testing FEATURE NAME HERE
 

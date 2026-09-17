@@ -11,13 +11,21 @@
     <input type="text" name="name" required>
 
 
-    <p>Cost</p>
-    <input id="totalNum" value="0" type="number" name="cost" readonly>
-
-    <p>Boot Drive</p>
-    <select class="priced" id="bootDrive" readonly>
-        <option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }}</option>
-    </select>
+    <fieldset>
+        <legend>TEST</legend>
+    
+        <label>
+            Cost
+            <input id="totalNum" value="0" type="number" name="cost" readonly>
+        </label>
+        
+        <label>
+            Boot Drive
+            <select class="priced" id="bootDrive" readonly>
+                <option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }}</option>
+            </select>
+        </label>
+    </fieldset>
 
     {# Drop down selection for CPUs #}
     <p>CPU</p>
@@ -134,8 +142,6 @@
 
 </form>
 
-
-<script src="/static/js/cost_calculation.js"></script>
 
 {% endblock %}
 

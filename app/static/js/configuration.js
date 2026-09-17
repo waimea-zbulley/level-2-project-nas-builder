@@ -1,3 +1,15 @@
+// CONMPATABILITY ============================================================
+
+
+const compatMenus = document.querySelectorAll('select')
+compatMenus.forEach(select => select.addEventListener('change', updateCompatability))
+
+function updateCompatability() {
+    
+}
+
+// PRICING ============================================================
+
 const pricedMenus = document.querySelectorAll('.priced')
 pricedMenus.forEach(select => select.addEventListener('change', updateTotal))
 
