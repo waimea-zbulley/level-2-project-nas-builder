@@ -13,6 +13,7 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 - Refine the design and UI of the website
 - Refine the user experience (UX) of the system
 - Perform final, full-system testing
+- Add descriptions for motherboards regarding what they entale
 - Add images for components
 
 

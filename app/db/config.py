@@ -47,17 +47,7 @@ class Configurations:
             ("My epic NAS", 1500, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 1, 1, 1),
             ("Even more epic NAS", 2500, 2, 1, 2, 4, 2, 2, 1, 2, 1, 1, 1, 1, 1)
     """
-# FOREIGN KEY(motherboard) REFERENCES motherboards(id)
-#             FOREIGN KEY(cpu) REFERENCES cpus(id)
-#             FOREIGN KEY(hard_drive) REFERENCES harddrives(id)
-#             FOREIGN KEY(solid_drive) REFERENCES soliddrives(id)
-#             FOREIGN KEY(ram) REFERENCES ram(id)
-#             FOREIGN KEY(gpu) REFERENCES gpus(id)
-#             FOREIGN KEY(`case`) REFERENCES cases(id)
-#             FOREIGN KEY(cooler) REFERENCES coolers(id)
-#             FOREIGN KEY(network_card) REFERENCES networkcard(id)
-#             FOREIGN KEY(psu) REFERENCES powesupply(id)
-#             FOREIGN KEY(os) REFERENCES os(id)
+
 class Motherboards:
 
     NAME = "motherboards"

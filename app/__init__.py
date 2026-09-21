@@ -164,257 +164,214 @@ def delete_config(id):
         return redirect("/configurations")
 
 
+#===================================================
+# Helper funcs
+#===================================================
+
+def get_mb():
+    mb = None
+    mb_id = session.get("mb", None)
+
+    with connect_db() as db:
+        sql = """
+            select id, name, cost, platform, ram_gen, ram_slots, sata_ports, m2_ports
+            from motherboards
+            WHERE id=?
+        """
+        params = (mb_id, )
+        mb = db.execute(sql, params).fetchone()
+
+    return mb
+
+def get_mb2():
+
+    with connect_db() as db:
+        sql = """
+            select id, name, cost, platform, ram_gen, ram_slots, sata_ports
+            from motherboards
+        """
+        mb = db.execute(sql,).fetchall()
+
+    return mb
+
+def get_cpus(mb):
+    mb = mb 
+
+    with connect_db() as db:
+        platform = mb.get("platform")
+
+        sql = """
+            SELECT id, name, cost, platform
+            FROM cpus
+            WHERE platform=?
+        """
+        params = (platform, )
+        cpus = db.execute(sql, params).fetchall()
+
+    return cpus
+
+def get_ram(mb):
+    mb = mb
+
+    with connect_db() as db:
+        ram_gen = mb.get("ram_gen")
+
+        sql = """
+            SELECT id, name, cost, generation
+            FROM ram
+            WHERE generation=?
+        """
+        params = (ram_gen, )
+        ram = db.execute(sql, params).fetchall()
+
+    return ram
+
+def get_hdds():
+    with connect_db() as db:
+        sql = """
+            SELECT id, name, cost
+            FROM harddrives
+        """
+        hdds = db.execute(sql, ).fetchall()
+
+    return hdds
+
+def get_ssds():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM soliddrives
+        """
+        sdds = db.execute(sql, ).fetchall()
+
+    return sdds
+
+def get_gpus():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM gpus
+        """
+        gpus = db.execute(sql, ).fetchall()
+
+    return gpus
+
+def get_coolers():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM coolers
+        """
+        coolers = db.execute(sql, ).fetchall()
+
+    return coolers
+
+def get_coolers():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM coolers
+        """
+        coolers = db.execute(sql, ).fetchall()
+
+    return coolers
+
+def get_nwcards():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM networkcard
+        """
+        nwcards = db.execute(sql, ).fetchall()
+
+    return nwcards
+
+def get_psus():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM powersupply
+        """
+        psus = db.execute(sql, ).fetchall()
+
+    return psus
+    
+def get_oses():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM os
+        """
+        oses = db.execute(sql, ).fetchall()
+
+    return oses
+
+def get_cases():
+    with connect_db() as db:
+        sql = """
+            SELECT id, cost, name
+            FROM cases
+        """
+        cases = db.execute(sql, ).fetchall()
+
+    return cases
+
+@app.get("/configuration/new/mb")
+def show_newconf():
+    if not session.get("mb"):
+        session["mb"] = None
+
+    mb = get_mb2()
+
+    return render_template(
+        "pages/select_motherboard.jinja",
+        mbs = mb,
+    )
+
+@app.post("/configuration/new/mb")
+def config_pick_mb():
+    mb_id = request.form.get("mb")
+    session["mb"] = int(mb_id)
+    
+    return redirect("/configuration/new/components")
+
+@app.get("/configuration/new/components")
+def show_newconf_stage2():
+
+    mb = get_mb()
+
+    if not mb:
+        flash("Please choose a suitable MB first!", "error")
+        return redirect("/config/mb")
+
+    mb = get_mb()
+    cpus = get_cpus(mb)
+    ram = get_ram(mb)
+    hdds = get_hdds()
+    ssds = get_ssds()
+    gpus = get_gpus()
+    coolers = get_coolers()
+    nwcards = get_nwcards()
+    psus = get_psus()
+    oses = get_oses()
+    cases = get_cases()
+    
 
 
+    return render_template(
+        "pages/new_configuration.jinja",
+        mb = mb,
+        cpus = cpus,
+        ram = ram,
+        hdds = hdds,
+        ssds = ssds,
+        gpus = gpus,
+        coolers = coolers,
+        nwcards = nwcards,
+        psus = psus,
+        cases = cases
 
-# @app.get("/configuration/new")
-# def new_config():
-#     with connect_db() as db:
-#         sql_cpu = """
-#             SELECT name, cost, id
-#             FROM cpus
-#         """
-#         sql_mb = """
-#             SELECT name, cost, id
-#             FROM motherboards
-#         """
-#         sql_hdd = """
-#             SELECT name, cost, id
-#             FROM harddrives
-#         """
-#         sql_ssd = """
-#             SELECT name, cost, id
-#             FROM soliddrives
-#         """
-#         sql_ram = """
-#             SELECT name, cost, id
-#             FROM ram
-#         """
-#         sql_gpu = """
-#             SELECT name, cost, id
-#             FROM gpus
-#         """
-#         sql_case = """
-#             SELECT name, cost, id
-#             FROM cases
-#         """
-#         sql_cooler = """
-#             SELECT name, cost, id
-#             FROM coolers
-#         """
-#         sql_nwcard = """
-#             SELECT name, cost, id
-#             FROM networkcard
-#         """
-#         sql_psu = """
-#             SELECT name, cost, id
-#             FROM powersupply
-#         """
-#         sql_os = """
-#             SELECT name, cost, id
-#             FROM os
-#         """
-
-#         params = ()
-#         cpus = db.execute(sql_cpu, params).fetchall()
-#         mbs = db.execute(sql_mb, params).fetchall()
-#         hdds = db.execute(sql_hdd, params).fetchall()
-#         ssds = db.execute(sql_ssd, params).fetchall()
-#         ram = db.execute(sql_ram, params).fetchall()
-#         gpus = db.execute(sql_gpu, params).fetchall()
-#         cases = db.execute(sql_case, params).fetchall()
-#         coolers = db.execute(sql_cooler, params).fetchall()
-#         nwcards = db.execute(sql_nwcard, params).fetchall()
-#         psus = db.execute(sql_psu, params).fetchall()
-#         os = db.execute(sql_os, params).fetchall()
-
-#     return render_template("pages/new_configuration.jinja", cpus=cpus, mbs=mbs, hdds=hdds, ssds=ssds, ram=ram, gpus=gpus, cases=cases, coolers=coolers, nwcards=nwcards, psus=psus, os=os)
-
-# @app.post("/configuration/new/finish")
-# def finish_config():
-
-#     name = request.form.get("name", "unknown").strip()
-#     cost = request.form.get("cost", "unknown").strip()
-#     cpu = request.form.get("cpu", "unknown").strip()
-#     mb = request.form.get("mb", "unknown").strip()
-#     hdd = request.form.get("hdd", "unknown").strip()
-#     hddqty = request.form.get("hddqty", "unknown").strip()
-#     ssd = request.form.get("ssd", "unknown").strip()
-#     ssdqty = request.form.get("ssdqty", "unknown").strip()
-#     ram = request.form.get("ram", "unknown").strip()
-#     ramqty = request.form.get("ramqty", "unknown").strip()
-#     gpu = request.form.get("gpu", "unknown").strip()
-#     case = request.form.get("case", "unknown").strip()
-#     cooler = request.form.get("cooler", "unknown").strip()
-#     nwcard = request.form.get("nwcard", "unknown").strip()
-#     psu = request.form.get("psu", "unknown").strip()
-#     os = request.form.get("os", "unknown").strip()
-
-#     #Connect with DB
-#     with connect_db() as db:
-
-#         sql = """
-#             INSERT INTO configurations (name, cost, cpu, motherboard, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, gpu, `case`, cooler, network_card, psu, os)
-#             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-#         """
-
-#         params = (name, cost, cpu, mb, hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os)
-
-#         db.execute(sql, params)
-
-#         flash("Successfully added configuration", "success")
-#         return redirect("/configurations") 
-
-
-# @app.get("/configuration/<int:id>/edit")
-# def update_config(id):
-#     with connect_db() as db:
-#         sql_cpu = """
-#             SELECT name, cost, id
-#             FROM cpus
-#         """
-#         sql_mb = """
-#             SELECT name, cost, id
-#             FROM motherboards
-#         """
-#         sql_hdd = """
-#             SELECT name, cost, id
-#             FROM harddrives
-#         """
-#         sql_ssd = """
-#             SELECT name, cost, id
-#             FROM soliddrives
-#         """
-#         sql_ram = """
-#             SELECT name, cost, id
-#             FROM ram
-#         """
-#         sql_gpu = """
-#             SELECT name, cost, id
-#             FROM gpus
-#         """
-#         sql_case = """
-#             SELECT name, cost, id
-#             FROM cases
-#         """
-#         sql_cooler = """
-#             SELECT name, cost, id
-#             FROM coolers
-#         """
-#         sql_nwcard = """
-#             SELECT name, cost, id
-#             FROM networkcard
-#         """
-#         sql_psu = """
-#             SELECT name, cost, id
-#             FROM powersupply
-#         """
-#         sql_os = """
-#             SELECT name, cost, id
-#             FROM os
-#         """
-#         sql_conf = """
-#             SELECT 
-#                 configurations.id   AS con_id,
-#                 configurations.cost AS con_cost,
-#                 configurations.hard_drive_qty AS hdd_qty,
-#                 configurations.solid_drive_qty AS ssd_qty,
-#                 configurations.ram_qty AS ram_qty,
-#                 configurations.name AS con_name,
-#                 cpus.id           AS cpu_id,
-#                 motherboards.id   AS motherboard_id,
-#                 harddrives.id     AS harddrive_id,
-#                 soliddrives.id    AS soliddrive_id,
-#                 ram.id            AS ram_id,
-#                 gpus.id           AS gpu_id,
-#                 cases.id          AS case_id,
-#                 coolers.id        AS cooler_id,
-#                 networkcard.name  AS networkcard_name,
-#                 powersupply.id    AS psu_id,
-#                 os.id             AS os_id
-
-#             FROM configurations
-#             JOIN cpus ON configurations.cpu = cpus.id
-#             JOIN motherboards ON configurations.motherboard = motherboards.id
-#             LEFT JOIN harddrives ON configurations.hard_drive = harddrives.id
-#             JOIN soliddrives ON configurations.solid_drive = soliddrives.id
-#             JOIN ram ON configurations.ram = ram.id
-#             LEFT JOIN gpus ON configurations.gpu = gpus.id
-#             JOIN cases ON configurations.`case` = cases.id
-#             JOIN coolers ON configurations.cooler = coolers.id
-#             JOIN networkcard ON configurations.network_card = networkcard.id
-#             JOIN powersupply ON configurations.psu = powersupply.id
-#             JOIN os ON configurations.os = os.id WHERE configurations.id = ?
-
-#         """
-
-#         params = (id,)
-#         config = db.execute(sql_conf, params).fetchone()
-#         cpus = db.execute(sql_cpu).fetchall()
-#         mbs = db.execute(sql_mb).fetchall()
-#         hdds = db.execute(sql_hdd).fetchall()
-#         ssds = db.execute(sql_ssd).fetchall()
-#         ram = db.execute(sql_ram).fetchall()
-#         gpus = db.execute(sql_gpu).fetchall()
-#         cases = db.execute(sql_case).fetchall()
-#         coolers = db.execute(sql_cooler).fetchall()
-#         nwcards = db.execute(sql_nwcard).fetchall()
-#         psus = db.execute(sql_psu).fetchall()
-#         os = db.execute(sql_os).fetchall()
-
-#     return render_template("pages/edit_configuration.jinja", cpus=cpus, mbs=mbs, hdds=hdds, ssds=ssds, ram=ram, gpus=gpus, cases=cases, coolers=coolers, nwcards=nwcards, psus=psus, os=os, config=config)
-
-# @app.post("/configuration/edit/<int:id>/finish")
-# def finish_edit_config(id):
-
-#     name = request.form.get("name", "unknown").strip()
-#     cost = request.form.get("cost", "unknown").strip()
-#     cpu = request.form.get("cpu", "unknown").strip()
-#     mb = request.form.get("mb", "unknown").strip()
-#     hdd = request.form.get("hdd", "unknown").strip()
-#     hddqty = request.form.get("hddqty", "unknown").strip()
-#     ssd = request.form.get("ssd", "unknown").strip()
-#     ssdqty = request.form.get("ssdqty", "unknown").strip()
-#     ram = request.form.get("ram", "unknown").strip()
-#     ramqty = request.form.get("ramqty", "unknown").strip()
-#     gpu = request.form.get("gpu", "unknown").strip()
-#     case = request.form.get("case", "unknown").strip()
-#     cooler = request.form.get("cooler", "unknown").strip()
-#     nwcard = request.form.get("nwcard", "unknown").strip()
-#     psu = request.form.get("psu", "unknown").strip()
-#     os = request.form.get("os", "unknown").strip()
-
-#     #Connect with DB
-#     with connect_db() as db:
-
-#         sql = """
-#             UPDATE configurations
-#             SET
-#                 name = ?,
-#                 cost = ?,
-#                 cpu = ?,
-#                 motherboard = ?,
-#                 hard_drive = ?,
-#                 hard_drive_qty = ?,
-#                 solid_drive = ?,
-#                 solid_drive_qty = ?,
-#                 ram = ?,
-#                 ram_qty = ?,
-#                 gpu = ?,
-#                 `case` = ?,
-#                 cooler = ?,
-#                 network_card = ?,
-#                 psu = ?,
-#                 os = ?
-#             WHERE id = ?
-#         """
-
-#         params = (name, cost, cpu, mb, hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os, id)
-
-#         db.execute(sql, params)
-
-#         flash("Successfully edited configuration", "success")
-#         return redirect("/configurations") 
+    )
 
 #===========================================================
 # Configure the app

@@ -1,0 +1,120 @@
+
+<form method="post" action="/configuration/new/finish" class="componentForm"> 
+
+    <select id="motherboard" class="priced" hidden><option data-price="{{ mb.cost }}"></option></select>
+    <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
+
+    <label>
+        Boot Drive
+        <select class="priced" id="bootDrive" readonly>
+            <option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }}</option>
+        </select>
+    </label>
+
+    {# Cpu form option #}
+    <fieldset>
+        <label>
+            CPU:
+            <select id="cpu"  name="cpu" class="priced" required >
+                <option value="" data-price="0">-- choose one --</option>
+                {% for cpu in cpus %}
+                    <option value="{{ cpu.id }}" data-price="{{ cpu.cost }}">{{ cpu.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+
+        <label>
+            <p>CPU Cooler</p>
+            <select id="coolers" name="cooler" class="priced" required>
+                <option value="" data-price="0">-- choose one --</option>
+                    {% for cooler in coolers %}
+                        <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}">{{ cooler.name }}</option>
+                    {% endfor %}
+            </select>
+        </label>
+    </fieldset>
+
+
+    {# RAM form option #}
+    <label>
+        RAM:
+        <select id="ram"  name="ram" class="priced" required >
+            <option value="" data-price="0">-- choose one --</option>
+            {% for ram in ram %}
+                <option value="{{ ram.id }}" data-price="{{ ram.cost }}">{{ ram.name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+
+    <fieldset>
+        <label>
+            Hard Drive:
+            <select id="hdd"  name="hdd" class="priced">
+                <option value="" data-price="0">-- choose one --</option>
+                {% for hdd in hdds %}
+                    <option value="{{ hdd.id }}" data-price="{{ hdd.cost }}">{{ hdd.name }}</option>
+                {% endfor %}
+            </select>  
+        </label>
+
+        <label>
+            Quantity
+            <input type="number" name="hddqty" id="hddqty" max="{{ mb.sata_ports }}" min="0">
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <label>
+            SSD:
+            <select id="ssd"  name="ssd" class="priced">
+                <option value="" data-price="0">-- choose one --</option>
+                {% for ssd in ssds %}
+                    <option value="{{ ssd.id }}" data-price="{{ ssd.cost }}">{{ ssd.name }}</option>
+                {% endfor %}
+            </select>  
+        </label>
+
+        <label>
+            Quantity
+            <input type="number" name="ssdqty" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
+        </label>
+    </fieldset>
+
+    <label>
+        Graphics Card:
+        <select id="gpu" name="gpu" class="priced">
+            <option value="" data-price="0">None</option>
+            {% for gpu in gpus%}
+                <option value="{{ gpu.id }}" data-price="{{ gpu.cost }}">{{ gpu.name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+
+    {# Drop down selection for CASES #}
+    <label>
+        Case:
+        <select id="cases" name="case" class="priced" required>
+            <option value="" data-price="0">-- choose one --</option>
+            {% for case in cases %}
+                <option value="{{ case.id }} "  data-price="{{ case.cost }}">{{ case.name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+
+
+    {# Drop down selection for Network Cards #}
+    <label>
+        Network Card
+        <select id="nwcards" name="nwcard" class="priced">
+            <option value="" data-price="0">None</option>
+            {% for nwcard in nwcards %}
+                <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}">{{ nwcard.name }}</option>
+            {% endfor %}
+        </select>
+
+    </label>
+
+<button>Next</button>
+
+</form>
+
