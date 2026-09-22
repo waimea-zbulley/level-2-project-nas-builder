@@ -1,8 +1,8 @@
 
-<form method="post" action="/configuration/new/finish" class="componentForm"> 
+<form method="post" action="/configuration/new/components" class="componentForm"> 
 
-    <select id="motherboard" class="priced" hidden><option data-price="{{ mb.cost }}"></option></select>
     <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
+    <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
 
     <label>
         Boot Drive
@@ -15,10 +15,10 @@
     <fieldset>
         <label>
             CPU:
-            <select id="cpu"  name="cpu" class="priced" required >
-                <option value="" data-price="0">-- choose one --</option>
+            <select id="cpu" name="cpu" class="priced power" required >
+                <option value="" data-power="0" data-price="0">-- choose one --</option>
                 {% for cpu in cpus %}
-                    <option value="{{ cpu.id }}" data-price="{{ cpu.cost }}">{{ cpu.name }}</option>
+                    <option value="{{ cpu.id }}" data-power="{{ cpu.powerdraw }}" data-price="{{ cpu.cost }}">{{ cpu.name }}</option>
                 {% endfor %}
             </select>
         </label>
@@ -49,10 +49,10 @@
     <fieldset>
         <label>
             Hard Drive:
-            <select id="hdd"  name="hdd" class="priced">
+            <select id="hdd"  name="hdd" class="priced hdd">
                 <option value="" data-price="0">-- choose one --</option>
                 {% for hdd in hdds %}
-                    <option value="{{ hdd.id }}" data-price="{{ hdd.cost }}">{{ hdd.name }}</option>
+                    <option value="{{ hdd.id }}" data-hdd="{{ hdd.capacity }}" data-price="{{ hdd.cost }}">{{ hdd.name }}</option>
                 {% endfor %}
             </select>  
         </label>
@@ -61,6 +61,8 @@
             Quantity
             <input type="number" name="hddqty" id="hddqty" max="{{ mb.sata_ports }}" min="0">
         </label>
+        {# <label>Total Capacity<input id="totalHddStorage" value="0" type="number" name="totalHddStorage" readonly></label> #}
+
     </fieldset>
 
     <fieldset>
@@ -82,10 +84,10 @@
 
     <label>
         Graphics Card:
-        <select id="gpu" name="gpu" class="priced">
-            <option value="" data-price="0">None</option>
+        <select id="gpu" name="gpu" class="priced power">
+            <option value="" data-power="0" data-price="0">None</option>
             {% for gpu in gpus%}
-                <option value="{{ gpu.id }}" data-price="{{ gpu.cost }}">{{ gpu.name }}</option>
+                <option value="{{ gpu.id }}" data-power="{{ gpu.powerdraw }}" data-price="{{ gpu.cost }}">{{ gpu.name }}</option>
             {% endfor %}
         </select>
     </label>
@@ -114,7 +116,6 @@
 
     </label>
 
-<button>Next</button>
+    <button>Next</button>
 
 </form>
-

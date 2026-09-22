@@ -1,0 +1,9 @@
+
+{% extends "pages/_base.jinja"%}
+
+{% block content %}
+    <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
+    {% include "partials/selected_motherboard.jinja" %}
+    {% include "partials/selected_components.jinja" %}
+    {% include "partials/config_final.jinja" %}
+{% endblock %}

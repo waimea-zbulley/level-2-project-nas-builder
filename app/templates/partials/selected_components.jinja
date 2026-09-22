@@ -1,0 +1,20 @@
+<ul>
+    <li>CPU: {{ cpu.name }}</li>
+    <li>RAM: {{ ram.name }}</li>
+    <li>Hard Drive: {{ hdd.name }}</li>
+    <li>SSD: {{ ssd.name }}</li>
+    <li>Graphics Card: {{ gpu.name }}</li>
+    <li>CPU Cooler: {{ cooler.name }}</li>
+    <li>Network Card: {{ nwcard.name }}</li>
+    <li>Case: {{ case.name }}</li>
+</ul>
+
+
+<select id="cpu" class="priced" hidden><option data-price="{{ cpu.cost }}"></option></select>
+<select id="ram" class="priced" hidden><option data-price="{{ ram.cost }}"></option></select>
+<select id="hdd" class="priced" hidden><option data-price="{{ hdd.cost }}"></option></select>
+<select id="ssd" class="priced" hidden><option data-price="{{ ssd.cost }}"></option></select>
+<select id="gpu" class="priced" hidden><option data-price="{{ gpu.cost }}"></option></select>
+<select id="cooler" class="priced" hidden><option data-price="{{ cooler.cost }}"></option></select>
+<select id="nwcard" class="priced" hidden><option data-price="{{ nwcard.cost }}"></option></select>
+<select id="case" class="priced" hidden><option data-price="{{ case.cost }}"></option></select>

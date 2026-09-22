@@ -21,6 +21,7 @@ Continue to develop the web application to the point that it provides all key fu
 - Preset configurations at least partially implemented
 - Make default mandatory boot drive rather than being part of solid drives
 - General tidy up of some messy leftover parts.
+- Tidy up codebase
 
 ## Testing price calculating
 
