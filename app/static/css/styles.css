@@ -160,3 +160,10 @@ main > h2 {
     gap: 2rem;
 }
 
+#configuration {
+    a {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+}

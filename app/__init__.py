@@ -52,16 +52,27 @@ def show_config(id):
                 configurations.name AS con_name,
                 configurations.cost AS con_cost,
                 cpus.name           AS cpu_name,
+                cpus.url            AS cpu_url,
                 motherboards.name   AS motherboard_name,
+                motherboards.url   AS motherboard_url,
                 harddrives.name     AS harddrive_name,
+                harddrives.url     AS harddrive_url,
                 soliddrives.name    AS soliddrive_name,
+                soliddrives.url    AS soliddrive_url,
                 ram.name            AS ram_name,
+                ram.url            AS ram_url,
                 gpus.name           AS gpu_name,
+                gpus.url           AS gpu_url,
                 cases.name          AS case_name,
+                cases.url          AS case_url,
                 coolers.name        AS cooler_name,
+                coolers.url        AS cooler_url,
                 networkcard.name    AS networkcard_name,
+                networkcard.url    AS networkcard_url,
                 powersupply.name    AS psu_name,
-                os.name             AS os_name
+                powersupply.url    AS psu_url,
+                os.name             AS os_name,
+                os.url             AS os_url
 
             FROM configurations
             JOIN cpus ON configurations.cpu = cpus.id
