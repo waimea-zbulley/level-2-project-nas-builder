@@ -119,8 +119,10 @@ class Cpus:
     SEED_DATA = """
         INSERT INTO cpus (name, powerdraw, cost, url, maxram, platform)
         VALUES
-            ("Intel Core Ultra 5 245K", 159, 424.35, "https://www.pbtech.co.nz/product/CPUIT155245K/Intel-Core-Ultra-5-245K-CPU-14-Cores--14-Threads", 192, "LGA1851"),
-            ("Ryzen 5 5600", 65, 263.35, "https://www.pbtech.co.nz/product/CPUAMD05600/AMD-Ryzen-5-5600-CPU-6-Core--12-Thread---Max-Boost", 128, "AM4")
+            ("Intel Core Ultra 5 245K", 80, 424.35, "https://www.pbtech.co.nz/product/CPUIT155245K/Intel-Core-Ultra-5-245K-CPU-14-Cores--14-Threads", 192, "LGA1851"),
+            ("Intel Core Ultra 9 285K", 125, 1091.35, "https://www.pbtech.co.nz/product/CPUIT159285K/Intel-Core-Ultra-9-285K-CPU-24-Cores--24-Threads", 192, "LGA1851"),
+            ("Ryzen 5 5600", 65, 263.35, "https://www.pbtech.co.nz/product/CPUAMD05600/AMD-Ryzen-5-5600-CPU-6-Core--12-Thread---Max-Boost", 128, "AM4"),
+            ("AMD Ryzen 9 5950X", 105, 711.85, "https://www.pbtech.co.nz/product/CPUAMD05950X/AMD-Ryzen-9-5950X-CPU-16-Core--32-Thread---Max-Boo", 128, "AM4")
     """
 
 class SolidDrives:
@@ -166,7 +168,9 @@ class Ram:
         INSERT INTO ram (name, cost, url, capacity, generation, speed)
         VALUES
             ("PNY XLR8 8GB DDR4", 125.35, "https://www.pbtech.co.nz/product/MEMPNY11013/PNY-XLR8-8GB-DDR4-3200MTs-Desktop-UDIMM-Gaming-RAM", 8, "DDR4", 3200),
-            ("PNY 16GB DDR5", 412.85, "https://www.pbtech.co.nz/product/MEMPNY0003/PNY-16GB-DDR5-Desktop-RAM-5600MTs---11V---CL46", 16, "DDR5", 5600)
+            ("PNY 16GB DDR5", 412.85, "https://www.pbtech.co.nz/product/MEMPNY0003/PNY-16GB-DDR5-Desktop-RAM-5600MTs---11V---CL46", 16, "DDR5", 5600),
+            ("Crucial 32GB DDR5", 780.85, "https://www.pbtech.co.nz/product/MEMCRU0811221/Crucial-32GB-DDR5-Desktop-UDIMM-RAM---5600MTs---CL", 32, "DDR5", 5600),
+            ("Ripjaws V Series 32GB DDR4", 688.85, "https://www.pbtech.co.nz/product/MEMGSK3880/GSKILL-Ripjaws-V-Series-32GB-DDR4-Desktop-RAM---Bl", 32, "DDR4", 3200)
     """
 class Gpus:
 
