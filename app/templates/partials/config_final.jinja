@@ -1,7 +1,7 @@
 <form method="post" action="/configuration/new/finish">
     <label>
         Powersupply
-        <select required>
+        <select required class="priced">
             <option value="0" data-price="0"> --Choose One-- </option>
             {% for psu in psus %}
                 <option value="{{ psu.id }}" data-price="{{ psu.cost }}">{{ psu.name }}</option>
@@ -11,11 +11,12 @@
 
     <label>
         Operating System
-        <select required>
+        <select required class="priced">
             <option value="0" data-price="0"> --Choose One-- </option>
             {% for os in oses %}
                 <option value="{{ os.id }}" data-price="{{ os.cost }}">{{ os.name }}</option>
             {% endfor %}
+            <option data-price="0">Other</option>
         </select>
     </label>
     <button>Finish Configuration</button>

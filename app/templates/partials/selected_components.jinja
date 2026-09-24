@@ -11,9 +11,18 @@
 
 
 <select id="cpu" class="priced" hidden><option data-price="{{ cpu.cost }}"></option></select>
-<select id="ram" class="priced" hidden><option data-price="{{ ram.cost }}"></option></select>
-<select id="hdd" class="priced" hidden><option data-price="{{ hdd.cost }}"></option></select>
-<select id="ssd" class="priced" hidden><option data-price="{{ ssd.cost }}"></option></select>
+<fieldset hidden>
+    <select id="ram" class="priced" hidden><option data-price="{{ ram.cost }}"></option></select>
+    <input class="quantity" value="{{ ram_qty }}" hidden>
+</fieldset>
+<fieldset hidden>
+    <select id="hdd" class="priced" hidden><option data-price="{{ hdd.cost }}"></option></select>
+    <input class="quantity" value="{{ hdd_qty }}" hidden>
+</fieldset>
+<fieldset hidden>
+    <select id="ssd" class="priced" hidden><option data-price="{{ ssd.cost }}"></option></select>
+    <input class="quantity" value="{{ ssd_qty }}" hidden>
+</fieldset>
 <select id="gpu" class="priced" hidden><option data-price="{{ gpu.cost }}"></option></select>
 <select id="cooler" class="priced" hidden><option data-price="{{ cooler.cost }}"></option></select>
 <select id="nwcard" class="priced" hidden><option data-price="{{ nwcard.cost }}"></option></select>

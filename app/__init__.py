@@ -294,7 +294,11 @@ def get_config_2():
         params = (cooler_id, )
         case = db.execute(sql, params).fetchone()
 
-    return cpu, ram, hdd, ssd, gpu, cooler, nwcard, case
+    ram_qty = request.form.get("ramqty")
+    ssd_qty = request.form.get("hddqty")
+    hdd_qty = request.form.get("hddqty")
+
+    return cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty
 
 
 def get_mb():
@@ -518,11 +522,11 @@ def config_pick_stage2():
 
 
     session["components_selected"] = 1
+    session["name"] = request.form.get("name")
     session["cpu"] = int(request.form.get("cpu"))
     session["ram"] = int(request.form.get("ram"))
     session["ssd"] = int(request.form.get("ssd"))
     session["cooler"] = int(request.form.get("cooler"))
-    session["nwcard"] = int(request.form.get("nwcard"))
     session["case"] = int(request.form.get("case"))
 
     # Optional things in the form
@@ -549,9 +553,10 @@ def config_pick_stage2():
 @app.get("/configuration/new/final")
 def config_pick_stage3():
     mb = get_mb()
-    cpu, ram, hdd, ssd, gpu, cooler, nwcard, case = get_config_2()
+    cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty = get_config_2()
     psus = get_psus()
     oses = get_oses()
+    # name = session["name"]
 
     return render_template(
         "pages/final_config.jinja",
@@ -565,9 +570,45 @@ def config_pick_stage3():
         nwcard = nwcard,
         case = case,
         psus = psus,
-        oses = oses
+        oses = oses,
+        # name = name
     )
 
+
+@app.post("/configuration/new/finish")
+def finish_config():
+
+    name = request.form.get("name", "unknown").strip()
+    cost = request.form.get("cost", "unknown").strip()
+    cpu = request.form.get("cpu", "unknown").strip()
+    mb = request.form.get("mb", "unknown").strip()
+    hdd = request.form.get("hdd", "unknown").strip()
+    hddqty = request.form.get("hddqty", "unknown").strip()
+    ssd = request.form.get("ssd", "unknown").strip()
+    ssdqty = request.form.get("ssdqty", "unknown").strip()
+    ram = request.form.get("ram", "unknown").strip()
+    ramqty = request.form.get("ramqty", "unknown").strip()
+    gpu = request.form.get("gpu", "unknown").strip()
+    case = request.form.get("case", "unknown").strip()
+    cooler = request.form.get("cooler", "unknown").strip()
+    nwcard = request.form.get("nwcard", "unknown").strip()
+    psu = request.form.get("psu", "unknown").strip()
+    os = request.form.get("os", "unknown").strip()
+
+    #Connect with DB
+    with connect_db() as db:
+
+        sql = """
+            INSERT INTO configurations (name, cost, cpu, motherboard, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, gpu, `case`, cooler, network_card, psu, os)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """
+
+        params = (name, cost, cpu, mb, hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os)
+
+        db.execute(sql, params)
+
+        flash("Successfully added configuration", "success")
+        return redirect("/configurations") 
 #===========================================================
 # Configure the app
 #===========================================================
