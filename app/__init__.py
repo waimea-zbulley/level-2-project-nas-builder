@@ -525,7 +525,6 @@ def config_pick_stage2():
     session["cost"] = request.form.get("cost", "unknown").strip()
     session["cpu"] = int(request.form.get("cpu"))
     session["ram"] = int(request.form.get("ram"))
-    session["ssd"] = int(request.form.get("ssd"))
     session["cooler"] = int(request.form.get("cooler"))
     session["case"] = int(request.form.get("case"))
 
@@ -545,6 +544,12 @@ def config_pick_stage2():
         session["hdd"] = int(request.form.get("hdd"))
     if hdd == "":
         session["hdd"] = None
+
+    ssd = request.form.get("ssd")
+    if ssd:
+        session["ssd"] = int(request.form.get("ssd"))
+    if ssd == "":
+        session["ssd"] = None
 
     nwcard = request.form.get("nwcard")
     if nwcard:

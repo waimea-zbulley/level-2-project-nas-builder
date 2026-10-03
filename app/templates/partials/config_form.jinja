@@ -76,7 +76,7 @@
         <label>
             SSD:
             <select id="ssd"  name="ssd" class="priced">
-                <option value="" data-price="0">-- choose one --</option>
+                <option value="" data-price="0">None</option>
                 {% for ssd in ssds %}
                     <option value="{{ ssd.id }}" data-price="{{ ssd.cost }}">{{ ssd.name }} - ${{ ssd.cost }}</option>
                 {% endfor %}

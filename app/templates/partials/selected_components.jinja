@@ -4,7 +4,9 @@
     {% if hdd != None %}
         <li>Hard Drive: {{ hdd.name }} Quantity: {{ hdd_qty }} </li> 
     {% endif %}
-    <li>SSD: {{ ssd.name }}</li>
+    {% if ssd != None %}
+        <li>SSD: {{ ssd.name }}</li>
+    {% endif %}
     {% if gpu != None %}
     <li>Graphics Card: {{ gpu.name }}</li>
     {% endif %}

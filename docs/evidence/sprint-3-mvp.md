@@ -58,7 +58,6 @@ After talking with my stakeholder we decided that for optional items instead of 
 
 After discussing with my stakeholder and by attempting at methods of validiation, this current from style is not maintanable, i will be moving to a sessions based style for my component picking, which is step by step. I will be building my project with this is mind to still meet all of my other requirements of my stakeholder to make sure that the final product remains satisfactory.
 
-"The new desgin still meets the requirements, because you start off with a motherboard and then can only select compatable components assosiated with that motherboard. Still nicely contained mostly in one menu." -Gareth 24/09/2026
 
 ## Testing new config form
 
@@ -69,7 +68,11 @@ This is the initial test of my new config form, as shown by the GIF when the fin
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+I have now fixed the issue related to quanitity items as well as fixes bugs related to some other components, the submission for a new config is now fully functional
+
+![GPU option select with None dialogye](screenshots/gifs-for-sprint3/New_config_example_multipage_2.gif)
+
+"The new desgin still meets the requirements, because you start off with a motherboard and then can only select compatable components assosiated with that motherboard. Still nicely contained mostly in one menu." -Gareth 24/09/2026
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
