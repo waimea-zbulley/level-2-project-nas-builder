@@ -57,7 +57,7 @@
         <label>
             Hard Drive:
             <select id="hdd"  name="hdd" class="priced hdd">
-                <option value="" data-price="0">-- choose one --</option>
+                <option value="" data-price="0">None</option>
                 {% for hdd in hdds %}
                     <option value="{{ hdd.id }}" data-hdd="{{ hdd.capacity }}" data-price="{{ hdd.cost }}">{{ hdd.name }} - ${{ hdd.cost }}</option>
                 {% endfor %}

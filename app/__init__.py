@@ -15,7 +15,6 @@ from app.helpers import *
 # Create the app
 app = Flask(__name__)
 
-
 #===========================================================
 # App Routes Handlers
 #===========================================================
@@ -240,7 +239,7 @@ def get_config_2():
 
     # Get GPU from config form
     gpu = None
-    gpu_id = session.get("ssd", None)
+    gpu_id = session.get("gpu", None)
 
     with connect_db() as db:
         sql = """
@@ -268,7 +267,7 @@ def get_config_2():
 
     # Get Network Card from config form
     nwcard = None
-    nwcard_id = session.get("cooler", None)
+    nwcard_id = session.get("nwcard", None)
 
     with connect_db() as db:
         sql = """
@@ -282,7 +281,7 @@ def get_config_2():
 
     # Get Case from config form
     case = None
-    case_id = session.get("cooler", None)
+    case_id = session.get("case", None)
 
     with connect_db() as db:
         sql = """
@@ -291,7 +290,7 @@ def get_config_2():
             WHERE id=?
         """
 
-        params = (cooler_id, )
+        params = (case_id, )
         case = db.execute(sql, params).fetchone()
 
     ram_qty = session["ram_qty"]
@@ -538,19 +537,19 @@ def config_pick_stage2():
     gpu = request.form.get("gpu")
     if gpu:
         session["gpu"] = int(request.form.get("gpu"))
-    else:
+    if gpu == "":
         session["gpu"] = None
 
     hdd = request.form.get("hdd")
     if hdd:
         session["hdd"] = int(request.form.get("hdd"))
-    else:
+    if hdd == "":
         session["hdd"] = None
 
     nwcard = request.form.get("nwcard")
     if nwcard:
         session["nwcard"] = int(request.form.get("nwcard"))
-    else:
+    if nwcard == "":
         session["nwcard"] = None
     
     return redirect("/configuration/new/final")
@@ -561,6 +560,7 @@ def config_pick_stage3():
     cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty = get_config_2()
     psus = get_psus()
     oses = get_oses()
+    ssds = get_ssds()
     name = session["name"]
     
 
@@ -580,6 +580,7 @@ def config_pick_stage3():
         hdd_qty = hdd_qty,
         psus = psus,
         oses = oses,
+        ssds = ssds,
         name = name
     )
 
