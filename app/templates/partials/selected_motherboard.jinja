@@ -4,9 +4,11 @@
 
 
     <ul>
+        <li>Name: {{ name }}</li>
         <li>MB: {{ mb.name }}</li>
     </ul>
     <select id="motherboard" class="priced" hidden><option data-price="{{ mb.cost }}"></option></select>
+    <input type="text" id="name" value="{{ name }}" required hidden>
 
 
 </div>

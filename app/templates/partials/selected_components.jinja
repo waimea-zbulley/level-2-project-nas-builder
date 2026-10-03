@@ -10,20 +10,24 @@
 </ul>
 
 
-<select id="cpu" class="priced" hidden><option data-price="{{ cpu.cost }}"></option></select>
+<select name="cpu" id="cpu" class="priced" hidden><option value="{{ cpu.id }}" data-price="{{ cpu.cost }}"></option></select>
 <fieldset hidden>
-    <select id="ram" class="priced" hidden><option data-price="{{ ram.cost }}"></option></select>
-    <input class="quantity" value="{{ ram_qty }}" hidden>
+    <select name="ram" id="ram" class="priced" hidden><option value="{{ ram.id }}" data-price="{{ ram.cost }}"></option></select>
+    <input name="ramqty" class="quantity" value="{{ ram_qty }}" hidden>
 </fieldset>
 <fieldset hidden>
-    <select id="hdd" class="priced" hidden><option data-price="{{ hdd.cost }}"></option></select>
-    <input class="quantity" value="{{ hdd_qty }}" hidden>
+    <select name="hdd" id="hdd" class="priced" hidden><option value="{{ hdd.id }}" data-price="{{ hdd.cost }}"></option></select>
+    <input name="hddqty" class="quantity" value="{{ hdd_qty }}" hidden>
 </fieldset>
 <fieldset hidden>
-    <select id="ssd" class="priced" hidden><option data-price="{{ ssd.cost }}"></option></select>
-    <input class="quantity" value="{{ ssd_qty }}" hidden>
+    <select name="ssd" id="ssd" class="priced" hidden><option value="{{ ssd.id }}" data-price="{{ ssd.cost }}"></option></select>
+    <input name="ssdqty" class="quantity" value="{{ ssd_qty }}" hidden>
 </fieldset>
-<select id="gpu" class="priced" hidden><option data-price="{{ gpu.cost }}"></option></select>
-<select id="cooler" class="priced" hidden><option data-price="{{ cooler.cost }}"></option></select>
-<select id="nwcard" class="priced" hidden><option data-price="{{ nwcard.cost }}"></option></select>
-<select id="case" class="priced" hidden><option data-price="{{ case.cost }}"></option></select>
+<select name="gpu" id="gpu" class="priced" hidden><option value="{{ gpu.id }}" data-price="{{ gpu.cost }}"></option></select>
+<select name="cooler" id="cooler" class="priced" hidden><option value="{{ cooler.id }}" data-price="{{ cooler.cost }}"></option></select>
+<select name="nwcard" id="nwcard" class="priced" hidden><option value="{{ nwcard.id }}" data-price="{{ nwcard.cost }}"></option></select>
+<select name="case" id="case" class="priced" hidden><option value="{{ case.id }}" data-price="{{ case.cost }}"></option></select>
+{# 
+<input name="hddqty" value="{{ hdd_qty }}" hidden readonly>
+<input name="ramqty" value="{{ ram_qty }}" hidden readonly>
+<input name="ssdqty" value="{{ ssd_qty }}" hidden readonly> #}

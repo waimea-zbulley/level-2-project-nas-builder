@@ -18,7 +18,6 @@ Continue to develop the web application to the point that it provides all key fu
     - Same as sprint-2 (already done)
 - Adding some colour as shown by ui prototyping to improve UX.
 - Make overall theming close to that of the mock ups
-- Preset configurations at least partially implemented
 - Make default mandatory boot drive rather than being part of solid drives
 - General tidy up of some messy leftover parts.
 - Tidy up codebase
@@ -59,12 +58,14 @@ After talking with my stakeholder we decided that for optional items instead of 
 
 After discussing with my stakeholder and by attempting at methods of validiation, this current from style is not maintanable, i will be moving to a sessions based style for my component picking, which is step by step. I will be building my project with this is mind to still meet all of my other requirements of my stakeholder to make sure that the final product remains satisfactory.
 
+"The new desgin still meets the requirements, because you start off with a motherboard and then can only select compatable components assosiated with that motherboard. Still nicely contained mostly in one menu." -Gareth 24/09/2026
 
-## Testing FEATURE NAME HERE
+## Testing new config form
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+This is the initial test of my new config form, as shown by the GIF when the final stage of the form is initialised the price in relatiotion to quantity items does not transfer.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![GPU option select with None dialogye](screenshots/gifs-for-sprint3/New_config_example_multipage_1.gif)
+
 
 ### Changes / Improvements
 

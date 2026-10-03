@@ -294,9 +294,9 @@ def get_config_2():
         params = (cooler_id, )
         case = db.execute(sql, params).fetchone()
 
-    ram_qty = request.form.get("ramqty")
-    ssd_qty = request.form.get("hddqty")
-    hdd_qty = request.form.get("hddqty")
+    ram_qty = session["ram_qty"]
+    ssd_qty = session["ssd_qty"]
+    hdd_qty = session["hdd_qty"]
 
     return cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty
 
@@ -463,7 +463,6 @@ def get_cases():
     return cases
 
 
-
 @app.get("/configuration/new/mb")
 def show_newconf():
     if not session.get("mb"):
@@ -480,6 +479,7 @@ def show_newconf():
 def config_pick_mb():
     mb_id = request.form.get("mb")
     session["mb"] = int(mb_id)
+    session["name"] = request.form.get("name")
     
     return redirect("/configuration/new/components")
 
@@ -500,6 +500,7 @@ def show_newconf_stage2():
     coolers = get_coolers()
     nwcards = get_nwcards()
     cases = get_cases()
+    name = session["name"]
     
 
 
@@ -513,6 +514,7 @@ def show_newconf_stage2():
         gpus = gpus,
         coolers = coolers,
         nwcards = nwcards,
+        name = name,
         cases = cases
 
     )
@@ -521,14 +523,17 @@ def show_newconf_stage2():
 def config_pick_stage2():
 
 
-    session["components_selected"] = 1
-    session["name"] = request.form.get("name")
+    session["cost"] = request.form.get("cost", "unknown").strip()
     session["cpu"] = int(request.form.get("cpu"))
     session["ram"] = int(request.form.get("ram"))
     session["ssd"] = int(request.form.get("ssd"))
     session["cooler"] = int(request.form.get("cooler"))
     session["case"] = int(request.form.get("case"))
 
+    session["hdd_qty"] = int(request.form.get("hddqty"))
+    session["ssd_qty"] = int(request.form.get("ssdqty"))
+    session["ram_qty"] = int(request.form.get("ramqty"))
+    
     # Optional things in the form
     gpu = request.form.get("gpu")
     if gpu:
@@ -556,7 +561,8 @@ def config_pick_stage3():
     cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty = get_config_2()
     psus = get_psus()
     oses = get_oses()
-    # name = session["name"]
+    name = session["name"]
+    
 
     return render_template(
         "pages/final_config.jinja",
@@ -569,31 +575,34 @@ def config_pick_stage3():
         cooler = cooler,
         nwcard = nwcard,
         case = case,
+        ram_qty = ram_qty,
+        ssd_qty = ssd_qty,
+        hdd_qty = hdd_qty,
         psus = psus,
         oses = oses,
-        # name = name
+        name = name
     )
 
 
-@app.post("/configuration/new/finish")
+@app.post("/configuration/new/final")
 def finish_config():
 
-    name = request.form.get("name", "unknown").strip()
-    cost = request.form.get("cost", "unknown").strip()
-    cpu = request.form.get("cpu", "unknown").strip()
-    mb = request.form.get("mb", "unknown").strip()
-    hdd = request.form.get("hdd", "unknown").strip()
-    hddqty = request.form.get("hddqty", "unknown").strip()
-    ssd = request.form.get("ssd", "unknown").strip()
-    ssdqty = request.form.get("ssdqty", "unknown").strip()
-    ram = request.form.get("ram", "unknown").strip()
-    ramqty = request.form.get("ramqty", "unknown").strip()
-    gpu = request.form.get("gpu", "unknown").strip()
-    case = request.form.get("case", "unknown").strip()
-    cooler = request.form.get("cooler", "unknown").strip()
-    nwcard = request.form.get("nwcard", "unknown").strip()
-    psu = request.form.get("psu", "unknown").strip()
-    os = request.form.get("os", "unknown").strip()
+    name = session["name"]
+    cost = session["cost"]
+    cpu = session["cpu"]
+    mb = session["mb"]
+    hdd = session["hdd"]
+    hddqty = session["hdd_qty"]
+    ssd = session["ssd"]
+    ssdqty = session["ssd_qty"]
+    ram = session["ram"]
+    ramqty = session["ram_qty"]
+    gpu = session["gpu"]
+    case = session["case"]
+    cooler = session["cooler"]
+    nwcard = session["nwcard"]
+    psu = request.form.get("psu")
+    os = request.form.get("os")
 
     #Connect with DB
     with connect_db() as db:
