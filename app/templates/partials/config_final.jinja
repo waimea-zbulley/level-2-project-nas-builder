@@ -1,23 +1,28 @@
 <form method="post" action="/configuration/new/final">
-    <label>
-        Powersupply
-        <select name="psu" required class="priced">
-            <option value="0" data-price="0"> --Choose One-- </option>
-            {% for psu in psus %}
-                <option value="{{ psu.id }}" data-price="{{ psu.cost }}">{{ psu.name }}</option>
-            {% endfor %}
-        </select>
-    </label>
 
-    <label>
-        Operating System
-        <select name="os" required class="priced">
-            <option value="0" data-price="0"> --Choose One-- </option>
-            {% for os in oses %}
-                <option value="{{ os.id }}" data-price="{{ os.cost }}">{{ os.name }}</option>
-            {% endfor %}
-            <option data-price="0">Other</option>
-        </select>
-    </label>
+    <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
+    <fieldset>
+        <label>
+            Powersupply
+            <select name="psu" required class="priced">
+                <option value="0" data-price="0"> --Choose One-- </option>
+                {% for psu in psus %}
+                    <option value="{{ psu.id }}" data-price="{{ psu.cost }}">{{ psu.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+
+        <label>
+            Operating System
+            <select name="os" required class="priced">
+                <option value="0" data-price="0"> --Choose One-- </option>
+                {% for os in oses %}
+                    <option value="{{ os.id }}" data-price="{{ os.cost }}">{{ os.name }}</option>
+                {% endfor %}
+                <option data-price="0">Other</option>
+            </select>
+        </label>
+    </fieldset>
+
     <button>Finish Configuration</button>
 </form>

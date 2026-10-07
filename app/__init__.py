@@ -299,7 +299,6 @@ def get_config_2():
 
     return cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty
 
-
 def get_mb():
     mb = None
     mb_id = session.get("mb", None)
@@ -462,16 +461,73 @@ def get_cases():
     return cases
 
 
+#===========================================================
+#           Edit Specif Help Funcs
+#===========================================================
+
+def get_mb_edit(id):
+    mb = None
+    config_id = id
+
+    with connect_db() as db:
+        sql = """
+            SELECT motherboard
+            FROM configurations
+            WHERE id=?
+        """
+        params = (config_id, )
+        mb_id = db.execute(sql, params).fetchone()["motherboard"]
+
+        sql = """
+            SELECT id, name, cost, platform, ram_gen, ram_slots, sata_ports, m2_ports
+            FROM motherboards
+            WHERE id=?
+        """
+
+        params = (mb_id, )
+        mb = db.execute(sql, params).fetchone()
+
+        return mb
+
+def get_name_edit(id):
+    name = None
+
+    config_id = id
+    with connect_db() as db:
+        sql = """
+            SELECT name
+            FROM configurations
+            WHERE id=?
+        """
+        params = (config_id, )
+        name = db.execute(sql, params).fetchone()["name"]
+
+        return name
+
+def get_config_edit(id):
+    config_id = id
+
+    with connect_db() as db:
+        sql = """
+            SELECT *
+            FROM configurations
+            WHERE id = ?
+        """
+        params = (config_id,)
+        config_edit = db.execute(sql, params).fetchone()
+
+    return config_edit
+
 @app.get("/configuration/new/mb")
 def show_newconf():
     if not session.get("mb"):
         session["mb"] = None
 
-    mb = get_mbs()
+    mbs = get_mbs()
 
     return render_template(
         "pages/select_motherboard.jinja",
-        mbs = mb
+        mbs = mbs
     )
 
 @app.post("/configuration/new/mb")
@@ -568,6 +624,7 @@ def config_pick_stage3():
     ssds = get_ssds()
     name = session["name"]
     
+    
 
     return render_template(
         "pages/final_config.jinja",
@@ -609,6 +666,9 @@ def finish_config():
     nwcard = session["nwcard"]
     psu = request.form.get("psu")
     os = request.form.get("os")
+    cost = request.form.get("cost", "unknown").strip()
+
+    
 
     #Connect with DB
     with connect_db() as db:
@@ -624,6 +684,118 @@ def finish_config():
 
         flash("Successfully added configuration", "success")
         return redirect("/configurations") 
+
+
+#===================================================
+#   Edit Routes
+#===================================================
+@app.get("/configuration/<int:id>/edit")
+def edit_config(id):
+    
+        params = (id,)
+        config = get_config_edit(id,)
+        mb = get_mb_edit(id,)
+        cpus = get_cpus(mb)
+        ram = get_ram(mb)
+        hdds = get_hdds()
+        ssds = get_ssds()
+        gpus = get_gpus()
+        coolers = get_coolers()
+        nwcards = get_nwcards()
+        cases = get_cases()
+        name = get_name_edit(id,)
+
+        return render_template(
+            "/pages/edit_components.jinja",
+            config = config,
+            mb = mb,
+            ssds = ssds,
+            cpus = cpus,
+            ram = ram,
+            hdds = hdds,
+            gpus = gpus,
+            coolers = coolers,
+            nwcards = nwcards,
+            name = name,
+            cases = cases
+            )
+
+@app.post("/configuration/<int:id>/edit")
+def edit_config_post(id):
+
+
+    session["cost"] = request.form.get("cost", "unknown").strip()
+    session["cpu"] = int(request.form.get("cpu"))
+    session["ram"] = int(request.form.get("ram"))
+    session["cooler"] = int(request.form.get("cooler"))
+    session["case"] = int(request.form.get("case"))
+
+    session["hdd_qty"] = int(request.form.get("hddqty"))
+    session["ssd_qty"] = int(request.form.get("ssdqty"))
+    session["ram_qty"] = int(request.form.get("ramqty"))
+    
+    # Optional things in the form
+    gpu = request.form.get("gpu")
+    if gpu:
+        session["gpu"] = int(request.form.get("gpu"))
+    if gpu == "":
+        session["gpu"] = None
+
+    hdd = request.form.get("hdd")
+    if hdd:
+        session["hdd"] = int(request.form.get("hdd"))
+    if hdd == "":
+        session["hdd"] = None
+
+    ssd = request.form.get("ssd")
+    if ssd:
+        session["ssd"] = int(request.form.get("ssd"))
+    if ssd == "":
+        session["ssd"] = None
+
+    nwcard = request.form.get("nwcard")
+    if nwcard:
+        session["nwcard"] = int(request.form.get("nwcard"))
+    if nwcard == "":
+        session["nwcard"] = None
+    
+    return redirect(f"/configuration/{id}/final/edit")
+
+@app.get("/configuration/<int:id>/final/edit")
+def edit_final(id):
+    mb = get_mb_edit(id,)
+    cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty = get_config_2()
+    psus = get_psus()
+    oses = get_oses()
+    ssds = get_ssds()
+    name = get_name_edit(id,)
+    config = get_config_edit(id,)
+
+    
+    
+
+    return render_template(
+        "pages/final_config.jinja",
+        config = config,
+        mb = mb,
+        cpu = cpu,
+        ram = ram,
+        hdd = hdd,
+        ssd = ssd,
+        gpu = gpu,
+        cooler = cooler,
+        nwcard = nwcard,
+        case = case,
+        ram_qty = ram_qty,
+        ssd_qty = ssd_qty,
+        hdd_qty = hdd_qty,
+        psus = psus,
+        oses = oses,
+        ssds = ssds,
+        name = name
+    )
+
+
 #===========================================================
 # Configure the app
 #===========================================================
