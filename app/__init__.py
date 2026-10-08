@@ -50,6 +50,13 @@ def show_config(id):
                 configurations.id   AS con_id,
                 configurations.name AS con_name,
                 configurations.cost AS con_cost,
+                configurations.hard_drive_qty as hddqty,
+                configurations.hard_drive as hdd,
+                configurations.solid_drive_qty as ssdqty,
+                configurations.solid_drive as ssd,
+                configurations.ram_qty as ramqty,
+                configurations.gpu as gpu,
+                configurations.network_card as nwcard,
                 cpus.name           AS cpu_name,
                 cpus.url            AS cpu_url,
                 motherboards.name   AS motherboard_name,
@@ -77,12 +84,12 @@ def show_config(id):
             JOIN cpus ON configurations.cpu = cpus.id
             JOIN motherboards ON configurations.motherboard = motherboards.id
             LEFT JOIN harddrives ON configurations.hard_drive = harddrives.id
-            JOIN soliddrives ON configurations.solid_drive = soliddrives.id
+            LEFT JOIN soliddrives ON configurations.solid_drive = soliddrives.id
             JOIN ram ON configurations.ram = ram.id
             LEFT JOIN gpus ON configurations.gpu = gpus.id
             JOIN cases ON configurations.`case` = cases.id
             JOIN coolers ON configurations.cooler = coolers.id
-            JOIN networkcard ON configurations.network_card = networkcard.id
+            LEFT JOIN networkcard ON configurations.network_card = networkcard.id
             JOIN powersupply ON configurations.psu = powersupply.id
             JOIN os ON configurations.os = os.id WHERE configurations.id = ?
 

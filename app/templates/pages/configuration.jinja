@@ -13,13 +13,21 @@
                     <p>Cost: ${{ config.con_cost }}</p>
                     <p>Cpu: <a target="_blank" href="{{ config.cpu_url }}">{{ config.cpu_name }}</a></p>
                     <p>Motherboard: <a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p>
-                    <p>Hard Drive: <a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a></p>
-                    <p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a></p>
+                    {% if config.hddqty > 0 and config.hdd %}
+                        <p>Hard Drive: <a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a>  Quantity: {{ config.hddqty }}</p>
+                    {% endif %}
+                    {% if config.ssdqty > 0 and config.ssd %}
+                        <p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a>  Quantity: {{ config.ssdqty }}</p>
+                    {% endif %}
                     <p>Ram: <a target="_blank" href="{{ config.ram_url }}">{{ config.ram_name }}</a></p>
-                    <p>Graphics Card: <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p>
+                    {% if config.gpu %}
+                        <p>Graphics Card: <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p>
+                    {% endif %}
                     <p>Case: <a target="_blank" href="{{ config.case_url }}">{{ config.case_name }}</a></p>
                     <p>Cpu Cooler: <a target="_blank" href="{{ config.cooler_url }}">{{ config.cooler_name }}</a></p>
-                    <p>Network Card: <a target="_blank" href="{{ config.networcard_url }}">{{ config.networkcard_name }}</a></p>
+                    {% if config.nwcard %}
+                        <p>Network Card: <a target="_blank" href="{{ config.networkcard_url }}">{{ config.networkcard_name }}</a></p>
+                    {% endif %}
                     <p>Power Supply: <a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p>
                     <p>Operating System: <a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p>
                 </header>
