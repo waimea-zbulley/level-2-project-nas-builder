@@ -651,7 +651,6 @@ def config_pick_stage3():
 def finish_config():
 
     name = session["name"]
-    cost = session["cost"]
     cpu = session["cpu"]
     mb = session["mb"]
     hdd = session["hdd"]
@@ -723,7 +722,7 @@ def edit_config(id):
 @app.post("/configuration/<int:id>/edit")
 def edit_config_post(id):
 
-
+    name = get_name_edit(id,)
     session["cost"] = request.form.get("cost", "unknown").strip()
     session["cpu"] = int(request.form.get("cpu"))
     session["ram"] = int(request.form.get("ram"))
@@ -775,7 +774,7 @@ def edit_final(id):
     
 
     return render_template(
-        "pages/final_config.jinja",
+        "pages/final_config_edit.jinja",
         config = config,
         mb = mb,
         cpu = cpu,
@@ -794,6 +793,43 @@ def edit_final(id):
         ssds = ssds,
         name = name
     )
+
+@app.post("/configuration/<int:id>/final/edit")
+def edit_final_edit(id):
+    cpu = session["cpu"]
+    mb = get_mb_edit(id,)
+    hdd = session["hdd"]
+    hddqty = session["hdd_qty"]
+    ssd = session["ssd"]
+    ssdqty = session["ssd_qty"]
+    ram = session["ram"]
+    ramqty = session["ram_qty"]
+    gpu = session["gpu"]
+    case = session["case"]
+    cooler = session["cooler"]
+    nwcard = session["nwcard"]
+    psu = request.form.get("psu")
+    os = request.form.get("os")
+    cost = request.form.get("cost", "unknown").strip()
+    name = get_name_edit(id,)
+
+    config_id = id
+
+    #Connect with DB
+    with connect_db() as db:
+
+        sql = """
+            UPDATE configurations
+            SET name=?, cost=?, cpu=?, motherboard=?, hard_drive=?, hard_drive_qty=?, solid_drive=?, solid_drive_qty=?, ram=?, ram_qty=?, gpu=?, `case`=?, cooler=?, network_card=?, psu=?, os=?
+            WHERE id = ?
+        """
+
+        params = (name, cost, cpu, mb["id"], hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os, config_id)
+
+        db.execute(sql, params)
+
+        flash(f"Successfully updated {"name"}", "success")
+        return redirect("/configurations") 
 
 
 #===========================================================
