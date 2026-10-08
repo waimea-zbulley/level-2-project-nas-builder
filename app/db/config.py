@@ -97,7 +97,9 @@ class HardDrives:
         INSERT INTO harddrives (name, powerdraw, cost, url, capacity, rpm)
         VALUES
             ("Seagate BarraCuda 2TB", 5, 282.97, "https://www.pbtech.co.nz/product/HDDSE2206/Seagate-BarraCuda-2TB-35-Internal-HDD-SATA3-6Gbs?qr=product_option", 2000, 7200),
-            ("WD Red Plus 4TB", 5, 481.37, "https://www.pbtech.co.nz/product/HDDWD22403/WD-Red-Plus-4TB-35-Internal-HDD-SATA3---128MB-Cach", 4000, 5400)
+            ("WD Red Plus 4TB", 5, 481.37, "https://www.pbtech.co.nz/product/HDDWD22403/WD-Red-Plus-4TB-35-Internal-HDD-SATA3---128MB-Cach", 4000, 5400),
+            ("Seagate 8TB Iron Wolf Pro", 5, 1018.01, "https://www.mightyape.co.nz/mn/buy/flashtrend-seagate-8tb-35-ironwolf-pro-nas-st8000nt001-leader-hasea-st8000nt001/", 8000, 5400)
+            ("Seagate 16TB Iron Wolf Pro", 5, 2393.82, "https://www.mightyape.co.nz/mn/buy/mad-electronics-seagate-16tb-35-ironwolf-pro-sata-nas-hard-drive-7200-rpm-256mb-cache-hdd-5-years-warranty-29788/?grt=", 16000, 5400)
     """
 class Cpus:
 
@@ -146,7 +148,8 @@ class SolidDrives:
         VALUES
             ("Acer FA100 256gb", 4, 90.85, "https://www.pbtech.co.nz/product/HDDACN1050/Acer-FA100-256GB-M2-PCIe-Gen3-x-4-NVME-SSD-Read-up", 256, 1300),
             ("Crucial E100 2TB", 5, 456.30, "https://www.pbtech.co.nz/product/HDDCRU30130/Crucial-E100-2TB-NVMe-M2-Gen4-Internal-2280-SSD-PC", 2000, 4500),
-            ("Kingston Fury Renegade 4TB", 10, 1148.85, "https://www.pbtech.co.nz/product/HDDKIN24300/Kingston-Fury-Renegade-4TB-M2-NVMe-Internal-SSD-wi", 4000, 7000)
+            ("Kingston Fury Renegade 4TB", 10, 1148.85, "https://www.pbtech.co.nz/product/HDDKIN24300/Kingston-Fury-Renegade-4TB-M2-NVMe-Internal-SSD-wi", 4000, 7000),
+            ("Samsung 9100 PRO 8TB", 10, 2988.85, "https://www.pbtech.co.nz/product/HDDSAM993131/Samsung-9100-PRO-With-Heatsink-8TB-M2-NVMe-Gen5-In", 8000, 13400)
     """
 class Ram:
 
@@ -297,20 +300,6 @@ class OS:
             ("Truenas Scale", 0, "https://www.truenas.com"),
             ("Unraid", 83, "https://account.unraid.net/buy")
     """
-#----------------------------------------------------------------------------
-# Table registry
-#----------------------------------------------------------------------------
-# Register all of your tables by adding them to the TABLES list here:
-#
-# TABLES = [
-#     Table1Name,
-#     Table2Name,
-#     etc.
-# ]
-#
-# Note: The table order is important - Create the tables that have
-# foreign keys *after* the tables they link to have been created
-#----------------------------------------------------------------------------
 
 TABLES = [
     Configurations,
