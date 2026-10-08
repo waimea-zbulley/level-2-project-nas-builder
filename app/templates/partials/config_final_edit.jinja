@@ -5,7 +5,6 @@
         <label>
             Powersupply
             <select name="psu" required class="priced">
-                <option value="0" data-price="0"> --Choose One-- </option>
                 {% for psu in psus %}
                     {# If statement to retrive the currently selected psu from the old config. 
                     Note: If the psu is not compatible it will not be passed through (therefore the blank option will be selected) #}
@@ -21,7 +20,6 @@
         <label>
             Operating System
             <select name="os" required class="priced">
-                <option value="0" data-price="0"> --Choose One-- </option>
                 {% for os in oses %}
                     {% if os.id == config.os %}
                         <option value="{{ os.id }}" data-price="{{ os.cost }}" selected>{{ os.name }}</option>

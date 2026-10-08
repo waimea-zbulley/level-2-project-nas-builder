@@ -11,7 +11,7 @@ For my end user I need to make a system that allows you to pick all the hardware
 
 Features needed:
  - Being able to select hardware
- - Selecting the desired raid setup and amount of desired usable storage.
+ - Shows desired usable storage.
  - Being able to save specfic configured setups
  - Being able to select the desired software on the system
  - Only being able to choose parts which are compatable with each other

@@ -462,7 +462,7 @@ def get_cases():
 
 
 #===========================================================
-#           Edit Specif Help Funcs
+#           Edit Specific Help Funcs
 #===========================================================
 
 def get_mb_edit(id):
@@ -828,7 +828,7 @@ def edit_final_edit(id):
 
         db.execute(sql, params)
 
-        flash(f"Successfully updated {"name"}", "success")
+        flash(f"Successfully updated {name}", "success")
         return redirect("/configurations") 
 
 
