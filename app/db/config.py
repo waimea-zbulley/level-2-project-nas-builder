@@ -98,7 +98,7 @@ class HardDrives:
         VALUES
             ("Seagate BarraCuda 2TB", 5, 282.97, "https://www.pbtech.co.nz/product/HDDSE2206/Seagate-BarraCuda-2TB-35-Internal-HDD-SATA3-6Gbs?qr=product_option", 2000, 7200),
             ("WD Red Plus 4TB", 5, 481.37, "https://www.pbtech.co.nz/product/HDDWD22403/WD-Red-Plus-4TB-35-Internal-HDD-SATA3---128MB-Cach", 4000, 5400),
-            ("Seagate 8TB Iron Wolf Pro", 5, 1018.01, "https://www.mightyape.co.nz/mn/buy/flashtrend-seagate-8tb-35-ironwolf-pro-nas-st8000nt001-leader-hasea-st8000nt001/", 8000, 5400)
+            ("Seagate 8TB Iron Wolf Pro", 5, 1018.01, "https://www.mightyape.co.nz/mn/buy/flashtrend-seagate-8tb-35-ironwolf-pro-nas-st8000nt001-leader-hasea-st8000nt001/", 8000, 5400),
             ("Seagate 16TB Iron Wolf Pro", 5, 2393.82, "https://www.mightyape.co.nz/mn/buy/mad-electronics-seagate-16tb-35-ironwolf-pro-sata-nas-hard-drive-7200-rpm-256mb-cache-hdd-5-years-warranty-29788/?grt=", 16000, 5400)
     """
 class Cpus:
