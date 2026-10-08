@@ -74,19 +74,17 @@ I have now fixed the issue related to quanitity items as well as fixes bugs rela
 
 "The new desgin still meets the requirements, because you start off with a motherboard and then can only select compatable components assosiated with that motherboard. Still nicely contained mostly in one menu." -Gareth 24/09/2026
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+## Testing editing configurations
 
-## Testing FEATURE NAME HERE
+This is my initial testing of my configuration editing, as shown by the video the name on the flash notification does not display correctly
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![First testing of editing form](screenshots/gifs-for-sprint3/edit_config_1.gif)
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+![Final testing of editing form](screenshots/gifs-for-sprint3/edit_config_2.gif)
+As shown by this gif I have fixed the issue regarding the flash notification as well as not allowing mandatory options to be set back to the "-- choose one --" option
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
 ## ETC...
