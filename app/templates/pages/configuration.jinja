@@ -14,12 +14,12 @@
                     <p>Cpu: <a target="_blank" href="{{ config.cpu_url }}">{{ config.cpu_name }}</a></p>
                     <p>Motherboard: <a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p>
                     {% if config.hddqty > 0 and config.hdd %}
-                        <p>Hard Drive: <a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a>  Quantity: {{ config.hddqty }}</p>
+                        <p>Hard Drive: <a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a>  Quantity: {{ config.hddqty }}, Capacity: {{ (config.harddrive_capacity * config.hddqty) / 1000 }}TB</p>
                     {% endif %}
                     {% if config.ssdqty > 0 and config.ssd %}
-                        <p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a>  Quantity: {{ config.ssdqty }}</p>
+                        <p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a>  Quantity: {{ config.ssdqty }}, Capacity: {{ (config.soliddrive_capacity * config.ssdqty) / 1000 }}TB</p>
                     {% endif %}
-                    <p>Ram: <a target="_blank" href="{{ config.ram_url }}">{{ config.ram_name }}</a></p>
+                    <p>Ram: <a target="_blank" href="{{ config.ram_url }}">{{ config.ram_name }}</a> Quantity: {{ config.ramqty }}, Capacity: {{ config.ram_capacity * config.ramqty }}GB </p>
                     {% if config.gpu %}
                         <p>Graphics Card: <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p>
                     {% endif %}
@@ -31,7 +31,6 @@
                     <p>Power Supply: <a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p>
                     <p>Operating System: <a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p>
                 </header>
-
 
             </div>
 

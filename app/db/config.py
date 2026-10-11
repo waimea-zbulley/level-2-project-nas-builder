@@ -138,7 +138,7 @@ class SolidDrives:
             powerdraw INTEGER NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            capacity TEXT NOT NULL,
+            capacity INTEGER NOT NULL,
             speed INTEGER NOT NULL,
             image TEXT
         )

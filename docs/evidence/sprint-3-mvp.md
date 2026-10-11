@@ -85,7 +85,11 @@ This is my initial testing of my configuration editing, as shown by the video th
 ![Final testing of editing form](screenshots/gifs-for-sprint3/edit_config_2.gif)
 As shown by this gif I have fixed the issue regarding the flash notification as well as not allowing mandatory options to be set back to the "-- choose one --" option
 
+## Testing Showing total capacity & quantity
 
+My config viewing now shows all the capacity of hdd and ssd/ram
+
+![Testing showing full capacity](screenshots/gifs-for-sprint3/Capacity+quantity.png)
 
 ## ETC...
 

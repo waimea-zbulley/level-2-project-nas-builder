@@ -57,35 +57,7 @@ function updatePower() {
     powerTotal.value = runningTotal.toFixed(2);
 }
 
-// HDD storage
 
-// const hddStorage = document.getElementById('hdd')
-// const hddQuantity = document.getElementById('hddqty')
-
-// hddStorage.addEventListener('change', updateHddStorage)
-// hddQuantity.addEventListener('input', updateHddStorage)
-
-
-// // const totalDisplayPower = document.getElementById('totalPower')
-// const totalHddStorage = document.getElementById('totalHddStorage') 
-
-// function updateHddStorage() {
-//     let runningTotal = 0
-    
-
-//     for (const select of hddStorage) {
-//         const selectedOption= select.options[select.selectedIndex]
-//         const storage = Number(selectedOption.dataset.hdd)
-//         const quantity = Number(hddQuantity.value)
-
-//         runningTotal += storage * quantity
-//     }
-
-//     // totalDisplay.textContent = `Total: $${runningTotal.toFixed(2)}`
-//     totalHddStorage.value = runningTotal.toFixed(2);
-// }
-
-// To initially calculate the price for boot drive
 updateCost();
 updatePower();
 

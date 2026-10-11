@@ -39,6 +39,7 @@ def configurations():
         """
         params = ()
         configs = db.execute(sql, params).fetchall()
+
         
         return render_template("pages/configurations.jinja", configs=configs)
 
@@ -62,10 +63,13 @@ def show_config(id):
                 motherboards.name   AS motherboard_name,
                 motherboards.url   AS motherboard_url,
                 harddrives.name     AS harddrive_name,
+                harddrives.capacity     AS harddrive_capacity,
                 harddrives.url     AS harddrive_url,
                 soliddrives.name    AS soliddrive_name,
                 soliddrives.url    AS soliddrive_url,
+                soliddrives.capacity    AS soliddrive_capacity,
                 ram.name            AS ram_name,
+                ram.capacity            AS ram_capacity,
                 ram.url            AS ram_url,
                 gpus.name           AS gpu_name,
                 gpus.url           AS gpu_url,
@@ -96,6 +100,7 @@ def show_config(id):
         """
         params = (id,)
         configs = db.execute(sql, params).fetchone()
+
 
         return render_template("pages/configuration.jinja", config=configs)
 
