@@ -66,7 +66,7 @@
 
         <label>
             Quantity
-            <input type="number" name="hddqty" class="quantity" id="hddqty" max="{{ mb.sata_ports }}" min="0">
+            <input type="number" name="hddqty" class="quantity" id="hddqty" value="0" max="{{ mb.sata_ports }}" min="0">
         </label>
         {# <label>Total Capacity<input id="totalHddStorage" value="0" type="number" name="totalHddStorage" readonly></label> #}
 
@@ -85,7 +85,7 @@
 
         <label>
             Quantity
-            <input type="number" class="quantity" name="ssdqty" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
+            <input type="number" class="quantity" name="ssdqty" value="0" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
         </label>
     </fieldset>
 

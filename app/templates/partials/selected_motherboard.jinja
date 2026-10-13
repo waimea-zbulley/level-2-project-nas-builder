@@ -4,7 +4,7 @@
 
 
     <ul>
-        <li>Name: {{ name }}</li>
+        <li>Name: {{ name | e }}</li>
         <li>MB: {{ mb.name }}</li>
     </ul>
     <select id="motherboard" class="priced" hidden><option data-price="{{ mb.cost }}"></option></select>
