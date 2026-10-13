@@ -146,6 +146,30 @@ main > h2 {
 #configurations {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    div {
+        background-color: var(--back-col-panel);
+        text-decoration: none;
+
+        color: var(--text-col-secondary);
+        max-width: 50rem;
+        min-width: 70%;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        .functionbuttons {
+            flex-direction: row;
+            padding: 0.25rem;
+            a {
+                background-color: var(--back-col-panel-sec);
+                padding: 0.25rem;
+                border-radius: 0.3rem;
+                text-decoration: none;
+            }
+
+        }
+    }
 }
 
 #addconf {
