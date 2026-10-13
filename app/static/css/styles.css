@@ -9,8 +9,10 @@
 
     --back-col:         #0f1315;
     --back-col-sec:     #2f393c;
+    --back-col-sec-trans:     #30464ce8;
     --back-col-panel:    #829ba2;
     --back-col-panel-sec:    #a6babf;
+    
     --primary:          #829ba2;
 
     --nav-bar-colour:    #3f3035;
@@ -36,11 +38,10 @@ body {
     min-height: 100dvh;
 }
 
-
 main {
-    max-width: 70rem;
+    max-width: 60rem;
     margin-inline: auto;
-    padding: 1rem;
+    padding-top: 0rem;
     background-color: var(--back-col-sec);
 }
 
@@ -56,6 +57,7 @@ body > header {
     position: sticky;
     top: 0;
     width: 100%;
+    height: 3rem;
 
     gap: 1rem;
     align-items: center;
@@ -66,7 +68,7 @@ body > header {
     nav {
         display: flex;
         gap: 1rem;
-
+        
         a {
             color: var(--accent-col);
         }
@@ -79,7 +81,7 @@ body > header {
 main > h2 {
     font-size: 2rem;
     text-align: center;
-    margin-block: 2rem;
+    padding: 1rem;
 }
 
 
@@ -145,17 +147,33 @@ main > h2 {
 
 #configurations {
     display: flex;
+    min-height: calc(100dvh - 10rem);
+    padding: 1;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     text-decoration: none;
+    
     div {
         background-color: var(--back-col-panel);
         text-decoration: none;
-
+        a {
+            text-decoration: none;
+        }
+        h3 {
+                font-size: 2rem;
+                text-align: center;
+                text-decoration: none;
+            }
         color: var(--text-col-secondary);
         max-width: 50rem;
-        min-width: 70%;
+        @media (width <= 500px) {
+            min-width: 90%;
+        }
+        @media (width >= 500px) {
+            min-width: 75%;
+        }
+        
         padding: 1rem;
         border-radius: 1.5rem;
         .functionbuttons {
@@ -167,13 +185,44 @@ main > h2 {
                 border-radius: 0.3rem;
                 text-decoration: none;
             }
-
+        }
+        .middlecontent {
+            p {
+                align-items: center;
+            }
+            justify-items: center;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
         }
     }
 }
 
 #addconf {
-    padding-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    a {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        text-align: center;
+        padding: 0.1rem;
+    }
+    
+
+    padding: 0;
+    bottom: 0px;
+    position: sticky;
+    background-color: var(--back-col-sec-trans);
+    width: 100%;
+    text-align: center;
+    max-width: 60rem;
+    padding: 0;
+    height: 2rem;
 }
 
 #homepage {
