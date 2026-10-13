@@ -101,5 +101,4 @@ As shown by the gif all links work without problem
 
 This sprint has taken a long time to get done but I have now met all my requirements for my MVP, including fully functional configuration adding with logic based off the motherboard/components to ensure a compatable build. I have made some UI impovements to get it closeish to that of the mock ups. My configurations have accurate pricing and can be edited while staying fully compatable. You are also able to view the total storage of the different storage mediums in the configuration. I now predominatly have UI and UX changes left to make in sprint 4, but am otherwise complete.
 
-""
-
+"This sprint has producesd a highly functional model which addresses all the requirements captured.  The end result is a higly functional web application that includes logic to ensure that only compatable parts are selected, the menu" is easy to navigate, the links to PBTech are a great touch that provides full information and reviewson the selected products." -Gareth 13/10/2026
