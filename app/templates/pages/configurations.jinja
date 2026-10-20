@@ -12,11 +12,11 @@
                 <div class="details">
                     <i class="configicon" data-lucide="{{ config.icon }}"></i>
                     <a href="/configuration/{{ config.id }}"><h3>{{ config.name }}</h3></a>
-                    <p class="cost" >Cost: {{ config.cost }}</p>
+                    <p class="cost" >${{ config.cost }}</p>
                 </div>
                 <div class="functionbuttons">
-                    <a href="/configuration/{{ config.id }}/delete">Delete</a>
-                    <a href="/configuration/{{ config.id }}/edit">Edit</a>  
+                    <a href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
+                    <a href="/configuration/{{ config.id }}/edit"><i data-lucide="square-pen"></i></a>  
                 </div>
             </div>
         {% else %}
