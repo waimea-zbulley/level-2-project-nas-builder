@@ -37,15 +37,16 @@ class Configurations:
             cooler INTEGER NOT NULL,
             network_card INTEGER,
             psu INTEGER,
-            os INTEGER
+            os INTEGER,
+            icon TEXT
         )
     """
 
     SEED_DATA = """
-        INSERT INTO configurations (name, cost, motherboard, cpu, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, `case`, cooler, network_card, psu, os)
+        INSERT INTO configurations (name, cost, motherboard, cpu, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, `case`, cooler, network_card, psu, os, icon)
         VALUES
-            ("My epic NAS", 1500, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 1, 1, 1),
-            ("Even more epic NAS", 2500, 2, 1, 2, 4, 2, 2, 1, 2, 1, 1, 1, 1, 1)
+            ("My epic NAS", 1500, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 1, 1, 1, "play"),
+            ("Even more epic NAS", 2500, 2, 1, 2, 4, 2, 2, 1, 2, 1, 1, 1, 1, 1, "server")
     """
 
 class Motherboards:

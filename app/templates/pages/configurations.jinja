@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <h2>configurations</h2>
+    <h2>Configurations</h2>
 
     <section id="configurations">
         
@@ -11,8 +11,8 @@
             <div>
                 <a href="/configuration/{{ config.id }}"><h3>{{ config.name }}</h3></a>
                 <div class="middlecontent">
-                    <p>ID: {{ config.id }}</p>
-                    <p>Cost: {{ config.cost }}</p>
+                    <p class="cost" >Cost: {{ config.cost }}</p>
+                    <i class="configicon" data-lucide="{{ config.icon }}"></i>
                 </div>
                 <div class="functionbuttons">
                     <a href="/configuration/{{ config.id }}/delete">Delete</a>

@@ -33,9 +33,10 @@ def configurations():
             SELECT
                 configurations.name,
                 configurations.id,
-                configurations.cost
-            
+                configurations.cost,
+                configurations.icon  
             FROM configurations
+
         """
         params = ()
         configs = db.execute(sql, params).fetchall()
@@ -547,6 +548,7 @@ def config_pick_mb():
     mb_id = request.form.get("mb")
     session["mb"] = int(mb_id)
     session["name"] = request.form.get("name")
+    session["icon"] = request.form.get("icon")
     
     return redirect("/configuration/new/components")
 
@@ -568,6 +570,7 @@ def show_newconf_stage2():
     nwcards = get_nwcards()
     cases = get_cases()
     name = session["name"]
+    icon = session["icon"]
     
 
 
@@ -635,6 +638,7 @@ def config_pick_stage3():
     oses = get_oses()
     ssds = get_ssds()
     name = session["name"]
+    icon = session["icon"]
     
     
 
@@ -655,7 +659,8 @@ def config_pick_stage3():
         psus = psus,
         oses = oses,
         ssds = ssds,
-        name = name
+        name = name,
+        icon = icon
     )
 
 
@@ -678,6 +683,7 @@ def finish_config():
     psu = request.form.get("psu")
     os = request.form.get("os")
     cost = request.form.get("cost", "unknown").strip()
+    icon = session["icon"]
 
     
 
@@ -685,11 +691,11 @@ def finish_config():
     with connect_db() as db:
 
         sql = """
-            INSERT INTO configurations (name, cost, cpu, motherboard, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, gpu, `case`, cooler, network_card, psu, os)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO configurations (name, cost, cpu, motherboard, hard_drive, hard_drive_qty, solid_drive, solid_drive_qty, ram, ram_qty, gpu, `case`, cooler, network_card, psu, os, icon)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
 
-        params = (name, cost, cpu, mb, hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os)
+        params = (name, cost, cpu, mb, hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os, icon)
 
         db.execute(sql, params)
 
@@ -734,7 +740,6 @@ def edit_config(id):
 @app.post("/configuration/<int:id>/edit")
 def edit_config_post(id):
 
-    name = get_name_edit(id,)
     session["cost"] = request.form.get("cost", "unknown").strip()
     session["cpu"] = int(request.form.get("cpu"))
     session["ram"] = int(request.form.get("ram"))
@@ -769,6 +774,9 @@ def edit_config_post(id):
         session["nwcard"] = int(request.form.get("nwcard"))
     if nwcard == "":
         session["nwcard"] = None
+
+    session["name"] = request.form.get("name")
+    session["icon"] = request.form.get("icon")
     
     return redirect(f"/configuration/{id}/final/edit")
 
@@ -779,7 +787,9 @@ def edit_final(id):
     psus = get_psus()
     oses = get_oses()
     ssds = get_ssds()
-    name = get_name_edit(id,)
+    name = session["name"]
+    icon = session["icon"]
+
     config = get_config_edit(id,)
 
     
@@ -823,7 +833,7 @@ def edit_final_edit(id):
     psu = request.form.get("psu")
     os = request.form.get("os")
     cost = request.form.get("cost", "unknown").strip()
-    name = get_name_edit(id,)
+    name = session["name"]
 
     config_id = id
 

@@ -1,8 +1,44 @@
-
 <form method="post" action="/configuration/{{ config.id }}/edit" class="componentForm"> 
     <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
     <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
 
+    <label>Name<input type="text" id="name" name="name" value="{{ name }}" required></label>
+    <fieldset class="icon-select">
+        <h2>Icon: </h2>
+        <div>
+            {% if config.icon == "play" %}
+                <label><input checked type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
+            {% else %}
+                <label><input type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
+            {% endif %}
+            {% if config.icon == "image" %}
+                <label><input checked type="radio" name="icon" value="image"><i class="icon" data-lucide="image"></i></label>
+            {% else %}
+                <label><input type="radio" name="icon" value="image"><i class="icon" data-lucide="image"></i></label>
+            {% endif %}
+            {% if config.icon == "hard-drive" %}
+                <label><input checked type="radio" name="icon" value="hard-drive"><i class="icon" data-lucide="hard-drive"></i></label>
+            {% else %}
+                <label><input type="radio" name="icon" value="hard-drive"><i class="icon" data-lucide="hard-drive"></i></label>
+            {% endif %}
+            {% if config.icon == "server" %}
+                <label><input checked type="radio" name="icon" value="server"><i class="icon" data-lucide="server"></i></label>
+            {% else %}
+                <label><input type="radio" name="icon" value="server"><i class="icon" data-lucide="server"></i></label>
+            {% endif %}
+            {% if config.icon == "cctv" %}
+                <label><input checked type="radio" name="icon" value="cctv"><i class="icon" data-lucide="cctv"></i></label>
+            {% else %}
+                <label><input type="radio" name="icon" value="cctv"><i class="icon" data-lucide="cctv"></i></label>
+            {% endif %}
+            {% if config.icon == "package-search" %}
+                <label><input checked type="radio" name="icon" value="package-search"><i class="icon" data-lucide="package-search"></i></label>
+            {% else %}
+                <label><input type="radio" name="icon" value="package-search"><i class="icon" data-lucide="package-search"></i></label>
+            {% endif %}
+        </div>
+        
+    </fieldset>
     <label>
         Boot Drive
         <select class="priced" id="bootDrive" readonly>
