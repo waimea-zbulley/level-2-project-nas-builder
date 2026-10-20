@@ -9,10 +9,10 @@
         
         {% for config in configs %}
             <div>
-                <a href="/configuration/{{ config.id }}"><h3>{{ config.name }}</h3></a>
-                <div class="middlecontent">
-                    <p class="cost" >Cost: {{ config.cost }}</p>
+                <div class="details">
                     <i class="configicon" data-lucide="{{ config.icon }}"></i>
+                    <a href="/configuration/{{ config.id }}"><h3>{{ config.name }}</h3></a>
+                    <p class="cost" >Cost: {{ config.cost }}</p>
                 </div>
                 <div class="functionbuttons">
                     <a href="/configuration/{{ config.id }}/delete">Delete</a>
