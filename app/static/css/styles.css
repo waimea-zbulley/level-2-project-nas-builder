@@ -8,7 +8,7 @@
     --text-col-secondary:#0f1315;
 
     --back-col:         #283032;
-    --back-col-sec:     #2f393c;
+    --back-col-sec:     #283032;
     --back-col-sec-trans:     #688e99;
     --back-col-panel:    #688e99;
     --back-col-panel-sec:    #a6babf;
@@ -39,7 +39,7 @@ body {
 }
 
 main {
-    max-width: 60rem;
+    max-width: 50rem;
     margin-inline: auto;
     padding-top: 0rem;
     background-color: var(--back-col-sec);
@@ -184,12 +184,12 @@ main > h2 {
                 box-shadow: none;
             }
         color: var(--text-col-secondary);
-        max-width: 50rem;
+        /* max-width: 50rem; */
         @media (width <= 500px) {
-            width: 90%;
+            width: 95%;
         }
         @media (width >= 500px) {
-            width: 75%;
+            width: 90%;
         }
         
         padding: 1rem;
@@ -323,12 +323,11 @@ main > h2 {
 
     .formitem {
         height: 6.5rem;
-        max-width: 50rem;
         @media (width <= 500px) {
-            width: 90%;
+            width: 95%;
         }
         @media (width >= 500px) {
-            width: 75%;
+            width: 90%;
         }
 
         input {
@@ -369,10 +368,10 @@ main > h2 {
         height: 6.5rem;
         max-width: 50rem;
         @media (width <= 500px) {
-            width: 90%;
+            width: 95%;
         }
         @media (width >= 500px) {
-            width: 75%;
+            width: 90%;
         }
 
         input {
