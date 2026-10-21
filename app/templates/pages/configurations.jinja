@@ -8,15 +8,19 @@
     <section id="configurations">
         
         {% for config in configs %}
-            <div>
+            <div class="config">
+                <i class="configicon" data-lucide="{{ config.icon }}"></i>
+
+                <h3 class="name"><a href="/configuration/{{ config.id }}">{{ config.name }}</a></h3>
+
                 <div class="details">
-                    <i class="configicon" data-lucide="{{ config.icon }}"></i>
-                    <a href="/configuration/{{ config.id }}"><h3>{{ config.name }}</h3></a>
-                    <p class="cost" >${{ config.cost }}</p>
-                </div>
-                <div class="functionbuttons">
-                    <a href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
-                    <a href="/configuration/{{ config.id }}/edit"><i data-lucide="square-pen"></i></a>  
+                    <div class="cost">
+                        <p>${{ config.cost }}</p>
+                    </div>
+                    <div class="functionbuttons">
+                        <a href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
+                        <a href="/configuration/{{ config.id }}/edit"><i data-lucide="square-pen"></i></a>  
+                    </div>                    
                 </div>
             </div>
         {% else %}

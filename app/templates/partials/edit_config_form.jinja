@@ -1,4 +1,4 @@
-<form method="post" action="/configuration/{{ config.id }}/edit" class="componentForm"> 
+<form method="post" action="/configuration/{{ config.id }}/edit" id="componentForm"> 
     <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
     <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
 
@@ -173,20 +173,23 @@
 
 
     {# Drop down selection for Network Cards #}
-    <label>
-        Network Card
-        <select id="nwcards" name="nwcard" class="priced">
-            <option value="" data-price="0">None</option>
-            {% for nwcard in nwcards %}
-                {% if nwcard.id == config.network_card%}
-                    <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}" selected>{{ nwcard.name }} - ${{ nwcard.cost }}</option>
-                {% else %}
-                    <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}">{{ nwcard.name }} - ${{ nwcard.cost }}</option>
-                {% endif %}
-            {% endfor %}
-        </select>
+    <fieldset class="formitem">
+        <label>
+            Network Card
+            <select id="nwcards" name="nwcard" class="priced ">
+                <option value="" data-price="0">None</option>
+                {% for nwcard in nwcards %}
+                    {% if nwcard.id == config.network_card%}
+                        <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}" selected>{{ nwcard.name }} - ${{ nwcard.cost }}</option>
+                    {% else %}
+                        <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}">{{ nwcard.name }} - ${{ nwcard.cost }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
 
-    </label>
+        </label>
+    </fieldset>
+    
 
     <button>Next</button>
 
