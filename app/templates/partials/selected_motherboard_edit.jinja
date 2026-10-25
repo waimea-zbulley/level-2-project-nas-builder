@@ -5,5 +5,5 @@
         <li>MB: {{ mb.name }}</li>
     </ul>
     <select id="motherboard" class="priced" hidden><option data-price="{{ mb.cost }}"></option></select>
-
+    <select class="priced" id="bootDrive" readonly hidden><option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option></select>
 </div>

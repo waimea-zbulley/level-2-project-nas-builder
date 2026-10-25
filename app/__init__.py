@@ -813,6 +813,7 @@ def edit_final(id):
         psus = psus,
         oses = oses,
         ssds = ssds,
+        icon=icon,
         name = name
     )
 
@@ -834,6 +835,7 @@ def edit_final_edit(id):
     os = request.form.get("os")
     cost = request.form.get("cost", "unknown").strip()
     name = session["name"]
+    icon = session["icon"]
 
     config_id = id
 
@@ -842,11 +844,11 @@ def edit_final_edit(id):
 
         sql = """
             UPDATE configurations
-            SET name=?, cost=?, cpu=?, motherboard=?, hard_drive=?, hard_drive_qty=?, solid_drive=?, solid_drive_qty=?, ram=?, ram_qty=?, gpu=?, `case`=?, cooler=?, network_card=?, psu=?, os=?
+            SET name=?, cost=?, cpu=?, motherboard=?, hard_drive=?, hard_drive_qty=?, solid_drive=?, solid_drive_qty=?, ram=?, ram_qty=?, gpu=?, `case`=?, cooler=?, network_card=?, psu=?, os=?, icon=?
             WHERE id = ?
         """
 
-        params = (name, cost, cpu, mb["id"], hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os, config_id)
+        params = (name, cost, cpu, mb["id"], hdd, hddqty, ssd, ssdqty, ram, ramqty, gpu, case, cooler, nwcard, psu, os, icon, config_id )
 
         db.execute(sql, params)
 

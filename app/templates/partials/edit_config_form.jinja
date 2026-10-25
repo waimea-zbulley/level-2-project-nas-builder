@@ -1,53 +1,63 @@
 <form method="post" action="/configuration/{{ config.id }}/edit" id="componentForm"> 
-    <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
-    <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
+    <div>
+        <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
+        <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
+        <label>Name<input type="text" id="name" name="name" value="{{ name }}" required></label>
+    </div>
 
-    <label>Name<input type="text" id="name" name="name" value="{{ name }}" required></label>
     <fieldset class="icon-select">
-        <h2>Icon: </h2>
-        <div>
-            {% if config.icon == "play" %}
-                <label><input checked type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
-            {% else %}
-                <label><input type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
-            {% endif %}
-            {% if config.icon == "image" %}
-                <label><input checked type="radio" name="icon" value="image"><i class="icon" data-lucide="image"></i></label>
-            {% else %}
-                <label><input type="radio" name="icon" value="image"><i class="icon" data-lucide="image"></i></label>
-            {% endif %}
-            {% if config.icon == "hard-drive" %}
-                <label><input checked type="radio" name="icon" value="hard-drive"><i class="icon" data-lucide="hard-drive"></i></label>
-            {% else %}
-                <label><input type="radio" name="icon" value="hard-drive"><i class="icon" data-lucide="hard-drive"></i></label>
-            {% endif %}
-            {% if config.icon == "server" %}
-                <label><input checked type="radio" name="icon" value="server"><i class="icon" data-lucide="server"></i></label>
-            {% else %}
-                <label><input type="radio" name="icon" value="server"><i class="icon" data-lucide="server"></i></label>
-            {% endif %}
-            {% if config.icon == "cctv" %}
-                <label><input checked type="radio" name="icon" value="cctv"><i class="icon" data-lucide="cctv"></i></label>
-            {% else %}
-                <label><input type="radio" name="icon" value="cctv"><i class="icon" data-lucide="cctv"></i></label>
-            {% endif %}
-            {% if config.icon == "package-search" %}
-                <label><input checked type="radio" name="icon" value="package-search"><i class="icon" data-lucide="package-search"></i></label>
-            {% else %}
-                <label><input type="radio" name="icon" value="package-search"><i class="icon" data-lucide="package-search"></i></label>
-            {% endif %}
-        </div>
-        
+        <h2>Icon:</h2>
+            <div class="icon-options">
+                {% if config.icon == "play" %}
+                    <label><input checked type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
+                {% else %}
+                    <label><input type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
+                {% endif %}
+                {% if config.icon == "image" %}
+                    <label><input checked type="radio" name="icon" value="image"><i class="icon" data-lucide="image"></i></label>
+                {% else %}
+                    <label><input type="radio" name="icon" value="image"><i class="icon" data-lucide="image"></i></label>
+                {% endif %}
+                {% if config.icon == "hard-drive" %}
+                    <label><input checked type="radio" name="icon" value="hard-drive"><i class="icon" data-lucide="hard-drive"></i></label>
+                {% else %}
+                    <label><input type="radio" name="icon" value="hard-drive"><i class="icon" data-lucide="hard-drive"></i></label>
+                {% endif %}
+                {% if config.icon == "server" %}
+                    <label><input checked type="radio" name="icon" value="server"><i class="icon" data-lucide="server"></i></label>
+                {% else %}
+                    <label><input type="radio" name="icon" value="server"><i class="icon" data-lucide="server"></i></label>
+                {% endif %}
+                {% if config.icon == "cctv" %}
+                    <label><input checked type="radio" name="icon" value="cctv"><i class="icon" data-lucide="cctv"></i></label>
+                {% else %}
+                    <label><input type="radio" name="icon" value="cctv"><i class="icon" data-lucide="cctv"></i></label>
+                {% endif %}
+                {% if config.icon == "package-search" %}
+                    <label><input checked type="radio" name="icon" value="package-search"><i class="icon" data-lucide="package-search"></i></label>
+                {% else %}
+                    <label><input type="radio" name="icon" value="package-search"><i class="icon" data-lucide="package-search"></i></label>
+                {% endif %}            
+            </div>
     </fieldset>
-    <label>
-        Boot Drive
-        <select class="priced" id="bootDrive" readonly>
-            <option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option>
-        </select>
-    </label>
+    <fieldset class="bootdrive"> 
+        <label>
+            Boot Drive
+            <p>{{ ssds[0].name }} - ${{ ssds[0].cost }}</p>
+        </label>
+    </fieldset>
+
+    {# <fieldset>
+        <label>
+            <select class="priced" id="bootDrive" readonly>
+                <option hidden data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option>
+            </select>
+        </label>
+    </fieldset> #}
+
 
     {# Cpu form option #}
-    <fieldset>
+    <fieldset class="cpuformitem">
         <label>
             CPU:
             <select id="cpu" name="cpu" class="priced power" required >
@@ -77,7 +87,7 @@
     </fieldset>
 
     {# RAM form option #}
-    <fieldset>
+    <fieldset class="multiformitem">
         <label>
             RAM:
             <select id="ram"  name="ram" class="priced" required >
@@ -91,14 +101,14 @@
             </select>
         </label>
 
-        <label>
-            Quantity:
+        <label class="quantityitem">
+            Qty
             <input type="number" name="ramqty" class="quantity" id="ramqty" value="{{ config.ram_qty }}" max="{{ mb.ram_slots }}" min="1">
         </label>
     </fieldset>
 
 
-    <fieldset>
+    <fieldset class="multiformitem">
         <label>
             Hard Drive:
             <select id="hdd"  name="hdd" class="priced hdd">
@@ -113,15 +123,15 @@
             </select>  
         </label>
 
-        <label>
-            Quantity
+        <label class="quantityitem">
+            Qty
             <input type="number" name="hddqty" value="{{ config.hard_drive_qty }}" class="quantity" id="hddqty" max="{{ mb.sata_ports }}" min="0">
         </label>
         {# <label>Total Capacity<input id="totalHddStorage" value="0" type="number" name="totalHddStorage" readonly></label> #}
 
     </fieldset>
 
-    <fieldset>
+    <fieldset class="multiformitem">
         <label>
             SSD:
             <select id="ssd"  name="ssd" class="priced">
@@ -136,40 +146,45 @@
             </select>  
         </label>
 
-        <label>
-            Quantity
+        <label class="quantityitem">
+            Qty
             <input type="number" value="{{ config.solid_drive_qty }}" class="quantity" name="ssdqty" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
         </label>
     </fieldset>
 
-    <label>
-        Graphics Card:
-        <select id="gpu" name="gpu" class="priced power">
-            <option value="" data-power="0" data-price="0">None</option>
-            {% for gpu in gpus%}
-                {% if gpu.id == config.gpu %}
-                    <option value="{{ gpu.id }}" data-power="{{ gpu.powerdraw }}" data-price="{{ gpu.cost }}" selected>{{ gpu.name }} - ${{ gpu.cost }}</option>
-                {% else %}
-                    <option value="{{ gpu.id }}" data-power="{{ gpu.powerdraw }}" data-price="{{ gpu.cost }}">{{ gpu.name }} - ${{ gpu.cost }}</option>
-                {% endif %}
-            {% endfor %}
-        </select>
-    </label>
+    <fieldset class="formitem">
+        <label>
+            Graphics Card:
+            <select id="gpu" name="gpu" class="priced power">
+                <option value="" data-power="0" data-price="0">None</option>
+                {% for gpu in gpus%}
+                    {% if gpu.id == config.gpu %}
+                        <option value="{{ gpu.id }}" data-power="{{ gpu.powerdraw }}" data-price="{{ gpu.cost }}" selected>{{ gpu.name }} - ${{ gpu.cost }}</option>
+                    {% else %}
+                        <option value="{{ gpu.id }}" data-power="{{ gpu.powerdraw }}" data-price="{{ gpu.cost }}">{{ gpu.name }} - ${{ gpu.cost }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </label>    
+    </fieldset>
 
     {# Drop down selection for CASES #}
-    <label>
-        Case:
-        <select id="cases" name="case" class="priced" required>
-            <option value="" data-price="0">-- choose one --</option>
-            {% for case in cases %}
-                {% if case.id == config.case %}
-                    <option value="{{ case.id }} "  data-price="{{ case.cost }}" selected>{{ case.name }} - ${{ case.cost }}</option>
-                {% else %}
-                    <option value="{{ case.id }} "  data-price="{{ case.cost }}">{{ case.name }} - ${{ case.cost }}</option>
-                {% endif %}
-            {% endfor %}
-        </select>
-    </label>
+    <fieldset class="formitem">
+        <label>
+            Case:
+            <select id="cases" name="case" class="priced" required>
+                <option value="" data-price="0">-- choose one --</option>
+                {% for case in cases %}
+                    {% if case.id == config.case %}
+                        <option value="{{ case.id }} "  data-price="{{ case.cost }}" selected>{{ case.name }} - ${{ case.cost }}</option>
+                    {% else %}
+                        <option value="{{ case.id }} "  data-price="{{ case.cost }}">{{ case.name }} - ${{ case.cost }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </label>  
+    </fieldset>
+
 
 
     {# Drop down selection for Network Cards #}

@@ -297,14 +297,6 @@ main > h2 {
         background-color: var(--back-col-sec-trans);
 
     }
-    
-
-    
-
-    h2 {
-        font-size: 2rem;
-        color: var(--text-col-secondary);
-    }
 }
 
 h1 {
@@ -313,6 +305,9 @@ h1 {
 
 .formitem {
     height: var(--item-heght);
+    background-color: var(--back-col-panel);
+    border: none;
+    border-radius: 2rem;
     @media (width <= 500px) {
         width: 95%;
     }
@@ -332,8 +327,16 @@ h1 {
         background-color: var(--back-col-panel-sec);
         border-radius: 1.5rem;
         height: 2.4rem;
+        font-weight: normal;
     }
-    
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+        color: var(--text-col-secondary);
+        font-weight: bold;
+    }
     select {
         @media (width <= 500px) {
         width: 90%;
@@ -341,17 +344,52 @@ h1 {
         @media (width >= 500px) {
             width: 65%;
         }
-        font-size: 1.2rem;
         text-align: center;
+        font-size: 1.2rem;
+        font-weight: normal;
         border-radius: 1.5rem;
         height: 2.4rem;
         border: solid 0.1rem black;
         background-color: var(--back-col-panel-sec);
     }
+}
+.bootdrive {
     background-color: var(--back-col-panel);
     border: none;
     border-radius: 2rem;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+
+    height: var(--item-heght);
+    @media (width <= 500px) {
+        width: 95%;
+    }
+    @media (width >= 500px) {
+        width: 90%;
+    }
+
+    label {
+        font-size: 2rem;
+        color: var(--text-col-secondary);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    p {
+        color: var(--text-col-secondary);
+        font-size: 1.2rem;
+        font-weight: normal;
+        background-color: var(--back-col-panel-sec);
+        height: 2.4rem;
+        border-radius: 1.5rem;
+        border: solid 0.1rem black;
+        width: 65%;
+        
+    }
 }
+
 .icon-select {
     height: 6.5rem;
     max-width: 50rem;
@@ -360,6 +398,11 @@ h1 {
     }
     @media (width >= 500px) {
         width: 90%;
+    }
+    h2 {
+        font-weight: bold;
+        font-size: 2rem;
+        color: var(--text-col-secondary);
     }
     input {
         /* width: 5rem; */
@@ -371,7 +414,7 @@ h1 {
         height: 1rem;
     }
     
-    div {
+    .icon-options {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -398,4 +441,113 @@ h1 {
     background-color: var(--back-col-panel);
     border: none;
     border-radius: 2rem;
+}
+.cpuformitem {
+    height: var(--item-heght);
+    background-color: var(--back-col-panel);
+    border: none;
+    border-radius: 2rem;
+    display: flex;
+    @media (width <= 500px) {
+        width: 95%;
+    }
+    @media (width >= 500px) {
+        width: 90%;
+    }
+    justify-content: space-between;
+
+    label {
+        display: flex;
+        @media (width <= 500px) {
+            width: 90%;
+        }
+        @media (width >= 500px) {
+            width: 65%;
+        }
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+        color: var(--text-col-secondary);
+        font-weight: bold;
+    }
+    select {
+        font-size: 1.2rem;
+        font-weight: normal;
+        text-align: center;
+        border-radius: 1.5rem;
+        height: 2.4rem;
+        border: solid 0.1rem black;
+        background-color: var(--back-col-panel-sec);
+    }
+    input {
+        @media (width <= 500px) {
+            width: 90%;
+        }
+        @media (width >= 500px) {
+            width: 65%;
+        }
+        text-align: center;
+        font-size: 1.2rem;
+        border: solid 0.1rem black;
+        background-color: var(--back-col-panel-sec);
+        border-radius: 1.5rem;
+        height: 2.4rem;
+        font-weight: normal;
+}
+}
+
+.multiformitem {
+    height: var(--item-heght);
+    background-color: var(--back-col-panel);
+    border: none;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+    @media (width <= 500px) {
+        width: 95%;
+    }
+    @media (width >= 500px) {
+        width: 90%;
+    }
+   
+
+    label {
+        display: flex;
+        margin-left:  1rem;
+        margin-right: 1rem;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+        color: var(--text-col-secondary);
+        font-weight: bold;
+    }
+    select {
+        font-size: 1.2rem;
+        font-weight: normal;
+        text-align: center;
+        border-radius: 1.5rem;
+        height: 2.4rem;
+        border: solid 0.1rem black;
+        background-color: var(--back-col-panel-sec);
+    }
+    .quanitiyitem {
+        width: 10%;
+    }
+    input {
+        @media (width <= 500px) {
+            width: 90%;
+        }
+        @media (width >= 500px) {
+            width: 65%;
+        }
+        text-align: center;
+        font-size: 1.2rem;
+        border: solid 0.1rem black;
+        background-color: var(--back-col-panel-sec);
+        border-radius: 1.5rem;
+        height: 2.4rem;
+        font-weight: normal;
+    }
 }

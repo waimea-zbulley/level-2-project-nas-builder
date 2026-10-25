@@ -14,24 +14,41 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 - Refine the user experience (UX) of the system
 - Perform final, full-system testing
 - Add descriptions for motherboards regarding what they entale
-- Add images for components
+- Add icons for configurations
 
 
 
-## Testing FEATURE NAME HERE
+## Testing Configuration page
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+My orignal page for configurations at the start of the print
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Initial coniguration page](screenshots/gifs-for-sprint4/1-configurations.png)
 
-![Placeholder](screenshots/placeholder.png)
+### Changes / Improvements 1
 
-### Changes / Improvements
+I have changed the background to match across the whole page based on my stakeholders feedback
 
-Replace this text with notes any improvements you made as a result of the testing.
+![Configuration page background changed](screenshots/gifs-for-sprint4/2-configurations.png)
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+### Changes / Improvements 2
+
+My stakeholder commented on the requirement for better contrast as well as improving the astetic of the new configuration and back buttons, this has been done in this improvment.
+
+![Configuration page improved contrast](screenshots/gifs-for-sprint4/3-configurations.png)
+
+
+### Changes / Improvements 3
+
+I have implemented icons to my configurations allowing the user to more easily and vissualy destinguish between their configurations
+
+![Configuration page with icons for configurations](screenshots/gifs-for-sprint4/4-configurations.png)
+
+### Changes / Improvements 4 
+
+I have improved the layout of the icon as well as switching the edit and delete names for icons making a simpler and clearer design.
+
+![Configuration page with icons for edit and delete and improved layout.](screenshots/gifs-for-sprint4/5-configurations.png)
 
 ## Testing FEATURE NAME HERE
 

@@ -5,42 +5,44 @@
         <h1>Motherboard & Configuration Name</h1>
 
         <fieldset class="formitem">
-            <h2>Name:</h2>
             <div>
-                <input type="text" id="name" name="name" minlength="4" maxlength="20" required>
+                <label>
+                    Name:
+                    <input type="text" id="name" name="name" minlength="4" maxlength="20" required>
+                </label>
                 
             </div>
         </fieldset>
         <fieldset class="icon-select">
             <h2>Icon: </h2>
-            <div>
+            <div class="icon-options">
                 <label>
-                    <input type="radio" name="icon" value="play">
+                    <input required type="radio" name="icon" value="play">
                     <i class="icon" data-lucide="play"></i>
                 </label>
 
                 <label>
-                    <input type="radio" name="icon" value="image">
+                    <input required type="radio" name="icon" value="image">
                     <i class="icon" data-lucide="image"></i>
                 </label>
 
                 <label>
-                    <input type="radio" name="icon" value="hard-drive">
+                    <input required type="radio" name="icon" value="hard-drive">
                     <i class="icon" data-lucide="hard-drive"></i>
                 </label>
 
                 <label>
-                    <input type="radio" name="icon" value="server">
+                    <input required type="radio" name="icon" value="server">
                     <i class="icon" data-lucide="server"></i>
                 </label>
 
                 <label>
-                    <input type="radio" name="icon" value="cctv">
+                    <input required type="radio" name="icon" value="cctv">
                     <i class="icon" data-lucide="cctv"></i>
                 </label>
 
                 <label>
-                    <input type="radio" name="icon" value="package-search">
+                    <input required type="radio" name="icon" value="package-search">
                     <i class="icon" data-lucide="package-search"></i>
                 </label>
             </div>
@@ -49,14 +51,17 @@
 
         
         <fieldset class="formitem">
-            <h2>Select Motherboard:</h2>
-            <select name="mb">
-            {% for mb in mbs %}
-                <option value="{{ mb.id }}" {% if mb.id == session.mb %} selected {% endif %}>
-                    {{ mb.name }} ({{ mb.platform }} socket)
-                </option>
-            {% endfor %}
-            </select>
+            <label>
+                Motherboard:
+                <select name="mb">
+                    {% for mb in mbs %}
+                        <option value="{{ mb.id }}" {% if mb.id == session.mb %} selected {% endif %}>
+                            {{ mb.name }} ({{ mb.platform }} socket)
+                        </option>
+                    {% endfor %}
+                </select>
+            </label>
+
         </fieldset>
         
         
