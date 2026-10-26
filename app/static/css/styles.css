@@ -551,3 +551,24 @@ h1 {
         font-weight: normal;
     }
 }
+
+#homepage {
+    #homebuttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        a {
+            text-align: center;
+            font-size: 3.5rem;
+            height: 7rem;
+            background-color: var(--back-col-panel);
+            padding: 1rem;
+            margin: 1rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: var(--text-col-secondary);
+        }
+    }
+}

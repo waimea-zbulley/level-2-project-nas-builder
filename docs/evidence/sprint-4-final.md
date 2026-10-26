@@ -50,17 +50,18 @@ I have improved the layout of the icon as well as switching the edit and delete 
 
 ![Configuration page with icons for edit and delete and improved layout.](screenshots/gifs-for-sprint4/5-configurations.png)
 
-## Testing FEATURE NAME HERE
+## Testing Updated Homepage
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+This is a screenshot of my new homepage which now has properly styled buttons
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Initial updated homepage](screenshots/gifs-for-sprint4/updated-homepage.png)
 
-### Changes / Improvements
+
+<!-- ### Changes / Improvements
 
 Replace this text with notes any improvements you made as a result of the testing.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE** -->
 
 
 ## Testing FEATURE NAME HERE
