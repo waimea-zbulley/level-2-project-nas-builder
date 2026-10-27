@@ -411,6 +411,7 @@ def get_coolers():
     return coolers
 
 def get_coolers():
+    
     with connect_db() as db:
         sql = """
             SELECT id, cost, name

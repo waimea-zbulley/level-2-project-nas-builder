@@ -57,7 +57,7 @@
 
 
     {# Cpu form option #}
-    <fieldset class="cpuformitem">
+    <fieldset class="formitem">
         <label>
             CPU:
             <select id="cpu" name="cpu" class="priced power" required >
@@ -71,17 +71,18 @@
                 {% endfor %}
             </select>
         </label>
-
+    </fieldset>
+    <fieldset class="formitem">
         <label>
-            <p>CPU Cooler</p>
+            CPU Cooler:
             <select id="coolers" name="cooler" class="priced" required>
-                    {% for cooler in coolers %}
-                        {% if cooler.id == config.cooler %}
-                            <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}" selected>{{ cooler.name }} - ${{ cooler.cost }}</option>
-                        {% else %}
-                            <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}">{{ cooler.name }} - ${{ cooler.cost }}</option>
-                        {% endif %}
-                    {% endfor %}
+                {% for cooler in coolers %}
+                    {% if cooler.id == config.cooler %}
+                        <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}" selected>{{ cooler.name }} - ${{ cooler.cost }}</option>
+                    {% else %}
+                        <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}">{{ cooler.name }} - ${{ cooler.cost }}</option>
+                    {% endif %}
+                {% endfor %}
             </select>
         </label>
     </fieldset>

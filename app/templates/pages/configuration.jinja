@@ -3,37 +3,48 @@
 
 {% block content %}
 
-    <h2>configurations</h2>
+    <h2>{{config.con_name}}</h2>
 
     <section id="configuration">
-
-
-                <header>
-                    <h3>Name: {{ config.con_name }}</h3>
-                    <p>Cost: ${{ config.con_cost }}</p>
-                    <p>Cpu: <a target="_blank" href="{{ config.cpu_url }}">{{ config.cpu_name }}</a></p>
-                    <p>Motherboard: <a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p>
-                    {% if config.hddqty > 0 and config.hdd %}
-                        <p>Hard Drive: <a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a>  Quantity: {{ config.hddqty }}, Capacity: {{ (config.harddrive_capacity * config.hddqty) / 1000 }}TB</p>
-                    {% endif %}
-                    {% if config.ssdqty > 0 and config.ssd %}
-                        <p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a>  Quantity: {{ config.ssdqty }}, Capacity: {{ (config.soliddrive_capacity * config.ssdqty) / 1000 }}TB</p>
-                    {% endif %}
-                    <p>Ram: <a target="_blank" href="{{ config.ram_url }}">{{ config.ram_name }}</a> Quantity: {{ config.ramqty }}, Capacity: {{ config.ram_capacity * config.ramqty }}GB </p>
-                    {% if config.gpu %}
-                        <p>Graphics Card: <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p>
-                    {% endif %}
-                    <p>Case: <a target="_blank" href="{{ config.case_url }}">{{ config.case_name }}</a></p>
-                    <p>Cpu Cooler: <a target="_blank" href="{{ config.cooler_url }}">{{ config.cooler_name }}</a></p>
-                    {% if config.nwcard %}
-                        <p>Network Card: <a target="_blank" href="{{ config.networkcard_url }}">{{ config.networkcard_name }}</a></p>
-                    {% endif %}
-                    <p>Power Supply: <a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p>
-                    <p>Operating System: <a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p>
-                </header>
-
+        <div class="component">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="dollar-sign"></i>
+                <h3>Cost</h3>
             </div>
+            <div class="details">
+                <p>${{ config.con_cost }}</p>
+            </div>        
+        </div>
 
+        <div class="component">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="cpu"></i>
+                <h3>Cpu</h3>
+            </div>
+            <div class="details">
+                <p><a target="_blank" href="{{ config.cpu_url }}">{{ config.cpu_name }}</a></p>
+            </div>
+        </div>
+
+        <div><p>Motherboard: <a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p></div>    
+        {% if config.hddqty > 0 and config.hdd %}
+            <div><p>Hard Drive: <a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a>  Quantity: {{ config.hddqty }}, Capacity: {{ (config.harddrive_capacity * config.hddqty) / 1000 }}TB</p></div>
+        {% endif %}
+    
+        {% if config.ssdqty > 0 and config.ssd %}
+            <div><p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a>  Quantity: {{ config.ssdqty }}, Capacity: {{ (config.soliddrive_capacity * config.ssdqty) / 1000 }}TB</p></div>  
+        {% endif %}
+        <div><p>Ram: <a target="_blank" href="{{ config.ram_url }}">{{ config.ram_name }}</a> Quantity: {{ config.ramqty }}, Capacity: {{ config.ram_capacity * config.ramqty }}GB </p></div>
+        {% if config.gpu %}
+            <div><p>Graphics Card: <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p></div>
+        {% endif %}
+        <div><p>Case: <a target="_blank" href="{{ config.case_url }}">{{ config.case_name }}</a></p></div>
+        <div><p>Cpu Cooler: <a target="_blank" href="{{ config.cooler_url }}">{{ config.cooler_name }}</a></p></div>
+        {% if config.nwcard %}
+            <div><p>Network Card: <a target="_blank" href="{{ config.networkcard_url }}">{{ config.networkcard_name }}</a></p></div>
+        {% endif %}
+        <div><p>Power Supply: <a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p></div>
+        <div><p>Operating System: <a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p></div>
     </section>
 <a href="/configurations"><p>Back</p></a>
 

@@ -75,7 +75,7 @@ body > header {
         }
 
         display: flex;
-        flex-direction: eow;
+        flex-direction: row;
         font-size: var(--font-size-lg);
         padding: var(--padding-lg);
         gap: 1rem;
@@ -166,7 +166,7 @@ main > h2 {
 #configurations {
     display: flex;
     min-height: calc(100dvh - 11rem);
-    padding: 1;
+    padding: 1rem;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -178,7 +178,7 @@ main > h2 {
         display: flex;
         align-items: center;
         gap: 1rem;
-        min-height: --var(--item-heght);
+        min-height: var(--item-heght);
         color: var(--text-col-secondary);
         padding: 1rem;
         border-radius: 1.5rem;
@@ -279,7 +279,35 @@ main > h2 {
         font-weight: bold;
         text-decoration: none;
     }
+    display: flex;
+    flex-direction: column;
+    
+    .component {
+        background-color: var(--back-col-panel);
+        color: var(--text-col-secondary);
+        padding: 1rem;
+        margin: 0.5rem;
+        height: var(--item-heght);
+        display: flex;
+        flex-direction: row;
+        border-radius: 1.5rem;
 
+        .descriptor {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            font-size: 2rem;
+            .componenticon {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+        .details {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+    }
 }
 
 #mbform {
@@ -424,7 +452,6 @@ h1 {
         label {
             display: flex;
             gap: 0.2rem;
-            justify-content: row;
             align-items: center;
             background-color: var(--back-col-panel-sec);
             border-color: white;
@@ -434,7 +461,7 @@ h1 {
             /* flex-direction: column; */
             &:has(input:checked) {
                 color: var(--text-col-secondary);
-                border-color: (var(--text-col-secondary));
+                border-color: var(--text-col-secondary);
             }
         }
     }
@@ -442,68 +469,18 @@ h1 {
     border: none;
     border-radius: 2rem;
 }
-.cpuformitem {
-    height: var(--item-heght);
-    background-color: var(--back-col-panel);
-    border: none;
-    border-radius: 2rem;
-    display: flex;
-    @media (width <= 500px) {
-        width: 95%;
-    }
-    @media (width >= 500px) {
-        width: 90%;
-    }
-    justify-content: space-between;
-
-    label {
-        display: flex;
-        @media (width <= 500px) {
-            width: 90%;
-        }
-        @media (width >= 500px) {
-            width: 65%;
-        }
-        flex-direction: column;
-        align-items: center;
-        font-size: 2rem;
-        color: var(--text-col-secondary);
-        font-weight: bold;
-    }
-    select {
-        font-size: 1.2rem;
-        font-weight: normal;
-        text-align: center;
-        border-radius: 1.5rem;
-        height: 2.4rem;
-        border: solid 0.1rem black;
-        background-color: var(--back-col-panel-sec);
-    }
-    input {
-        @media (width <= 500px) {
-            width: 90%;
-        }
-        @media (width >= 500px) {
-            width: 65%;
-        }
-        text-align: center;
-        font-size: 1.2rem;
-        border: solid 0.1rem black;
-        background-color: var(--back-col-panel-sec);
-        border-radius: 1.5rem;
-        height: 2.4rem;
-        font-weight: normal;
-}
-}
 
 .multiformitem {
-    height: var(--item-heght);
+    min-height: var(--item-heght);
     background-color: var(--back-col-panel);
     border: none;
     border-radius: 2rem;
+
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-between;
+    
     
     @media (width <= 500px) {
         width: 95%;
