@@ -8,36 +8,36 @@
 Use advanced techniques to develop a database means that, taking into account the problem / need and the end users:
 
 1. You must first define the purpose of your system and the end-users' needs:
-   - [ ] Define the **purpose of the system** that uses the database
-   - [ ] Describe the **needs of the end-users**
-   - [ ] Define the **key functionality** of the proposed system
+   - [x] Define the **purpose of the system** that uses the database
+   - [x] Describe the **needs of the end-users**
+   - [x] Define the **key functionality** of the proposed system
 
 2. You need to design the structure of the database:
-   - [ ] **Tables** - at least two that are linked by a relationship
-   - [ ] **Data Types** - a range of data types used
-   - [ ] **Key Fields** - primary keys for each table, foreign keys for relationships
-   - [ ] **Values** - auto-generation / default values as required
-   - [ ] Source and structure of **Input Data** is described
-   - [ ] Type and format of **Output Data** is described
-   - [ ] **Processing of Data** to achieve the output is described
+   - [x] **Tables** - at least two that are linked by a relationship
+   - [x] **Data Types** - a range of data types used
+   - [x] **Key Fields** - primary keys for each table, foreign keys for relationships
+   - [x] **Values** - auto-generation / default values as required
+   - [x] Source and structure of **Input Data** is described
+   - [x] Type and format of **Output Data** is described
+   - [x] **Processing of Data** to achieve the output is described
 
 3. You should use appropriate tools and advanced techniques to organise and query the data:
-   - [ ] **Linking data in related tables** using queries or keys
-   - [ ] Writing **custom queries** to update the data (INSERT / UPDATE / DELETE)
+   - [x] **Linking data in related tables** using queries or keys
+   - [x] Writing **custom queries** to update the data (INSERT / UPDATE / DELETE)
 
 4. You should use appropriate tools and advanced techniques to present the data:
-   - [ ] Creating **customised data displays from multiple tables** for web pages
-   - [ ] **Dynamically linking data** between the database and web pages
+   - [x] Creating **customised data displays from multiple tables** for web pages
+   - [x] **Dynamically linking data** between the database and web pages
    - [ ] Applying **data access permissions** as appropriate (user accounts)
 
 5. You must apply appropriate data integrity and testing procedures:
-   - [ ] Show that any **presented data is correct** (e.g. matches database values / calculations)
-   - [ ] Show that any input user data **updates the database as expected**
+   - [x] Show that any **presented data is correct** (e.g. matches database values / calculations)
+   - [x] Show that any input user data **updates the database as expected**
 
 6. You need to explain and address relevant implications:
-   - [ ] Identify the **implications most relevant** to your project
-   - [ ] Explain **what the implications mean** and **why each is relevant** to your project
-   - [ ] Explain **how each implication will impact your specific project** (considerations / choices / designs)
+   - [x] Identify the **implications most relevant** to your project
+   - [x] Explain **what the implications mean** and **why each is relevant** to your project
+   - [x] Explain **how each implication will impact your specific project** (considerations / choices / designs)
 
 *Note: You must satisfy **all** of the criteria above to pass*
 
@@ -47,13 +47,13 @@ Use advanced techniques to develop a database means that, taking into account th
 Use advanced techniques to develop an informed database means **all the criteria for Achieved**, plus:
 
 1. You should use information from testing procedures to improve the quality of your database:
-   - [ ] Show **evidence of your testing**, particularly with end-users
-   - [ ] Show the **improvements made** as a result
+   - [x] Show **evidence of your testing**, particularly with end-users
+   - [x] Show the **improvements made** as a result
 
 2. You should structure, organise and query your data logically:
-   - [ ] Your tables should be **normalised** (no repeating data)
-   - [ ] Your fields have the **appropriate data type**, **defaults**, etc.
-   - [ ] Your database **queries are well-written and efficient**
+   - [x] Your tables should be **normalised** (no repeating data)
+   - [x] Your fields have the **appropriate data type**, **defaults**, etc.
+   - [x] Your database **queries are well-written and efficient**
 
 3. You need to address relevant implications:
    - [ ] At the end of your project, you need to **explain what you did in your project to address each implication**
@@ -65,16 +65,16 @@ Use advanced techniques to develop a refined database means **all of the criteri
 
 1. You have made iterative improvements throughout the design, development and testing process:
    - [ ] You have refined features of the DB (the schema and the UI) over **multiple iterations**
-   - [ ] Each iteration is **clearly documented**, showing testing and resulting refinements
+   - [x] Each iteration is **clearly documented**, showing testing and resulting refinements
 
 2. You must have used efficient tools and techniques in the system's production:
-   - [ ] You have effectively used **version control**
-   - [ ] Your git **commits are regular with descriptive commit messages**
-   - [ ] You have **effectively used tools** like DrawSQL, Figma, VS Code, Turso SQL editor, etc. to help develop the outcome
+   - [x] You have effectively used **version control**
+   - [x] Your git **commits are regular with descriptive commit messages**
+   - [x] You have **effectively used tools** like DrawSQL, Figma, VS Code, Turso SQL editor, etc. to help develop the outcome
 
 3. You present the data from the database effectively for the purpose and end users:
-   - [ ] Data is displayed in ways that make its **meaning clear** (e.g. using colour)
-   - [ ] Data is **displayed in interesting and creative ways** to meet the needs of the user and satisfy the system requirements
+   - [x] Data is displayed in ways that make its **meaning clear** (e.g. using colour)
+   - [x] Data is **displayed in interesting and creative ways** to meet the needs of the user and satisfy the system requirements
 
 
 
@@ -88,9 +88,9 @@ Use advanced techniques to develop a refined database means **all of the criteri
 Use advanced techniques to develop a digital media outcome means that, taking into account the problem / need and the end users:
 
 1. You must first define the purpose of your system and the end-users' needs:
-   - [ ] Define the **purpose of the system** that uses the database
-   - [ ] Describe the **needs of the end-users**
-   - [ ] Define the **key functionality** of the proposed system
+   - [x] Define the **purpose of the system** that uses the database
+   - [x] Describe the **needs of the end-users**
+   - [x] Define the **key functionality** of the proposed system
 
 2. You must use appropriate advanced tools and techniques, for example:
    - [ ] You have used **non-core functionality** of tools / libraries (i.e. you have extended these beyond their supplied defaults)
