@@ -524,6 +524,9 @@ h1 {
             flex-wrap: wrap;
             
         }
+        .quantity {
+            width: 5rem;
+        }
         input {
             text-align: center;
             font-size: 1.2rem;
