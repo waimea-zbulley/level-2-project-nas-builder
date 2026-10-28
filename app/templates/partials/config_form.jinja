@@ -1,5 +1,4 @@
-
-<form method="post" action="/configuration/new/components" class="componentForm"> 
+<form method="post" action="/configuration/new/components" id="componentForm"> 
     <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
     <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
 
@@ -11,21 +10,23 @@
     </label>
 
     {# Cpu form option #}
-    <fieldset>
+    <fieldset class="formitem">
         <label>
             CPU:
             <select id="cpu" name="cpu" class="priced power" required >
-                <option value="" data-power="0" data-price="0">-- choose one --</option>
+                <option value="" data-power="0" data-price="0" disabled selected hidden>-- choose one --</option>
                 {% for cpu in cpus %}
                     <option value="{{ cpu.id }}" data-power="{{ cpu.powerdraw }}" data-price="{{ cpu.cost }}">{{ cpu.name }} - ${{ cpu.cost }}</option>
                 {% endfor %}
             </select>
         </label>
+    </fieldset>
 
+    <fieldset class="formitem">
         <label>
             <p>CPU Cooler</p>
             <select id="coolers" name="cooler" class="priced" required>
-                <option value="" data-price="0">-- choose one --</option>
+                <option value="" data-price="0" disabled selected hidden>-- choose one --</option>
                     {% for cooler in coolers %}
                         <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}">{{ cooler.name }} - ${{ cooler.cost }}</option>
                     {% endfor %}
@@ -35,11 +36,11 @@
 
 
     {# RAM form option #}
-    <fieldset>
+    <fieldset class="multiformitem">
         <label>
             RAM:
             <select id="ram"  name="ram" class="priced" required >
-                <option value="" data-price="0">-- choose one --</option>
+                <option value="" data-price="0" disabled selected hidden>-- choose one --</option>
                 {% for ram in ram %}
                     <option value="{{ ram.id }}" data-price="{{ ram.cost }}">{{ ram.name }} - ${{ ram.cost }}</option>
                 {% endfor %}
@@ -53,11 +54,11 @@
     </fieldset>
 
 
-    <fieldset>
+    <fieldset class="multiformitem">
         <label>
             Hard Drive:
             <select id="hdd"  name="hdd" class="priced hdd">
-                <option value="" data-price="0">None</option>
+                <option value="" data-price="0" >None</option>
                 {% for hdd in hdds %}
                     <option value="{{ hdd.id }}" data-hdd="{{ hdd.capacity }}" data-price="{{ hdd.cost }}">{{ hdd.name }} - ${{ hdd.cost }}</option>
                 {% endfor %}
@@ -72,7 +73,7 @@
 
     </fieldset>
 
-    <fieldset>
+    <fieldset class="multiformitem">
         <label>
             SSD:
             <select id="ssd"  name="ssd" class="priced">
@@ -89,39 +90,49 @@
         </label>
     </fieldset>
 
-    <label>
-        Graphics Card:
-        <select id="gpu" name="gpu" class="priced power">
-            <option value="" data-power="0" data-price="0">None</option>
-            {% for gpu in gpus%}
-                <option value="{{ gpu.id }}" data-power="{{ gpu.powerdraw }}" data-price="{{ gpu.cost }}">{{ gpu.name }} - ${{ gpu.cost }}</option>
-            {% endfor %}
-        </select>
-    </label>
+    {# Drop down for grahpics card #}
+    <fieldset class="formitem">
+        <label>
+            Graphics Card:
+            <select id="gpu" name="gpu" class="priced power">
+                <option value="" data-power="0" data-price="0">None</option>
+                {% for gpu in gpus%}
+                    <option value="{{ gpu.id }}" data-power="{{ gpu.powerdraw }}" data-price="{{ gpu.cost }}">{{ gpu.name }} - ${{ gpu.cost }}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </fieldset>
+    
 
     {# Drop down selection for CASES #}
-    <label>
-        Case:
-        <select id="cases" name="case" class="priced" required>
-            <option value="" data-price="0">-- choose one --</option>
-            {% for case in cases %}
-                <option value="{{ case.id }} "  data-price="{{ case.cost }}">{{ case.name }} - ${{ case.cost }}</option>
-            {% endfor %}
-        </select>
-    </label>
+    <fieldset class="formitem">
+        <label>
+            Case:
+            <select id="cases" name="case" class="priced" required>
+                <option value="" data-price="0" disabled selected hidden>-- choose one --</option>
+                {% for case in cases %}
+                    <option value="{{ case.id }} "  data-price="{{ case.cost }}">{{ case.name }} - ${{ case.cost }}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </fieldset>
+    
 
 
     {# Drop down selection for Network Cards #}
-    <label>
-        Network Card
-        <select id="nwcards" name="nwcard" class="priced">
-            <option value="" data-price="0">None</option>
-            {% for nwcard in nwcards %}
-                <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}">{{ nwcard.name }} - ${{ nwcard.cost }}</option>
-            {% endfor %}
-        </select>
+    <fieldset class="formitem">
+        <label>
+            Network Card
+            <select id="nwcards" name="nwcard" class="priced">
+                <option value="" data-price="0">None</option>
+                {% for nwcard in nwcards %}
+                    <option value="{{ nwcard.id }} "  data-price="{{ nwcard.cost }}">{{ nwcard.name }} - ${{ nwcard.cost }}</option>
+                {% endfor %}
+            </select>
 
-    </label>
+        </label>
+    </fieldset>
+    
 
     <button>Next</button>
 

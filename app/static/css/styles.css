@@ -23,6 +23,7 @@
     --accent-col:       #e43;
 
     --item-heght:       6rem;
+    --item-margin:       1rem;
 }
 
 
@@ -172,6 +173,7 @@ main > h2 {
     gap: 1rem;
     text-decoration: none;
     
+        
     .config {
         background-color: var(--back-col-panel);
         box-shadow: 0px 0px 0.7rem #0f1315ac;
@@ -182,6 +184,13 @@ main > h2 {
         color: var(--text-col-secondary);
         padding: 1rem;
         border-radius: 1.5rem;
+
+        @media (width >= 52rem) {
+            width: 100%;
+        }
+        @media (width <= 52rem) {
+            width: 90%;
+        }
         
         .configicon {
             width: 2.5rem;
@@ -220,14 +229,7 @@ main > h2 {
             }
         }
 
-        /* max-width: 50rem; */
-        @media (width <= 500px) {
-            width: 95%;
-        }
-        @media (width >= 500px) {
-            width: 90%;
-        }
-        
+
     
 
     }
@@ -332,23 +334,18 @@ h1 {
 }
 
 .formitem {
-    height: var(--item-heght);
+    min-height: var(--item-heght);
     background-color: var(--back-col-panel);
     border: none;
     border-radius: 2rem;
-    @media (width <= 500px) {
-        width: 95%;
+    @media (width >= 52rem) {
+            min-width: 100%;
     }
-    @media (width >= 500px) {
-        width: 90%;
+    @media (width <= 52rem) {
+            min-width: 90%;
     }
     input {
-        @media (width <= 500px) {
-            width: 90%;
-        }
-        @media (width >= 500px) {
-            width: 65%;
-        }
+        width: 25rem;
         text-align: center;
         font-size: 1.2rem;
         border: solid 0.1rem black;
@@ -366,19 +363,14 @@ h1 {
         font-weight: bold;
     }
     select {
-        @media (width <= 500px) {
-        width: 90%;
-        }
-        @media (width >= 500px) {
-            width: 65%;
-        }
         text-align: center;
         font-size: 1.2rem;
         font-weight: normal;
         border-radius: 1.5rem;
-        height: 2.4rem;
+        min-height: 2.4rem;
         border: solid 0.1rem black;
         background-color: var(--back-col-panel-sec);
+        min-width: none;
     }
 }
 .bootdrive {
@@ -389,12 +381,12 @@ h1 {
     align-items: center;
     text-align: center;
 
-    height: var(--item-heght);
-    @media (width <= 500px) {
-        width: 95%;
+    min-height: var(--item-heght);
+    @media (width >= 52rem) {
+            min-width: 100%;
     }
-    @media (width >= 500px) {
-        width: 90%;
+    @media (width <= 52rem) {
+            min-width: 90%;
     }
 
     label {
@@ -402,6 +394,7 @@ h1 {
         color: var(--text-col-secondary);
         font-weight: bold;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         flex-direction: column;
     }
@@ -413,19 +406,18 @@ h1 {
         height: 2.4rem;
         border-radius: 1.5rem;
         border: solid 0.1rem black;
-        width: 65%;
+        width: 50%;
         
     }
 }
 
 .icon-select {
-    height: 6.5rem;
-    max-width: 50rem;
-    @media (width <= 500px) {
-        width: 95%;
+    min-height: var(--item-heght);
+    @media (width >= 52rem) {
+            min-width: 100%;
     }
-    @media (width >= 500px) {
-        width: 90%;
+    @media (width <= 52rem) {
+            min-width: 90%;
     }
     h2 {
         font-weight: bold;
@@ -479,54 +471,50 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    
-    
-    @media (width <= 500px) {
-        width: 95%;
+    justify-content: space-around;
+    @media (width >= 52rem) {
+            min-width: 100%;
     }
-    @media (width >= 500px) {
-        width: 90%;
+    @media (width <= 52rem) {
+            min-width: 90%;
     }
+
    
 
     label {
         display: flex;
-        margin-left:  1rem;
-        margin-right: 1rem;
         flex-direction: column;
         align-items: center;
         font-size: 2rem;
         color: var(--text-col-secondary);
         font-weight: bold;
-    }
-    select {
-        font-size: 1.2rem;
-        font-weight: normal;
-        text-align: center;
-        border-radius: 1.5rem;
-        height: 2.4rem;
-        border: solid 0.1rem black;
-        background-color: var(--back-col-panel-sec);
-    }
-    .quanitiyitem {
-        width: 10%;
-    }
-    input {
-        @media (width <= 500px) {
-            width: 90%;
+        flex-wrap: wrap;
+        min-width: none;
+
+        select {
+            font-size: 1.2rem;
+            font-weight: normal;
+            text-align: center;
+            border-radius: 1.5rem;
+            min-height: 2.4rem;
+            border: solid 0.1rem black;
+            background-color: var(--back-col-panel-sec);
+            
+            display: flex;
+            flex-wrap: wrap;
+            
         }
-        @media (width >= 500px) {
-            width: 65%;
+        input {
+            text-align: center;
+            font-size: 1.2rem;
+            border: solid 0.1rem black;
+            background-color: var(--back-col-panel-sec);
+            border-radius: 1.5rem;
+            min-height: 2.4rem;
+            font-weight: normal;
         }
-        text-align: center;
-        font-size: 1.2rem;
-        border: solid 0.1rem black;
-        background-color: var(--back-col-panel-sec);
-        border-radius: 1.5rem;
-        height: 2.4rem;
-        font-weight: normal;
     }
+    
 }
 
 #homepage {
