@@ -14,7 +14,7 @@
         <label>
             CPU:
             <select id="cpu" name="cpu" class="priced power" required >
-                <option value="" data-power="0" data-price="0" disabled selected hidden>-- choose one --</option>
+                <option value="" data-power="0" data-price="0" disabled selected >-- choose one --</option>
                 {% for cpu in cpus %}
                     <option value="{{ cpu.id }}" data-power="{{ cpu.powerdraw }}" data-price="{{ cpu.cost }}">{{ cpu.name }} - ${{ cpu.cost }}</option>
                 {% endfor %}
@@ -26,7 +26,7 @@
         <label>
             <p>CPU Cooler</p>
             <select id="coolers" name="cooler" class="priced" required>
-                <option value="" data-price="0" disabled selected hidden>-- choose one --</option>
+                <option value="" data-price="0" disabled selected >-- choose one --</option>
                     {% for cooler in coolers %}
                         <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}">{{ cooler.name }} - ${{ cooler.cost }}</option>
                     {% endfor %}
@@ -40,7 +40,7 @@
         <label>
             RAM:
             <select id="ram"  name="ram" class="priced" required >
-                <option value="" data-price="0" disabled selected hidden>-- choose one --</option>
+                <option value="" data-price="0" disabled selected >-- choose one --</option>
                 {% for ram in ram %}
                     <option value="{{ ram.id }}" data-price="{{ ram.cost }}">{{ ram.name }} - ${{ ram.cost }}</option>
                 {% endfor %}
@@ -109,7 +109,7 @@
         <label>
             Case:
             <select id="cases" name="case" class="priced" required>
-                <option value="" data-price="0" disabled selected hidden>-- choose one --</option>
+                <option value="" data-price="0" disabled selected >-- choose one --</option>
                 {% for case in cases %}
                     <option value="{{ case.id }} "  data-price="{{ case.cost }}">{{ case.name }} - ${{ case.cost }}</option>
                 {% endfor %}

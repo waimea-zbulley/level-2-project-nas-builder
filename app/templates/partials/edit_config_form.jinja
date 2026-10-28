@@ -2,8 +2,17 @@
     <div>
         <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
         <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
-        <label>Name<input type="text" id="name" name="name" value="{{ name }}" required></label>
     </div>
+
+    <fieldset class="formitem">
+        <div>
+            <label>
+                Name:
+                <input type="text" id="name" name="name" minlength="4" maxlength="20" value="{{ name }}" required>
+            </label>
+            
+        </div>
+    </fieldset>
 
     <fieldset class="icon-select">
         <h2>Icon:</h2>

@@ -12,6 +12,12 @@
     --back-col-sec-trans:     #688e99;
     --back-col-panel:    #688e99;
     --back-col-panel-sec:    #a6babf;
+
+    --hover-col-positive:    #3fa336;
+    --hover-col-negative:    #e43;
+    --hover-col-neutral:    rgb(244, 135, 34);
+    --hover-col-primary:    #4d7883;
+    --hover-col-accent:    #1f1b1d;
     
     --primary:          #829ba2;
 
@@ -20,7 +26,7 @@
 
     --border-col:       #355;
 
-    --accent-col:       #e43;
+    --accent-col:       #3f3035;
 
     --item-heght:       6rem;
     --item-margin:       1rem;
@@ -38,7 +44,8 @@ html {
 
 
 body {
-    min-height: 100dvh;
+    min-height: 93dvh;
+    margin-bottom: 7dvh;
 }
 
 main {
@@ -52,7 +59,22 @@ a, a:visited, a:active {
   color: inherit;
 }
 
-
+/* Hovering */
+a.positive-hover:hover, button.positive-hover:hover {
+    background-color: var(--hover-col-positive) !important;
+}
+a.negative-hover:hover, button.negative-hover:hover {
+    background-color: var(--hover-col-negative) !important;
+}
+a.neutral-hover:hover, button.negative-hover:hover {
+    background-color: var(--hover-col-neutral) !important;
+}
+a.primary-hover:hover, button.neutal-hover:hover {
+    background-color: var(--hover-col-primary) !important;
+}
+a.accent-hover:hover, button.accent-hover:hover {
+    background-color: var(--hover-col-accent) !important;
+}
 /* Header & Nav -----------------------------------------------*/
 
 body > header {
@@ -110,13 +132,7 @@ main > h2 {
     align-items: center;
     gap: 1rem;
     
-    select {
-        background-color: var(--back-col-panel-sec);
-        border-radius: 1rem;
-        color: var(--text-col-secondary);
-    }
-
-    input {
+    select, input {
         background-color: var(--back-col-panel-sec);
         border-radius: 1rem;
         color: var(--text-col-secondary);
@@ -166,14 +182,15 @@ main > h2 {
 
 #configurations {
     display: flex;
-    min-height: calc(100dvh - 11rem);
     padding: 1rem;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     text-decoration: none;
     
-        
+    .config:has(h3.name a:hover) {
+        background-color: var(--hover-col-primary);
+}
     .config {
         background-color: var(--back-col-panel);
         box-shadow: 0px 0px 0.7rem #0f1315ac;
@@ -226,6 +243,7 @@ main > h2 {
                     padding: 0.25rem;
                     border-radius: 0.25rem;
                 }
+                
             }
         }
 
@@ -235,37 +253,44 @@ main > h2 {
     }
 }
 
-#addconf {
+#pageFooter {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    height: 4.5rem;
+    justify-content: space-evenly;
     
-    
-    a {
+    a, button {
         display: flex;
         align-items: center;
-        margin-bottom: 0.5rem;
+        justify-content: center;
+        margin-bottom: 1rem;
+        height: 3.5rem;
+        width: 3.5rem;
         text-decoration: none;
         font-size: 1.25rem;
         border-radius: 0.5rem;
-        color: #0f1315;
+        color: var(--text-col);
         text-align: center;
-        padding: 0.8rem;
-        background-color: var(--back-col-sec-trans);
+        padding: 0rem;
+        background-color: var(--nav-bar-colour);
         border: #0f1315 0.15rem solid;
         box-shadow: 0px 0px 0.7rem #0f1315ac;
+        cursor: pointer;
 
     }
     
-
-    padding: 0;
-    bottom: 0px;
-    position: sticky;
-    width: 100%;
-    text-align: center;
-    max-width: 60rem;
-    padding: 0;
-    height: 3rem;
+    .footerIcon {
+        text-align: center;
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+    
 }
 
 #homepage {
@@ -318,15 +343,7 @@ main > h2 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-
-    button {
-        height: 2rem;
-        width: 5rem;
-        border-radius: 1.5rem;
-        border: solid 0.1rem black;
-        background-color: var(--back-col-sec-trans);
-
-    }
+    /* min-height: calc(100dvh - 11rem); */
 }
 
 h1 {
@@ -345,7 +362,7 @@ h1 {
             min-width: 90%;
     }
     input {
-        width: 25rem;
+        min-width: 50%;
         text-align: center;
         font-size: 1.2rem;
         border: solid 0.1rem black;
@@ -363,6 +380,7 @@ h1 {
         font-weight: bold;
     }
     select {
+        min-width: 50%;
         text-align: center;
         font-size: 1.2rem;
         font-weight: normal;
@@ -406,7 +424,9 @@ h1 {
         height: 2.4rem;
         border-radius: 1.5rem;
         border: solid 0.1rem black;
-        width: 50%;
+        min-width: 50%;
+        text-align: center;
+
         
     }
 }

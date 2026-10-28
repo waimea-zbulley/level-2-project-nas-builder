@@ -11,15 +11,15 @@
             <div class="config">
                 <i class="configicon" data-lucide="{{ config.icon }}"></i>
 
-                <h3 class="name"><a href="/configuration/{{ config.id }}">{{ config.name }}</a></h3>
+                <h3 class="name"><a class="configHover" href="/configuration/{{ config.id }}">{{ config.name }}</a></h3>
 
                 <div class="details">
                     <div class="cost">
                         <p>${{ config.cost }}</p>
                     </div>
                     <div class="functionbuttons">
-                        <a href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
-                        <a href="/configuration/{{ config.id }}/edit"><i data-lucide="square-pen"></i></a>  
+                        <a class="negative-hover" href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
+                        <a class="neutral-hover" href="/configuration/{{ config.id }}/edit"><i data-lucide="square-pen"></i></a>  
                     </div>                    
                 </div>
             </div>
@@ -31,6 +31,6 @@
 
     </section>
 
-<footer id="addconf"><a href="/">Back</a><a href="/configuration/new/mb">Add Configuration</a></footer>
+<footer id="pageFooter"><a class="accent-hover" href="/"><i class="footerIcon" data-lucide="arrow-big-left"></i></a><a class="positive-hover" href="/configuration/new/mb"><i class="footerIcon" data-lucide="plus"></i></a></footer>
 {% endblock %}
 

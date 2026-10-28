@@ -1,27 +1,27 @@
-<form method="post" action="/configuration/new/final">
+<form method="post" action="/configuration/new/final" id="componentForm">
 
     <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
-    <fieldset>
+    <fieldset class="formitem">
         <label>
             Powersupply
             <select name="psu" required class="priced">
-                <option value="0" data-price="0" disabled selected hidden> --Choose One-- </option>
+                <option value="" data-price="0" disabled selected> --Choose One-- </option>
                 {% for psu in psus %}
                     <option value="{{ psu.id }}" data-price="{{ psu.cost }}">{{ psu.name }}</option>
                 {% endfor %}
             </select>
         </label>
-
+    </fieldset>
+    <fieldset class="formitem">
         <label>
             Operating System
             <select name="os" required class="priced">
-                <option value="0" data-price="0" disabled selected hidden> --Choose One-- </option>
+                <option value="" data-price="0" disabled selected> --Choose One-- </option>
                 {% for os in oses %}
                     <option value="{{ os.id }}" data-price="{{ os.cost }}">{{ os.name }}</option>
                 {% endfor %}
             </select>
         </label>
     </fieldset>
-
     <button>Finish Configuration</button>
 </form>
