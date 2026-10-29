@@ -51,8 +51,12 @@
 
         
         <fieldset class="formitem">
+
             <label>
-                Motherboard:
+                <span class="formTitle">
+                    Motherboard
+                    <span title="The motherboard is a vital part in picking out parts for your NAS, here is some information to help you! &#10; &#10;AM4: A good budget platform good for cheaper NAS's or ones strictly for storage &#10; &#10;LGA1851: A more expensive option good for more high load tasks such as video streaming or files which need to be accesed with higher speeds."><i data-lucide="info"></i></span>
+                </span>
                 <select name="mb">
                     {% for mb in mbs %}
                         <option value="{{ mb.id }}" {% if mb.id == session.mb %} selected {% endif %}>

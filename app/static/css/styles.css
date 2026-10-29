@@ -18,6 +18,8 @@
     --hover-col-neutral:    rgb(190, 138, 90);
     --hover-col-primary:    #4d7883;
     --hover-col-accent:    #1f1b1d;
+    --hover-col-component:    #84a3bc;
+
     
     --primary:          #829ba2;
 
@@ -35,6 +37,10 @@
 
 /* Overall Layout -----------------------------------------------*/
 
+#pageIcon {
+    stroke: white;
+    background-color: black;
+}
 html {
     background-color: var(--back-col);
     color: var(--text-col);
@@ -190,31 +196,32 @@ main > h2 {
 }
 
 #components {
+    .componentCatagory {
+        h2 {
+            text-align: center;
+        }
+    }
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
     padding: 1rem;
-    
-
-    @media (width >= 500px) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @media (width >= 800px) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+    grid-template-columns: 1fr 1fr;
 
     div {
         margin: 0.5rem;
         background-color: var(--back-col-panel);
-        border: 2px solid black;
-        border-radius: 0.5rem;
+        border: 0.15rem solid black;
+        border-radius: 1rem;
         padding: 0.25rem;
         color: var(--text-col-secondary);
 
         
         .component {
             background-color: var(--back-col-panel-sec);
+            color: var(--text-col-secondary);
+        }
+        .component:hover {
+            background-color: var(--hover-col-component);
             color: var(--text-col-secondary);
         }
         
@@ -470,6 +477,12 @@ main > h2 {
     /* min-height: calc(100dvh - 11rem); */
     h1 {
         text-align: center;
+    }
+
+    .formTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 }
 

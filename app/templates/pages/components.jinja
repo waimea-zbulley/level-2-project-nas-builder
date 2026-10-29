@@ -3,12 +3,12 @@
 
 {% block content %}
 
-    <h2>components</h2>
+    <h2>Components</h2>
 
     <section id="components">
 
         {# Section for CPUs #}
-        <div id="cpus">
+        <div class="componentCatagory" id="cpus">
             <h2>Cpus</h2>
             {% for cpu in cpus %}
                 <div class="component">
@@ -26,7 +26,7 @@
         </div>
         
         {# Section for Motherboards #}
-        <div id="motherboards">
+        <div class="componentCatagory" id="motherboards">
             <h2>Motherboards</h2>
                 {% for mb in mbs %}
                 <div class="component">
@@ -46,7 +46,7 @@
         </div>
 
         {# Section for Hard Drives #}
-        <div id="hdds">
+        <div class="componentCatagory" id="hdds">
             <h2>Hard Drives</h2>
                 {% for hdd in hdds %}
                 <div class="component">
@@ -62,7 +62,7 @@
             {% endfor %}
         </div>
 
-        <div id="ssds">
+        <div class="componentCatagory" id="ssds">
             <h2>Solid State Drives</h2>
                 {% for ssd in ssds %}
                 <div class="component">
@@ -78,7 +78,7 @@
             {% endfor %}
         </div>
 
-        <div id="gpus">
+        <div class="componentCatagory" id="gpus">
             <h2>Graphics Cards</h2>
                 {% for gpu in gpus %}
                 <div class="component">
@@ -92,7 +92,7 @@
             {% endfor %}
         </div>
 
-        <div id="ssds">
+        <div class="componentCatagory" id="ssds">
             <h2>PC Cases</h2>
                 {% for case in cases %}
                 <div class="component">
@@ -106,7 +106,7 @@
             {% endfor %}
         </div>
 
-        <div id="coolers">
+        <div class="componentCatagory" id="coolers">
             <h2>CPU Coolers</h2>
                 {% for cooler in coolers %}
                 <div class="component">
@@ -119,7 +119,7 @@
             {% endfor %}
         </div>
 
-        <div id="networkcards">
+        <div class="componentCatagory" id="networkcards">
             <h2>Network Cards</h2>
                 {% for nwcard in nwcards %}
                 <div class="component">
@@ -133,7 +133,7 @@
             {% endfor %}
         </div>
 
-        <div id="powersupply">
+        <div class="componentCatagory" id="powersupply">
             <h2>Powersupplys</h2>
                 {% for psu in psus %}
                 <div class="component">
@@ -147,7 +147,7 @@
             {% endfor %}
         </div>
 
-        <div id="os">
+        <div class="componentCatagory" id="os">
             <h2>Operating Systems</h2>
                 {% for os in os %}
                 <div class="component">
