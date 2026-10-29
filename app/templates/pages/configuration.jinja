@@ -26,10 +26,33 @@
             </div>
         </div>
 
-        <div><p>Motherboard: <a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p></div>    
+        <div class="component">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="circuit-board"></i>
+                <h3>Motherboard</h3>
+            </div>
+            <div class="details">
+                <p><a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p>
+            </div>
+        </div>  
         {% if config.hddqty > 0 and config.hdd %}
-            <div><p>Hard Drive: <a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a>  Quantity: {{ config.hddqty }}, Capacity: {{ (config.harddrive_capacity * config.hddqty) / 1000 }}TB</p></div>
+            <div class="quantityComponent">
+                <div class="descriptor">
+                    <i class="componenticon" data-lucide="hard-drive"></i>
+                    <h3>Hard Drive</h3>
+                </div>
+                <div class="details">
+                    <div class="details1">
+                        <p><a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a></p>
+                    </div>
+                    <div class="details2">
+                        <p>Quantity: {{ config.hddqty }}, Capacity: {{ (config.harddrive_capacity * config.hddqty) / 1000 }}TB</p>
+                    </div>
+                </div>
+                
+            </div>
         {% endif %}
+
     
         {% if config.ssdqty > 0 and config.ssd %}
             <div><p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a>  Quantity: {{ config.ssdqty }}, Capacity: {{ (config.soliddrive_capacity * config.ssdqty) / 1000 }}TB</p></div>  
@@ -46,7 +69,8 @@
         <div><p>Power Supply: <a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p></div>
         <div><p>Operating System: <a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p></div>
     </section>
-<a href="/configurations"><p>Back</p></a>
+<footer id="pageFooter"><a class="neutral-hover" href="/"><i class="footerIcon" data-lucide="arrow-big-left"></i></a><a href="/configuration/{{ config.con_id }}/edit""><i class="footerIcon" data-lucide="square-pen"></i></a></footer>
+
 
 {% endblock %}
 

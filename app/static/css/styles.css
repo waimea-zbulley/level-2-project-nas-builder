@@ -333,18 +333,7 @@ main > h2 {
     }
     display: flex;
     flex-direction: column;
-    
-    .component {
-        background-color: var(--back-col-panel);
-        color: var(--text-col-secondary);
-        padding: 1rem;
-        margin: 0.5rem;
-        height: var(--item-heght);
-        display: flex;
-        flex-direction: row;
-        border-radius: 1.5rem;
-
-        .descriptor {
+    .descriptor {
             display: flex;
             align-items: center;
             flex: 1;
@@ -354,11 +343,39 @@ main > h2 {
                 height: 2.5rem;
             }
         }
+
+    .component {
+        background-color: var(--back-col-panel);
+        color: var(--text-col-secondary);
+        padding: 1rem;
+        margin: 0.5rem;
+        min-height: var(--item-heght);
+        display: flex;
+        flex-direction: row;
+        border-radius: 1.5rem;
+
+        
         .details {
             font-size: 2rem;
             text-align: center;
         }
 
+    }
+
+    .quantityComponent {
+        background-color: var(--back-col-panel);
+        color: var(--text-col-secondary);
+        padding: 1rem;
+        margin: 0.5rem;
+        min-height: var(--item-heght);
+        display: flex;
+        flex-direction: row;
+        border-radius: 1.5rem;
+
+        .details {
+            font-size: 2rem;
+            
+        }
     }
 }
 
