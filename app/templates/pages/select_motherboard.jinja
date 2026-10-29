@@ -4,17 +4,19 @@
     <form id="mbform" method="post" action="/configuration/new/mb">
         <h1>Motherboard & Configuration Name</h1>
 
-        <fieldset class="formitem">
+        {# Field for configuration name input #}
+        <fieldset class="formItem">
             <div>
                 <label>
-                    Name:
+                    <span class="formTitle">Name<span class="requiredItem">*</span></span>
                     <input type="text" id="name" name="name" minlength="4" maxlength="20" required>
                 </label>
-                
             </div>
         </fieldset>
+
+        {# Radial selection for configuration icon #}
         <fieldset class="icon-select">
-            <h2>Icon: </h2>
+            <h2>Icon<span class="requiredItem">*</span> </h2>
             <div class="icon-options">
                 <label>
                     <input required type="radio" name="icon" value="play">
@@ -49,25 +51,24 @@
             
         </fieldset>
 
-        
-        <fieldset class="formitem">
-
+        {# Selection field for Motherboard #}
+        <fieldset class="formItem">
             <label>
-                <span class="formTitle">
-                    Motherboard
-                    <span title="The motherboard is a vital part in picking out parts for your NAS, here is some information to help you! &#10; &#10;AM4: A good budget platform good for cheaper NAS's or ones strictly for storage &#10; &#10;LGA1851: A more expensive option good for more high load tasks such as video streaming or files which need to be accesed with higher speeds."><i data-lucide="info"></i></span>
-                </span>
+                <span class="formTitle">Motherboard<span class="requiredItem">*</span></span>
+                    {# <span title="The motherboard is a vital part in picking out parts for your NAS, here is some information to help you! &#10; &#10;AM4: A good budget platform good for cheaper NAS's or ones strictly for storage &#10; &#10;LGA1851: A more expensive option good for more high load tasks such as video streaming or files which need to be accesed with higher speeds."><i data-lucide="info"></i></span> #}
+                
                 <select name="mb">
                     {% for mb in mbs %}
                         <option value="{{ mb.id }}" {% if mb.id == session.mb %} selected {% endif %}>
-                            {{ mb.name }} ({{ mb.platform }} socket)
+                            {{ mb.name }} ({{ mb.platform }}) - ${{ mb.cost }}
                         </option>
                     {% endfor %}
                 </select>
             </label>
 
         </fieldset>
-        
+
+        {# Page footer navigation #}
         <footer id="pageFooter"><a class="neutral-hover" href="/"><i class="footerIcon" data-lucide="arrow-big-left"></i></a><button class="positive-hover" type="submit"><i class="footerIcon" data-lucide="arrow-big-right"></i></button></footer>
     </form>
 

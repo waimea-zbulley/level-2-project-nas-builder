@@ -1,9 +1,13 @@
 <form method="post" action="/configuration/{{ config.id }}/final/edit" id="componentForm">
     <h1>Edit Powersupply & Operating System</h1>
+
+    {# Hidden form item to pass through cost to flask #}
     <input id="totalNum" value="0" type="number" name="cost" readonly hidden>
-    <fieldset class="formitem">
+
+    {# Field for powersupply selection #}
+    <fieldset class="formItem">
         <label>
-            Powersupply
+            <span class="formTitle">Powersupply<span class="requiredItem">*</span></span>
             <select name="psu" required class="priced">
                 {% for psu in psus %}
                     {# If statement to retrive the currently selected psu from the old config. 
@@ -17,9 +21,11 @@
             </select>
         </label>
     </fieldset>
-    <fieldset class="formitem">
+
+    {# Field for Operating System selection #}
+    <fieldset class="formItem">
         <label>
-            Operating System
+            <span class="formTitle">Operating System<span class="requiredItem">*</span></span>
             <select name="os" required class="priced">
                 {% for os in oses %}
                     {% if os.id == config.os %}
@@ -32,6 +38,7 @@
         </label>
     </fieldset>
 
+    {# Footer for navigation/cost display #}
     <footer id="pageFooter"><div class="footerCost"><p>Cost</p><p>$<span id="total">0.00</span></p></div><button class="positive-hover" type="submit"><i class="footerIcon" data-lucide="check-line"></i></button></footer>
 
 

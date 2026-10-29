@@ -1,19 +1,27 @@
-<form method="post" action="/configuration/{{ config.id }}/edit" id="componentForm"> 
+<form method="post" action="/configuration/{{ config.id }}/edit" id="componentForm">
+    {# Hidden form items to store build cost & power to be passed through flask #}
     <input id="totalNum" value="0" type="number" name="cost" readonly hidden>
     <input id="totalPower" value="0" type="number" name="cost" readonly hidden>
+
     <h1>Edit main components & name</h1>
-    <fieldset class="formitem">
+
+{# All IF/ELSE statements are to detect if the component is selected in the configuration so that it can be easily edited #}
+
+    {# Input field for configuration name #}
+    <fieldset class="formItem">
         <div>
             <label>
-                Name:
+                {# This is to show that the compnent is mandatory (this applys to all other items with this required item class) #}
+                <span class="formTitle">Name<span class="requiredItem">*</span></span>  
                 <input type="text" id="name" name="name" minlength="4" maxlength="20" value="{{ name }}" required>
             </label>
             
         </div>
     </fieldset>
 
+    {# Radial selection menu for configuration icon #}
     <fieldset class="icon-select">
-        <h2>Icon:</h2>
+        <h2>Icon<span class="requiredItem">*</span> </h2>
             <div class="icon-options">
                 {% if config.icon == "play" %}
                     <label><input checked type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
@@ -47,18 +55,20 @@
                 {% endif %}            
             </div>
     </fieldset>
+
+    {# Field to show bootdrive #}
     <fieldset class="bootdrive"> 
         <label>
-            Boot Drive
+            <span class="formTitle">Boot Drive<span class="requiredItem">*</span></span> 
             <p>{{ ssds[0].name }} - ${{ ssds[0].cost }}</p>
         </label>
     </fieldset>
 
 
-    {# Cpu form option #}
-    <fieldset class="formitem">
+    {# CPU form option #}
+    <fieldset class="formItem">
         <label>
-            CPU:
+            <span class="formTitle">CPU<span class="requiredItem">*</span></span>
             <select id="cpu" name="cpu" class="priced power" required >
                 {% for cpu in cpus %}
                     {# If statement to determine which cpu is currently selected in the configuration, so it can be edited. The same principle can be applied to the rest of components :) #}
@@ -71,9 +81,11 @@
             </select>
         </label>
     </fieldset>
-    <fieldset class="formitem">
+
+    {# Select field for CPU Cooler #}
+    <fieldset class="formItem">
         <label>
-            CPU Cooler:
+            <span class="formTitle">CPU Cooler<span class="requiredItem">*</span></span> 
             <select id="coolers" name="cooler" class="priced" required>
                 {% for cooler in coolers %}
                     {% if cooler.id == config.cooler %}
@@ -89,7 +101,7 @@
     {# RAM form option #}
     <fieldset class="multiformitem">
         <label>
-            RAM:
+            <span class="formTitle">RAM<span class="requiredItem">*</span></span>
             <select id="ram"  name="ram" class="priced" required >
                 {% for ram in ram %}
                     {% if ram.id == config.ram %}
@@ -102,15 +114,15 @@
         </label>
 
         <label class="quantityitem">
-            Qty
+            <span class="formTitle">QTY<span class="requiredItem">*</span></span>
             <input type="number" name="ramqty" class="quantity" id="ramqty" value="{{ config.ram_qty }}" max="{{ mb.ram_slots }}" min="1">
         </label>
     </fieldset>
 
-
+    {# Select field for Hard Drive #}
     <fieldset class="multiformitem">
         <label>
-            Hard Drive:
+            Hard Drive
             <select id="hdd"  name="hdd" class="priced hdd">
                 <option value="" data-price="0">None</option>
                 {% for hdd in hdds %}
@@ -123,17 +135,18 @@
             </select>  
         </label>
 
+        {# Quantity for HDD #}
         <label class="quantityitem">
-            Qty
+            QTY
             <input type="number" name="hddqty" value="{{ config.hard_drive_qty }}" class="quantity" id="hddqty" max="{{ mb.sata_ports }}" min="0">
         </label>
-        {# <label>Total Capacity<input id="totalHddStorage" value="0" type="number" name="totalHddStorage" readonly></label> #}
 
     </fieldset>
 
+    {# Select field for SSD #}
     <fieldset class="multiformitem">
         <label>
-            SSD:
+            SSD
             <select id="ssd"  name="ssd" class="priced">
                 <option value="" data-price="0">None</option>
                 {% for ssd in ssds %}
@@ -146,15 +159,17 @@
             </select>  
         </label>
 
+        {# Quantity for SSD #}
         <label class="quantityitem">
-            Qty
+            QTY
             <input type="number" value="{{ config.solid_drive_qty }}" class="quantity" name="ssdqty" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
         </label>
     </fieldset>
 
-    <fieldset class="formitem">
+    {# Select Option for Graphics card #}
+    <fieldset class="formItem">
         <label>
-            Graphics Card:
+            Graphics Card
             <select id="gpu" name="gpu" class="priced power">
                 <option value="" data-power="0" data-price="0">None</option>
                 {% for gpu in gpus%}
@@ -169,9 +184,9 @@
     </fieldset>
 
     {# Drop down selection for CASES #}
-    <fieldset class="formitem">
+    <fieldset class="formItem">
         <label>
-            Case:
+            <span class="formTitle">Case<span class="requiredItem">*</span></span>
             <select id="cases" name="case" class="priced" required>
                 <option value="" data-price="0">-- choose one --</option>
                 {% for case in cases %}
@@ -188,7 +203,7 @@
 
 
     {# Drop down selection for Network Cards #}
-    <fieldset class="formitem">
+    <fieldset class="formItem">
         <label>
             Network Card
             <select id="nwcards" name="nwcard" class="priced ">

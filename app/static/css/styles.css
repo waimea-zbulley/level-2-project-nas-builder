@@ -41,6 +41,7 @@
     stroke: white;
     background-color: black;
 }
+
 html {
     background-color: var(--back-col);
     color: var(--text-col);
@@ -48,6 +49,16 @@ html {
     font-family: system-ui, sans-serif;
 }
 
+/* Mandatory item styling */
+.requiredItem {
+    color: rgb(0, 38, 103)
+}
+
+.formTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
 body {
     min-height: 93dvh;
@@ -64,6 +75,8 @@ main {
 a, a:visited, a:active {
   color: inherit;
 }
+
+
 
 /* Hovering */
 a.positive-hover:hover, button.positive-hover:hover {
@@ -478,17 +491,11 @@ main > h2 {
     h1 {
         text-align: center;
     }
-
-    .formTitle {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
 }
 
 
 
-.formitem {
+.formItem {
     min-height: var(--item-heght);
     background-color: var(--back-col-panel);
     border: none;
@@ -681,7 +688,7 @@ main > h2 {
         text-align: center;
         font-size: 2.5rem;
     }
-    #homebuttons {
+    #homeButtons {
         display: flex;
         flex-direction: column;
 
