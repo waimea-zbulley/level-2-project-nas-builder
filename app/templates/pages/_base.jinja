@@ -14,7 +14,6 @@
 	<title>Notes Demo {% block title %}{% endblock %}</title>
 
     <link rel="icon" href="/static/images/note.svg">
-    <script src="/static/js/menu.js"></script>
     <script src="/static/js/utils.js"></script>
 
     <link rel="stylesheet" href="/static/css/reset.css">
@@ -27,13 +26,17 @@
     <header>
 
         <a href="/">
-            Home
+            <i data-lucide="house"></i>
         </a>
 
-        {# <nav>
-            <a href="/configurations">Configurations</a>
-            <a href="/components">Components</a>           
-        </nav> #}
+        <nav>
+            <i data-lucide="menu" alt="" class="nav-icon"></i>
+            <div class="nav-panel">
+                <a href="/configurations">Configurations</a>
+                <a href="/components">Components</a>
+            </div>
+        </nav>
+        
     </header>
 
     {# Show flash messages from any previous events #}
@@ -49,9 +52,9 @@
     <script src="/static/js/configuration.js"></script>
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
+    <script src="/static/js/menu.js"></script>
+
 </body>
 
 </html>

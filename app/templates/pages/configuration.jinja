@@ -11,42 +11,43 @@
                 <i class="componenticon" data-lucide="dollar-sign"></i>
                 <h3>Cost</h3>
             </div>
-            <div class="details">
-                <p>${{ config.con_cost }}</p>
+            <div id="cost" class="details">
+                <p >${{ config.con_cost }}</p>
             </div>        
         </div>
 
         <div class="component">
             <div class="descriptor">
+                <i class="componenticon" data-lucide="circuit-board"></i>
+                <h3>MB</h3>
+            </div>
+            <div class="details">
+                <p><a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p>
+            </div>
+        </div>  
+
+        <div class="component">
+            <div class="descriptor">
                 <i class="componenticon" data-lucide="cpu"></i>
-                <h3>Cpu</h3>
+                <h3>CPU</h3>
             </div>
             <div class="details">
                 <p><a target="_blank" href="{{ config.cpu_url }}">{{ config.cpu_name }}</a></p>
             </div>
         </div>
 
-        <div class="component">
-            <div class="descriptor">
-                <i class="componenticon" data-lucide="circuit-board"></i>
-                <h3>Motherboard</h3>
-            </div>
-            <div class="details">
-                <p><a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p>
-            </div>
-        </div>  
         {% if config.hddqty > 0 and config.hdd %}
             <div class="quantityComponent">
                 <div class="descriptor">
                     <i class="componenticon" data-lucide="hard-drive"></i>
-                    <h3>Hard Drive</h3>
+                    <h3>HDD</h3>
                 </div>
                 <div class="details">
-                    <div class="details1">
+                    <div class="detail1">
                         <p><a target="_blank" href="{{ config.harddrive_url }}">{{ config.harddrive_name }}</a></p>
                     </div>
-                    <div class="details2">
-                        <p>Quantity: {{ config.hddqty }}, Capacity: {{ (config.harddrive_capacity * config.hddqty) / 1000 }}TB</p>
+                    <div class="detail2">
+                        <p>Quantity: <span>{{ config.hddqty }}</span>, Capacity: <span>{{ (config.harddrive_capacity * config.hddqty) / 1000 }}TB</span></p>
                     </div>
                 </div>
                 
@@ -55,21 +56,102 @@
 
     
         {% if config.ssdqty > 0 and config.ssd %}
-            <div><p>Solid Drive: <a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a>  Quantity: {{ config.ssdqty }}, Capacity: {{ (config.soliddrive_capacity * config.ssdqty) / 1000 }}TB</p></div>  
+            <div class="quantityComponent">
+                <div class="descriptor">
+                    <i class="componenticon" data-lucide="microchip"></i>
+                    <h3>SSD</h3>
+                </div>
+                <div class="details">
+                    <div class="detail1">
+                        <p><a target="_blank" href="{{ config.soliddrive_url }}">{{ config.soliddrive_name }}</a></p>
+                    </div>
+                    <div class="detail2">
+                        <p>Quantity: <span>{{ config.ssdqty }}</span>, Capacity: <span>{{ (config.soliddrive_capacity * config.ssdqty) / 1000 }}TB</span></p>
+                    </div>
+                </div>
+            </div>
         {% endif %}
-        <div><p>Ram: <a target="_blank" href="{{ config.ram_url }}">{{ config.ram_name }}</a> Quantity: {{ config.ramqty }}, Capacity: {{ config.ram_capacity * config.ramqty }}GB </p></div>
+
+        <div class="quantityComponent">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="memory-stick"></i>
+                <h3>RAM</h3>
+            </div>
+            <div class="details">
+                <div class="detail1">
+                    <p><a target="_blank" href="{{ config.ram_url }}">{{ config.ram_name }}</a></p>
+                </div>
+                <div class="detail2">
+                    <p>QTY: <span>{{ config.ramqty }}</span>, Capacity: <span>{{ config.ram_capacity * config.ramqty }}GB</span></p>
+                </div>
+            </div>
+        </div>
+
         {% if config.gpu %}
-            <div><p>Graphics Card: <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p></div>
+            <div class="component">
+                <div class="descriptor">
+                    <i class="componenticon" data-lucide="gpu"></i>
+                    <h3>GPU</h3>
+                </div>
+                <div class="details">
+                    <p> <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p>
+                </div>
+            </div>
         {% endif %}
-        <div><p>Case: <a target="_blank" href="{{ config.case_url }}">{{ config.case_name }}</a></p></div>
-        <div><p>Cpu Cooler: <a target="_blank" href="{{ config.cooler_url }}">{{ config.cooler_name }}</a></p></div>
+
+        <div class="component">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="pc-case"></i>
+                <h3>Case</h3>
+            </div>
+            <div class="details">
+                <p> <a target="_blank" href="{{ config.case_url }}">{{ config.case_name }}</a></p>
+            </div>
+        </div>
+
+        <div class="component">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="fan"></i>
+                <h3>CPU Cooler</h3>
+            </div>
+            <div class="details">
+                <p><a target="_blank" href="{{ config.cooler_url }}">{{ config.cooler_name }}</a></p>
+            </div>
+        </div>
+
         {% if config.nwcard %}
-            <div><p>Network Card: <a target="_blank" href="{{ config.networkcard_url }}">{{ config.networkcard_name }}</a></p></div>
+            <div class="component">
+                <div class="descriptor">
+                    <i class="componenticon" data-lucide="ethernet-port"></i>
+                    <h3>Network Card</h3>
+                </div>
+                <div class="details">
+                    <p><a target="_blank" href="{{ config.networkcard_url }}">{{ config.networkcard_name }}</a></p>
+                </div>
+            </div>
         {% endif %}
-        <div><p>Power Supply: <a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p></div>
-        <div><p>Operating System: <a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p></div>
+
+        <div class="component">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="smartphone-charging"></i>
+                <h3>PSU</h3>
+            </div>
+            <div class="details">
+                <p><a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p>
+            </div>
+        </div>
+
+        <div class="component">
+            <div class="descriptor">
+                <i class="componenticon" data-lucide="code-xml"></i>
+                <h3>OS</h3>
+            </div>
+            <div class="details">
+                <p><a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p>
+            </div>
+        </div>
     </section>
-<footer id="pageFooter"><a class="neutral-hover" href="/"><i class="footerIcon" data-lucide="arrow-big-left"></i></a><a href="/configuration/{{ config.con_id }}/edit""><i class="footerIcon" data-lucide="square-pen"></i></a></footer>
+<footer id="pageFooter"><a class="neutral-hover" href="/"><i class="footerIcon" data-lucide="arrow-big-left"></i></a><a class="neutral-hover" href="/configuration/{{ config.con_id }}/edit""><i class="footerIcon" data-lucide="square-pen"></i></a></footer>
 
 
 {% endblock %}

@@ -278,8 +278,8 @@ class PowerSupply:
     SEED_DATA = """
         INSERT INTO powersupply (name, cost, url, power)
         VALUES
-            ("DEEPCOOL Gamer Storm PF600x 600W", 79.35, "https://www.pbtech.co.nz/product/PSUDPC0006/DEEPCOOL-Gamer-Storm-PF600x-600W-80PLUS-230V-Bronz", 600),
-            ("DEEPCOOL PQ1000G Black 1000W", 205.85, "https://www.pbtech.co.nz/product/PSUDPC10130/DEEPCOOL-PQ1000G-Black-1000W-ATX-31-Power-Supply-8", 1000)
+            ("DEEPCOOL PF600x 600W", 79.35, "https://www.pbtech.co.nz/product/PSUDPC0006/DEEPCOOL-Gamer-Storm-PF600x-600W-80PLUS-230V-Bronz", 600),
+            ("DEEPCOOL PQ1000G 1000W", 205.85, "https://www.pbtech.co.nz/product/PSUDPC10130/DEEPCOOL-PQ1000G-Black-1000W-ATX-31-Power-Supply-8", 1000)
     """
 class OS:
 
