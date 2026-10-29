@@ -1,4 +1,4 @@
-<ul>
+{# <ul>
     <li>CPU: {{ cpu.name }}</li>
     <li>RAM: {{ ram.name }}</li>
     {% if hdd != None %}
@@ -15,7 +15,7 @@
         <li>Network Card: {{ nwcard.name }}</li>
     {% endif %}
     <li>Case: {{ case.name }}</li>
-</ul>
+</ul> #}
 
 <select hidden class="priced" id="bootDrive" readonly><option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option></select>
 <select name="cpu" id="cpu" class="priced" hidden><option value="{{ cpu.id }}" data-price="{{ cpu.cost }}"></option></select>

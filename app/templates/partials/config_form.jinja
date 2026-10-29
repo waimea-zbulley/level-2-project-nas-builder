@@ -1,13 +1,17 @@
 <form method="post" action="/configuration/new/components" id="componentForm"> 
-    <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
-    <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
+    <h1>Main Components</h1>
 
-    <label>
-        Boot Drive
-        <select class="priced" id="bootDrive" readonly>
-            <option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option>
-        </select>
-    </label>
+    <input id="totalNum" value="0" type="number" name="cost" readonly hidden>
+    <input id="totalPower" value="0" type="number" name="cost" readonly hidden>
+
+    <select hidden class="priced" id="bootDrive" readonly><option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option></select>
+
+    <fieldset class="bootdrive"> 
+        <label>
+            Boot Drive
+            <p>{{ ssds[0].name }} - ${{ ssds[0].cost }}</p>
+        </label>
+    </fieldset>
 
     {# Cpu form option #}
     <fieldset class="formitem">
@@ -132,8 +136,6 @@
 
         </label>
     </fieldset>
-    
 
-    <button>Next</button>
-
+    <footer id="pageFooter"><div class="footerCost"><p>Cost</p><p>$<span id="total">0.00</span></p></div><button class="positive-hover" type="submit"><i class="footerIcon" data-lucide="arrow-big-right"></i></button></footer>
 </form>

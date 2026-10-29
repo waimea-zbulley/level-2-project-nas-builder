@@ -700,7 +700,7 @@ def finish_config():
 
         db.execute(sql, params)
 
-        flash("Successfully added configuration", "success")
+        flash(f"Successfully added configuration {name}", "success")
         return redirect("/configurations") 
 
 

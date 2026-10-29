@@ -1,9 +1,7 @@
 <form method="post" action="/configuration/{{ config.id }}/edit" id="componentForm"> 
-    <div>
-        <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
-        <label>Powerdraw<input id="totalPower" value="0" type="number" name="cost" readonly></label>
-    </div>
-
+    <input id="totalNum" value="0" type="number" name="cost" readonly hidden>
+    <input id="totalPower" value="0" type="number" name="cost" readonly hidden>
+    <h1>Edit main components & name</h1>
     <fieldset class="formitem">
         <div>
             <label>
@@ -208,6 +206,5 @@
     </fieldset>
     
 
-    <button>Next</button>
-
+    <footer id="pageFooter"><div class="footerCost"><p>Cost</p><p>$<span id="total">0.00</span></p></div><button class="positive-hover" type="submit"><i class="footerIcon" data-lucide="arrow-big-right"></i></button></footer>
 </form>

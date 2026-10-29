@@ -28,11 +28,13 @@ function updateCost() {
         const selectedOption= select.options[select.selectedIndex]
         const price = Number(selectedOption.dataset.price)
         
+        
         runningTotal += qty * price
     }
 
     // totalDisplay.textContent = `Total: $${runningTotal.toFixed(2)}`
     totalNum.value = runningTotal.toFixed(2);
+    totalDisplay.textContent = runningTotal.toFixed(0);
 }
 
 

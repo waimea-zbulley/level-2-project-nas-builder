@@ -15,11 +15,11 @@
 
                 <div class="details">
                     <div class="cost">
-                        <p>${{ config.cost }}</p>
+                        <p>${{ config.cost | round | int }}</p>
                     </div>
                     <div class="functionbuttons">
-                        <a class="negative-hover" href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
                         <a class="neutral-hover" href="/configuration/{{ config.id }}/edit"><i data-lucide="square-pen"></i></a>  
+                        <a class="negative-hover" href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
                     </div>                    
                 </div>
             </div>

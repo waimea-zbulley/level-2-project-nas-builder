@@ -1,6 +1,6 @@
 <form method="post" action="/configuration/new/final" id="componentForm">
-
-    <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
+    <h1>Final Steps</h1>
+    <input id="totalNum" value="0" type="number" name="cost" readonly hidden>
     <fieldset class="formitem">
         <label>
             Powersupply
@@ -23,5 +23,5 @@
             </select>
         </label>
     </fieldset>
-    <button>Finish Configuration</button>
+    <footer id="pageFooter"><div class="footerCost"><p>Cost</p><p>$<span id="total">0.00</span></p></div><button class="positive-hover" type="submit"><i class="footerIcon" data-lucide="check-line"></i></button></footer>
 </form>

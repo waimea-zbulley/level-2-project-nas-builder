@@ -1,7 +1,7 @@
-<form method="post" action="/configuration/{{ config.id }}/final/edit">
-
-    <label>Cost<input id="totalNum" value="0" type="number" name="cost" readonly></label>
-    <fieldset>
+<form method="post" action="/configuration/{{ config.id }}/final/edit" id="componentForm">
+    <h1>Edit Powersupply & Operating System</h1>
+    <input id="totalNum" value="0" type="number" name="cost" readonly hidden>
+    <fieldset class="formitem">
         <label>
             Powersupply
             <select name="psu" required class="priced">
@@ -16,7 +16,8 @@
                 {% endfor %}
             </select>
         </label>
-
+    </fieldset>
+    <fieldset class="formitem">
         <label>
             Operating System
             <select name="os" required class="priced">
@@ -31,5 +32,7 @@
         </label>
     </fieldset>
 
-    <button>Finish Configuration</button>
+    <footer id="pageFooter"><div class="footerCost"><p>Cost</p><p>$<span id="total">0.00</span></p></div><button class="positive-hover" type="submit"><i class="footerIcon" data-lucide="check-line"></i></button></footer>
+
+
 </form>
