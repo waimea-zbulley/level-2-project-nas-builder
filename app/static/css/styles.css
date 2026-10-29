@@ -140,7 +140,7 @@ body > header {
             color: var(--text-col);
             text-decoration: none;
         }
-        
+
         }
         .nav-icon {
             color: var(--text-col);
@@ -357,13 +357,6 @@ main > h2 {
     
 }
 
-#homepage {
-    background-color: var(--back-col-sec);
-    max-width: 70rem;
-    max-height: 50rem;
-    height: 50rem;
-    gap: 2rem;
-}
 
 #configuration {
     #cost {
@@ -673,27 +666,38 @@ main > h2 {
 }
 
 #homepage {
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
     #homebuttons {
         display: flex;
         flex-direction: column;
-        
-        a {
-            @media (width <= 520px) {
-                font-size: 2rem;
 
-            }
-            @media (width >= 520px) {
-                font-size: 3.25rem;
-                
-            }
-            text-align: center;
-            height: 7rem;
+        
+        
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+
+            font-size: 2rem;
+            min-height: var(--item-heght);
             background-color: var(--back-col-panel);
             padding: 1rem;
             margin: 1rem;
             border-radius: 1.7rem;
             text-decoration: none;
             color: var(--text-col-secondary);
+
+            @media (width >= 52rem) {
+            min-width: 100%;
+            }
+            @media (width <= 52rem) {
+                min-width: 90%;
+            }
         }
     }
 }
