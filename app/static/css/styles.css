@@ -374,6 +374,11 @@ main > h2 {
     
 }
 
+.maxQuantity {
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+
 /* Styling for viewing an individual configuration */
 #configuration {
     display: flex;
@@ -657,7 +662,9 @@ main > h2 {
             min-width: 90%;
     }
 
-   
+    .multiItem {
+        min-width: 50%;
+    }
 
     label {
         display: flex;
@@ -676,7 +683,7 @@ main > h2 {
             min-height: 2.4rem;
             border: solid 0.1rem black;
             background-color: var(--back-col-panel-sec);
-            
+            min-width: 100%;
             display: flex;
             flex-wrap: wrap;
             

@@ -100,7 +100,7 @@
 
     {# RAM form option #}
     <fieldset class="multiFormItem">
-        <label>
+        <label class="multiItem">
             <span class="formTitle">RAM<span class="requiredItem">*</span></span>
             <select id="ram"  name="ram" class="priced" required >
                 {% for ram in ram %}
@@ -116,12 +116,13 @@
         <label class="quantityitem">
             <span class="formTitle">QTY<span class="requiredItem">*</span></span>
             <input type="number" name="ramqty" class="quantity" id="ramqty" value="{{ config.ram_qty }}" max="{{ mb.ram_slots }}" min="1">
+            <span class="maxQuantity">Max: {{ config.ram_qty }}</span>
         </label>
     </fieldset>
 
     {# Select field for Hard Drive #}
     <fieldset class="multiFormItem">
-        <label>
+        <label class="multiItem">
             Hard Drive
             <select id="hdd"  name="hdd" class="priced hdd">
                 <option value="" data-price="0">None</option>
@@ -139,13 +140,14 @@
         <label class="quantityitem">
             QTY
             <input type="number" name="hddqty" value="{{ config.hard_drive_qty }}" class="quantity" id="hddqty" max="{{ mb.sata_ports }}" min="0">
+            <span class="maxQuantity">Max: {{ config.hard_drive_qty }}</span>
         </label>
 
     </fieldset>
 
     {# Select field for SSD #}
     <fieldset class="multiFormItem">
-        <label>
+        <label class="multiItem">
             SSD
             <select id="ssd"  name="ssd" class="priced">
                 <option value="" data-price="0">None</option>
@@ -163,6 +165,7 @@
         <label class="quantityitem">
             QTY
             <input type="number" value="{{ config.solid_drive_qty }}" class="quantity" name="ssdqty" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
+            <span class="maxQuantity">Max: {{ config.solid_drive_qty }}</span>
         </label>
     </fieldset>
 
