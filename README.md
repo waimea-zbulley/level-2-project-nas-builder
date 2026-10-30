@@ -4,10 +4,9 @@
 This is an app that assists the user in selecting the parts for a home use oriented NAS
 
 The app has the following key features:
-- Feature one
-- Feature two
-- Feature three
-- ...
+- Ability to create/edit/delete a custom configuration of NAS (Network Attached Storage)
+- Have the build fully compatable based off the chosen motherboard to ensure that userss have a smooth experinece with creating a compatable build
+- Ability to view all components in and out of NAS from the database, with links to their store of origin.
 
 ## Live site
 https://level-2-project-nas-builder.onrender.com/
@@ -20,8 +19,9 @@ Task Instructions:
 Project Evidence
 - [Sprint 0: Project Requirements](docs/evidence/sprint-0-requirements.md)
 - [Sprint 1: Prototype Development](docs/evidence/sprint-1-prototype.md)
-- [Sprint 2: MVP Development](docs/evidence/sprint-2-mvp.md)
-- [Sprint 3: Final System Development](docs/evidence/sprint-3-final.md)
+- [Sprint 2: Database](docs/evidence/sprint-2-database.md)
+- [Sprint 3: MVP Development](docs/evidence/sprint-3-mvp.md)
+- [Sprint 4: Final System Development](docs/evidence/sprint-4-final.md)
 - [Review: Project Final Review](docs/evidence/system-review.md)
 
 
