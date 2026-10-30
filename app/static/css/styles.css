@@ -37,10 +37,6 @@
 
 /* Overall Layout -----------------------------------------------*/
 
-#pageIcon {
-    stroke: white;
-    background-color: black;
-}
 
 html {
     background-color: var(--back-col);
@@ -49,16 +45,17 @@ html {
     font-family: system-ui, sans-serif;
 }
 
-/* Mandatory item styling */
+
+/* Mandatory item styling---------------------------- */
 .requiredItem {
     color: rgb(0, 38, 103)
 }
-
 .formTitle {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* ------------------------------------------------- */
 
 body {
     min-height: 93dvh;
@@ -78,7 +75,7 @@ a, a:visited, a:active {
 
 
 
-/* Hovering */
+/* Hovering functionality -------------------------------------- */
 a.positive-hover:hover, button.positive-hover:hover {
     background-color: var(--hover-col-positive) !important;
 }
@@ -94,6 +91,9 @@ a.primary-hover:hover, button.neutal-hover:hover {
 a.accent-hover:hover, button.accent-hover:hover {
     background-color: var(--hover-col-accent) !important;
 }
+/* ----------------------------------------------------------- */
+
+
 /* Header & Nav -----------------------------------------------*/
 
 body > header {
@@ -208,6 +208,7 @@ main > h2 {
     }
 }
 
+/* Components page */
 #components {
     .componentCatagory {
         h2 {
@@ -251,8 +252,10 @@ main > h2 {
     gap: 1rem;
     text-decoration: none;
     
+    /* If text is hovered over highlight whole configuration */
     .config:has(h3.name a:hover) {
         background-color: var(--hover-col-primary);
+    /* Individual configuration */
     }
     .config {
         background-color: var(--back-col-panel);
@@ -272,7 +275,8 @@ main > h2 {
             width: 90%;
         }
         
-        .configicon {
+        /* Lucide configuration icon */
+        .configIcon {
             width: 2.5rem;
             height: 2.5rem;
             box-shadow: none;
@@ -292,12 +296,14 @@ main > h2 {
             }
         }
 
+        /* Details of config eg cost */
         .details {
             display: flex;
             flex-direction: column;
             text-align: center;
             gap: 0.5rem;
-            .functionbuttons {
+            /* Edit & delete buttons */
+            .functionButtons {
                 display: flex;
                 gap: 0.5rem;
                 a {
@@ -316,6 +322,7 @@ main > h2 {
     }
 }
 
+/* Footer for pages, usally has havigation relative to that page */
 #pageFooter {
     display: flex;
     flex-direction: row;
@@ -328,8 +335,8 @@ main > h2 {
     height: 4.5rem;
     justify-content: space-evenly;
     
-    
-    a, button {
+    /* For the tiems in the footer */
+    a, button, .footerCost {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -349,22 +356,11 @@ main > h2 {
         cursor: pointer;
 
     }
+    /* extra styling specificly for cost in footer --------- */
     .footerCost {
         display: flex;
         flex-direction: column;
         width: 6rem;
-        margin-bottom: 1rem;
-        margin-top: 0rem;
-        height: 3.5rem;
-        text-decoration: none;
-        font-size: 1.25rem;
-        border-radius: 0.5rem;
-        color: var(--text-col);
-        text-align: center;
-        padding: 0rem;
-        background-color: var(--nav-bar-colour);
-        border: #0f1315 0.15rem solid;
-        box-shadow: 0px 0px 0.7rem #0f1315ac;
         cursor: auto;
         line-height: 1;
 
@@ -374,20 +370,23 @@ main > h2 {
         width: 2.25rem;
         height: 2.25rem;
     }
+    /* ----------------------------------------------------- */
     
 }
 
-
+/* Styling for viewing an individual configuration */
 #configuration {
+    display: flex;
+    flex-direction: column;
+
+
+    /* Removing underlining from cost */
     #cost {
         text-decoration: none;
     }
     a {
-        /* font-weight: bold; */
         text-decoration: none;
     }
-    display: flex;
-    flex-direction: column;
 
     h3 {
         font-size: 2rem;
@@ -396,6 +395,20 @@ main > h2 {
         margin-left: 0.5rem;
     }
 
+    /* Whole component unit */
+    .component {
+        background-color: var(--back-col-panel);
+        color: var(--text-col-secondary);
+        padding: 1rem;
+        margin: 0.5rem;
+        min-height: var(--item-heght);
+        display: flex;
+        flex-direction: row;
+        border-radius: 1.5rem;
+
+    }
+
+    /* The name of the component */
     .details {
         display: flex;
         align-items: center;
@@ -403,6 +416,8 @@ main > h2 {
         text-align: center;
         text-decoration: underline;
     }
+
+    /* Title and icon for component */
     .descriptor {
             display: flex;
             align-items: center;
@@ -416,19 +431,9 @@ main > h2 {
                 height: 2.5rem;
             }
         }
-
-    .component {
-        background-color: var(--back-col-panel);
-        color: var(--text-col-secondary);
-        padding: 1rem;
-        margin: 0.5rem;
-        min-height: var(--item-heght);
-        display: flex;
-        flex-direction: row;
-        border-radius: 1.5rem;
-
-    }
-
+    
+    
+    /* styling specific to components with multiple details */
     .quantityComponent {
         background-color: var(--back-col-panel);
         color: var(--text-col-secondary);
@@ -453,6 +458,7 @@ main > h2 {
             .detail1 {
                 text-decoration: underline;
             }
+            /* ensures that quantity and total storage are not underlined */
             .detail2 {
                 p {
                     text-decoration: none;
@@ -460,6 +466,7 @@ main > h2 {
             }
         }
         
+        /* name/icon */
         .descriptor {
             h3 {
                 font-weight: bold;
@@ -481,6 +488,7 @@ main > h2 {
     }
 }
 
+/* Specific styling for motherboard selection form */
 #mbform {
     text-align: center;
     display: flex;
@@ -494,7 +502,7 @@ main > h2 {
 }
 
 
-
+/* Styling for an indivdual form item (e.g. motherboard selection) */
 .formItem {
     min-height: var(--item-heght);
     background-color: var(--back-col-panel);
@@ -506,6 +514,8 @@ main > h2 {
     @media (width <= 52rem) {
             min-width: 90%;
     }
+
+    /* styling for the parts of form */
     input {
         min-width: 50%;
         text-align: center;
@@ -535,12 +545,12 @@ main > h2 {
         background-color: var(--back-col-panel-sec);
     }
 }
+
+/* styling specificly for boot drive displaying */
 .bootdrive {
     background-color: var(--back-col-panel);
     border: none;
     border-radius: 2rem;
-    /* display: flex; */
-    align-items: center;
     text-align: center;
 
     min-height: var(--item-heght);
@@ -575,8 +585,14 @@ main > h2 {
     }
 }
 
-.icon-select {
+/* Styling specific to the icon selection */
+.iconSelect{
     min-height: var(--item-heght);
+    background-color: var(--back-col-panel);
+    border: none;
+    border-radius: 2rem;
+
+
     @media (width >= 52rem) {
             min-width: 100%;
     }
@@ -589,7 +605,6 @@ main > h2 {
         color: var(--text-col-secondary);
     }
     input {
-        /* width: 5rem; */
         text-align: center;
         font-size: 1.2rem;
         border: solid 0.1rem black;
@@ -597,8 +612,8 @@ main > h2 {
         border-radius: 1.5rem;
         height: 1rem;
     }
-    
-    .icon-options {
+    /* The actual icon options */
+    .iconOption {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -614,19 +629,18 @@ main > h2 {
             border: solid white 0.15rem;
             border-radius: 0.5rem;
             height: 2.35rem;
-            /* flex-direction: column; */
+            
+            /* So that icon selected is a different colour for distinction */
             &:has(input:checked) {
                 color: var(--text-col-secondary);
                 border-color: var(--text-col-secondary);
             }
         }
     }
-    background-color: var(--back-col-panel);
-    border: none;
-    border-radius: 2rem;
 }
 
-.multiformitem {
+/* Styling for form items with multiple parts */
+.multiFormItem {
     min-height: var(--item-heght);
     background-color: var(--back-col-panel);
     border: none;
@@ -683,18 +697,17 @@ main > h2 {
     
 }
 
+/* Styling for homepage */
 #homepage {
     h1 {
         text-align: center;
         font-size: 2.5rem;
     }
+    /* main homepage buttons */
     #homeButtons {
         display: flex;
         flex-direction: column;
-
         
-        
-
         a {
             display: flex;
             justify-content: center;

@@ -9,7 +9,7 @@
         
         {% for config in configs %}
             <div class="config">
-                <i class="configicon" data-lucide="{{ config.icon }}"></i>
+                <i class="configIcon" data-lucide="{{ config.icon }}"></i>
 
                 <h3 class="name"><a class="configHover" href="/configuration/{{ config.id }}">{{ config.name }}</a></h3>
 
@@ -17,7 +17,7 @@
                     <div class="cost">
                         <p>${{ config.cost | round | int }}</p>
                     </div>
-                    <div class="functionbuttons">
+                    <div class="functionButtons">
                         <a aria-label="Edit" class="neutral-hover" href="/configuration/{{ config.id }}/edit"><i data-lucide="square-pen"></i></a>  
                         <a aria-label="Delete" class="negative-hover" href="/configuration/{{ config.id }}/delete"><i data-lucide="trash"></i></a>
                     </div>                    
