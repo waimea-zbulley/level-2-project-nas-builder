@@ -4,13 +4,13 @@
     {# Hidden form items to store cost and power draw to pass through to flask. As well as boot drive #}
     <input id="totalNum" value="0" type="number" name="cost" readonly hidden>
     <input id="totalPower" value="0" type="number" name="cost" readonly hidden>
-    <select hidden class="priced" id="bootDrive" readonly><option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option></select>
+    <select hidden class="priced" id="bootDrive"><option data-price="{{ ssds[0].cost }}" value="{{ ssds[0].id }}" >{{ ssds[0].name }} - ${{ ssds[0].cost }}</option></select>
 
     {# Field to show Bootdrive #}
     <fieldset class="bootdrive"> 
         <label>
             <span class="formTitle">Boot Drive<span class="requiredItem">*</span></span>
-            <p>{{ ssds[0].name }} - ${{ ssds[0].cost }}</p>
+            <span class="bootName">{{ ssds[0].name }} - ${{ ssds[0].cost }}</span>
         </label>
     </fieldset>
 
@@ -43,7 +43,7 @@
 
     {# RAM form option #}
     <fieldset class="multiFormItem">
-        <label>
+        <label class="multiItem">
             <span class="formTitle">RAM<span class="requiredItem">*</span></span>
             <select id="ram"  name="ram" class="priced" required >
                 <option value="" data-price="0" disabled selected >-- choose one --</option>
@@ -61,7 +61,7 @@
 
     {# Select field for HDD #}
     <fieldset class="multiFormItem">
-        <label>
+        <label class="multiItem">
             Hard Drive
             <select id="hdd"  name="hdd" class="priced hdd">
                 <option value="" data-price="0" >None</option>
@@ -82,7 +82,7 @@
 
     {# Select field for SSD #}
     <fieldset class="multiFormItem">
-        <label>
+        <label class="multiItem">
             SSD
             <select id="ssd"  name="ssd" class="priced">
                 <option value="" data-price="0">None</option>

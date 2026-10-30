@@ -21,7 +21,7 @@
 
     {# Radial selection menu for configuration icon #}
     <fieldset class="iconSelect">
-        <h2>Icon<span class="requiredItem">*</span> </h2>
+        <h2>Icon<span class="requiredItem">*</span></h2>
             <div class="iconOption">
                 {% if config.icon == "play" %}
                     <label><input checked type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
@@ -60,7 +60,7 @@
     <fieldset class="bootdrive"> 
         <label>
             <span class="formTitle">Boot Drive<span class="requiredItem">*</span></span> 
-            <p>{{ ssds[0].name }} - ${{ ssds[0].cost }}</p>
+            <span class="bootName">{{ ssds[0].name }} - ${{ ssds[0].cost }}</span>
         </label>
     </fieldset>
 
@@ -69,7 +69,7 @@
     <fieldset class="formItem">
         <label>
             <span class="formTitle">CPU<span class="requiredItem">*</span></span>
-            <select id="cpu" name="cpu" class="priced power" required >
+            <select id="cpu" name="cpu" class="priced power">
                 {% for cpu in cpus %}
                     {# If statement to determine which cpu is currently selected in the configuration, so it can be edited. The same principle can be applied to the rest of components :) #}
                     {% if cpu.id == config.cpu %}
@@ -86,7 +86,7 @@
     <fieldset class="formItem">
         <label>
             <span class="formTitle">CPU Cooler<span class="requiredItem">*</span></span> 
-            <select id="coolers" name="cooler" class="priced" required>
+            <select id="coolers" name="cooler" class="priced" >
                 {% for cooler in coolers %}
                     {% if cooler.id == config.cooler %}
                         <option value="{{ cooler.id }}"  data-price="{{ cooler.cost }}" selected>{{ cooler.name }} - ${{ cooler.cost }}</option>
@@ -102,7 +102,7 @@
     <fieldset class="multiFormItem">
         <label class="multiItem">
             <span class="formTitle">RAM<span class="requiredItem">*</span></span>
-            <select id="ram"  name="ram" class="priced" required >
+            <select id="ram"  name="ram" class="priced">
                 {% for ram in ram %}
                     {% if ram.id == config.ram %}
                         <option value="{{ ram.id }}" data-price="{{ ram.cost }}" selected>{{ ram.name }} - ${{ ram.cost }}</option>
@@ -190,7 +190,7 @@
     <fieldset class="formItem">
         <label>
             <span class="formTitle">Case<span class="requiredItem">*</span></span>
-            <select id="cases" name="case" class="priced" required>
+            <select id="cases" name="case" class="priced">
                 <option value="" data-price="0">-- choose one --</option>
                 {% for case in cases %}
                     {% if case.id == config.case %}

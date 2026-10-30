@@ -8,7 +8,7 @@
     <fieldset class="formItem">
         <label>
             <span class="formTitle">Powersupply<span class="requiredItem">*</span></span>
-            <select name="psu" required class="priced">
+            <select name="psu" class="priced">
                 {% for psu in psus %}
                     {# If statement to retrive the currently selected psu from the old config. 
                     Note: If the psu is not compatible it will not be passed through (therefore the blank option will be selected) #}
@@ -26,7 +26,7 @@
     <fieldset class="formItem">
         <label>
             <span class="formTitle">Operating System<span class="requiredItem">*</span></span>
-            <select name="os" required class="priced">
+            <select name="os" class="priced">
                 {% for os in oses %}
                     {% if os.id == config.os %}
                         <option value="{{ os.id }}" data-price="{{ os.cost }}" selected>{{ os.name }}</option>

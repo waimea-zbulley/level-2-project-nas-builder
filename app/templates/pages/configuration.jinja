@@ -3,23 +3,23 @@
 
 {% block content %}
 
-    <h2>{{config.con_name}}</h2>
+    <h1>{{config.con_name}}</h1>
 
     <section id="configuration">
         <div class="component">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="dollar-sign"></i>
-                <h3>Cost</h3>
+                <h2>Cost</h2>
             </div>
             <div id="cost" class="details">
-                <p >${{ config.con_cost }}</p>
+                <p>${{ config.con_cost }}</p>
             </div>        
         </div>
 
         <div class="component">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="circuit-board"></i>
-                <h3>MB</h3>
+                <h2>MB</h2>
             </div>
             <div class="details">
                 <p><a target="_blank" href="{{ config.motherboard_url}}">{{ config.motherboard_name }}</a></p>
@@ -29,7 +29,7 @@
         <div class="component">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="cpu"></i>
-                <h3>CPU</h3>
+                <h2>CPU</h2>
             </div>
             <div class="details">
                 <p><a target="_blank" href="{{ config.cpu_url }}">{{ config.cpu_name }}</a></p>
@@ -40,7 +40,7 @@
             <div class="quantityComponent">
                 <div class="descriptor">
                     <i class="componenticon" data-lucide="hard-drive"></i>
-                    <h3>HDD</h3>
+                    <h2>HDD</h2>
                 </div>
                 <div class="details">
                     <div class="detail1">
@@ -59,7 +59,7 @@
             <div class="quantityComponent">
                 <div class="descriptor">
                     <i class="componenticon" data-lucide="microchip"></i>
-                    <h3>SSD</h3>
+                    <h2>SSD</h2>
                 </div>
                 <div class="details">
                     <div class="detail1">
@@ -75,7 +75,7 @@
         <div class="quantityComponent">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="memory-stick"></i>
-                <h3>RAM</h3>
+                <h2>RAM</h2>
             </div>
             <div class="details">
                 <div class="detail1">
@@ -91,7 +91,7 @@
             <div class="component">
                 <div class="descriptor">
                     <i class="componenticon" data-lucide="gpu"></i>
-                    <h3>GPU</h3>
+                    <h2>GPU</h2>
                 </div>
                 <div class="details">
                     <p> <a target="_blank" href="{{ config.gpu_url }}">{{ config.gpu_name }}</a></p>
@@ -102,7 +102,7 @@
         <div class="component">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="pc-case"></i>
-                <h3>Case</h3>
+                <h2>Case</h2>
             </div>
             <div class="details">
                 <p> <a target="_blank" href="{{ config.case_url }}">{{ config.case_name }}</a></p>
@@ -112,7 +112,7 @@
         <div class="component">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="fan"></i>
-                <h3>CPU Cooler</h3>
+                <h2>CPU Cooler</h2>
             </div>
             <div class="details">
                 <p><a target="_blank" href="{{ config.cooler_url }}">{{ config.cooler_name }}</a></p>
@@ -123,7 +123,7 @@
             <div class="component">
                 <div class="descriptor">
                     <i class="componenticon" data-lucide="ethernet-port"></i>
-                    <h3>Network Card</h3>
+                    <h2>Network Card</h2>
                 </div>
                 <div class="details">
                     <p><a target="_blank" href="{{ config.networkcard_url }}">{{ config.networkcard_name }}</a></p>
@@ -134,7 +134,7 @@
         <div class="component">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="smartphone-charging"></i>
-                <h3>PSU</h3>
+                <h2>PSU</h2>
             </div>
             <div class="details">
                 <p><a target="_blank" href="{{ config.psu_url }}">{{ config.psu_name }}</a></p>
@@ -144,14 +144,14 @@
         <div class="component">
             <div class="descriptor">
                 <i class="componenticon" data-lucide="code-xml"></i>
-                <h3>OS</h3>
+                <h2>OS</h2>
             </div>
             <div class="details">
                 <p><a target="_blank" href="{{ config.os_url }}">{{ config.os_name }}</a></p>
             </div>
         </div>
     </section>
-<footer id="pageFooter"><a class="neutral-hover" href="/"><i class="footerIcon" data-lucide="arrow-big-left"></i></a><a class="neutral-hover" href="/configuration/{{ config.con_id }}/edit""><i class="footerIcon" data-lucide="square-pen"></i></a></footer>
+<footer id="pageFooter"><a class="neutral-hover" href="/"><i class="footerIcon" data-lucide="arrow-big-left"></i></a><a class="neutral-hover" href="/configuration/{{ config.con_id }}/edit"><i class="footerIcon" data-lucide="square-pen"></i></a></footer>
 
 
 {% endblock %}

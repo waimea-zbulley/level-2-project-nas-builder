@@ -23,11 +23,15 @@ app = Flask(__name__)
 # Home page - Show all notes
 #-----------------------------------------------------------
 @app.get("/")
+# Renders the home page for root (/) dir of the website
 def main_page():
     return render_template("pages/homepage.jinja")
 
 @app.get("/configurations")
+# Function for the configurations route
 def configurations():
+
+    # Pulls all the required information from configurations for displaying a users config on this page
     with connect_db() as db:
         sql = """
             SELECT
@@ -41,11 +45,13 @@ def configurations():
         params = ()
         configs = db.execute(sql, params).fetchall()
 
-        
         return render_template("pages/configurations.jinja", configs=configs)
 
 @app.get("/configuration/<int:id>")
+# Function for rendering the page for viewing the comonents/details of a specific configuration.
 def show_config(id):
+
+    # Pulls all the required information for displaying a users configuration, linking with all 12 tables
     with connect_db() as db:
         sql = """
             SELECT 
@@ -106,9 +112,11 @@ def show_config(id):
         return render_template("pages/configuration.jinja", config=configs)
 
 @app.get("/components")
+# Function for rendering the page showing all components in the database
 def compnents():
     with connect_db() as db:
 
+        # SQL for pulling all components in the database
         sql_cpu = """
             SELECT *
             FROM cpus
@@ -155,6 +163,8 @@ def compnents():
         """
 
         params = ()
+
+        # Seting variable names for all components to be used in the jinja template
         cpus = db.execute(sql_cpu, params).fetchall()
         mbs = db.execute(sql_mb, params).fetchall()
         hdds = db.execute(sql_hdd, params).fetchall()
@@ -167,14 +177,13 @@ def compnents():
         psus = db.execute(sql_psu, params).fetchall()
         os = db.execute(sql_os, params).fetchall()
 
-        # db.execute(sql, params)
-
         return render_template("pages/components.jinja", cpus=cpus, mbs=mbs, hdds=hdds, ssds=ssds, ram=ram, gpus=gpus, cases=cases, coolers=coolers, nwcards=nwcards, psus=psus, os=os)
 
 @app.get("/configuration/<int:id>/delete")
+# Function for deleting configuration
 def delete_config(id):
 
-    # Delting a configuration
+    # Deleting a configuration
     with connect_db() as db:
         sql = """
             DELETE FROM configurations
@@ -192,6 +201,8 @@ def delete_config(id):
 #===================================================
 
 def get_config_2():
+    """Retives all components from session relevant to the users build, this is used to pass through the data for the final part of the configuration"""
+    
     # Get cpu from component selection
     cpu = None
     cpu_id = session.get("cpu", None)
@@ -313,6 +324,7 @@ def get_config_2():
     return cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty
 
 def get_mb():
+    """Gets the motherboard from the users session to pass through to next stage of form"""
     mb = None
     mb_id = session.get("mb", None)
 
@@ -328,7 +340,7 @@ def get_mb():
     return mb
 
 def get_mbs():
-
+    """Gets all motherboards to display to the user as options for selection"""
     with connect_db() as db:
         sql = """
             SELECT id, name, cost, platform, ram_gen, ram_slots, sata_ports
@@ -339,8 +351,8 @@ def get_mbs():
     return mb
 
 def get_cpus(mb):
+    """Pulls CPUs comptabible with the user's chosen motherboard"""
     mb = mb 
-
     with connect_db() as db:
         platform = mb.get("platform")
 
@@ -355,6 +367,7 @@ def get_cpus(mb):
     return cpus
 
 def get_ram(mb):
+    """Pulls RAM comptabible with the user's chosen motherboard"""
     mb = mb
 
     with connect_db() as db:
@@ -371,6 +384,7 @@ def get_ram(mb):
     return ram
 
 def get_hdds():
+    """Pulls all HDDs from the database"""
     with connect_db() as db:
         sql = """
             SELECT id, name, cost, capacity
@@ -381,6 +395,7 @@ def get_hdds():
     return hdds
 
 def get_ssds():
+    """Pulls all SSDs from the database"""
     with connect_db() as db:
         sql = """
             SELECT id, cost, name
@@ -391,6 +406,8 @@ def get_ssds():
     return sdds
 
 def get_gpus():
+    """Pulls all GPU from the database"""
+
     with connect_db() as db:
         sql = """
             SELECT id, cost, name, powerdraw
@@ -401,17 +418,8 @@ def get_gpus():
     return gpus
 
 def get_coolers():
-    with connect_db() as db:
-        sql = """
-            SELECT id, cost, name
-            FROM coolers
-        """
-        coolers = db.execute(sql, ).fetchall()
+    """Pulls all CPU Coolers from the database"""
 
-    return coolers
-
-def get_coolers():
-    
     with connect_db() as db:
         sql = """
             SELECT id, cost, name
@@ -422,6 +430,7 @@ def get_coolers():
     return coolers
 
 def get_nwcards():
+    """Pulls all network cards from the database"""
     with connect_db() as db:
         sql = """
             SELECT id, cost, name
@@ -432,10 +441,11 @@ def get_nwcards():
     return nwcards
 
 def get_psus():
+    """Gets PSUs compatable with the users component choices"""
     gpu_id = session.get("gpu", None)
 
     with connect_db() as db:
-
+        # Checks weather the user has a gpu (requiring a higher wattage PSU if they do)
         if gpu_id is not None:
 
             sql = """
@@ -443,7 +453,6 @@ def get_psus():
                 FROM powersupply
                 WHERE power >= 800
             """
-
         else:
             
             sql = """
@@ -455,6 +464,7 @@ def get_psus():
     return psus
     
 def get_oses():
+    """Pulls all Operating Systems from the database"""
     with connect_db() as db:
         sql = """
             SELECT id, cost, name
@@ -465,6 +475,7 @@ def get_oses():
     return oses
 
 def get_cases():
+    """Pulls all cases from the database"""
     with connect_db() as db:
         sql = """
             SELECT id, cost, name
@@ -480,6 +491,7 @@ def get_cases():
 #===========================================================
 
 def get_mb_edit(id):
+    """Retrives the motherboard and it's relivant data for the select configuration to edit"""
     mb = None
     config_id = id
 
@@ -504,6 +516,7 @@ def get_mb_edit(id):
         return mb
 
 def get_name_edit(id):
+    """Retrives name for the select configuration to allow editing"""
     name = None
 
     config_id = id
@@ -519,6 +532,7 @@ def get_name_edit(id):
         return name
 
 def get_config_edit(id):
+    """Retrives components from select configuration to allow editing"""
     config_id = id
 
     with connect_db() as db:
@@ -533,6 +547,7 @@ def get_config_edit(id):
     return config_edit
 
 @app.get("/configuration/new/mb")
+# function for showing new configuration page (inital page of the form)
 def show_newconf():
     if not session.get("mb"):
         session["mb"] = None
@@ -545,6 +560,7 @@ def show_newconf():
     )
 
 @app.post("/configuration/new/mb")
+# Posts the inital form answers to the session to be passed to next form page/to be used to determine what components are valid for the user to pick (based off motherboard)
 def config_pick_mb():
     mb_id = request.form.get("mb")
     session["mb"] = int(mb_id)
@@ -554,9 +570,11 @@ def config_pick_mb():
     return redirect("/configuration/new/components")
 
 @app.get("/configuration/new/components")
+# Function to show component selection/second stage of form
 def show_newconf_stage2():
     mb = get_mb()
 
+    # Ensures that user cant accidently go to the part of the form without selecting a motherboard
     if not mb:
         flash("Please choose a suitable MB first!", "error")
         return redirect("/configuration/new/mb")
@@ -591,6 +609,7 @@ def show_newconf_stage2():
     )
 
 @app.post("/configuration/new/components")
+# Function for posting second stage/component selections to the final stage of the form
 def config_pick_stage2():
 
 
@@ -604,7 +623,7 @@ def config_pick_stage2():
     session["ssd_qty"] = int(request.form.get("ssdqty"))
     session["ram_qty"] = int(request.form.get("ramqty"))
     
-    # Optional things in the form
+    # Optional things in the form to prevent them getting messed up in some situations
     gpu = request.form.get("gpu")
     if gpu:
         session["gpu"] = int(request.form.get("gpu"))
@@ -632,6 +651,7 @@ def config_pick_stage2():
     return redirect("/configuration/new/final")
 
 @app.get("/configuration/new/final")
+# Final stage of form for PSU & OS selection
 def config_pick_stage3():
     mb = get_mb()
     cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty = get_config_2()
@@ -666,6 +686,7 @@ def config_pick_stage3():
 
 
 @app.post("/configuration/new/final")
+# Posts final form selections & all previous selections
 def finish_config():
 
     name = session["name"]
@@ -688,7 +709,7 @@ def finish_config():
 
     
 
-    #Connect with DB
+    # Adds the users configuration to the database
     with connect_db() as db:
 
         sql = """
@@ -708,6 +729,7 @@ def finish_config():
 #   Edit Routes
 #===================================================
 @app.get("/configuration/<int:id>/edit")
+# Component, name & icon edit page
 def edit_config(id):
     
         params = (id,)
@@ -739,8 +761,10 @@ def edit_config(id):
             )
 
 @app.post("/configuration/<int:id>/edit")
+# Posts the first stage of the edit form to the final edit form
 def edit_config_post(id):
 
+    # Setting users choices into session
     session["cost"] = request.form.get("cost", "unknown").strip()
     session["cpu"] = int(request.form.get("cpu"))
     session["ram"] = int(request.form.get("ram"))
@@ -782,6 +806,7 @@ def edit_config_post(id):
     return redirect(f"/configuration/{id}/final/edit")
 
 @app.get("/configuration/<int:id>/final/edit")
+# Final edit page (Power Supply & Operating System)
 def edit_final(id):
     mb = get_mb_edit(id,)
     cpu, ram, hdd, ssd, gpu, cooler, nwcard, case, ram_qty, ssd_qty, hdd_qty = get_config_2()
@@ -792,9 +817,6 @@ def edit_final(id):
     icon = session["icon"]
 
     config = get_config_edit(id,)
-
-    
-    
 
     return render_template(
         "pages/final_config_edit.jinja",
@@ -819,6 +841,7 @@ def edit_final(id):
     )
 
 @app.post("/configuration/<int:id>/final/edit")
+# Posts final edit page
 def edit_final_edit(id):
     cpu = session["cpu"]
     mb = get_mb_edit(id,)
@@ -840,7 +863,7 @@ def edit_final_edit(id):
 
     config_id = id
 
-    #Connect with DB
+    # Updates the selected configuration based off the users changes
     with connect_db() as db:
 
         sql = """
