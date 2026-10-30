@@ -5,7 +5,7 @@
 
     <h1>Edit main components & name</h1>
 
-{# All IF/ELSE statements are to detect if the component is selected in the configuration so that it can be easily edited #}
+    {# All IF/ELSE statements are to detect if the component is selected in the configuration so that it can be easily edited #}
 
     {# Input field for configuration name #}
     <fieldset class="formItem">
@@ -20,9 +20,9 @@
     </fieldset>
 
     {# Radial selection menu for configuration icon #}
-    <fieldset class="icon-select">
+    <fieldset class="iconSelect">
         <h2>Icon<span class="requiredItem">*</span> </h2>
-            <div class="icon-options">
+            <div class="iconOption">
                 {% if config.icon == "play" %}
                     <label><input checked type="radio" name="icon" value="play"><i class="icon" data-lucide="play"></i></label>
                 {% else %}
