@@ -79,6 +79,41 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ## ETC...
 
+## Proof for HTML & CSS validation
+
+### CSS (styles.css)
+![Image of CSS validated from CSS validator](screenshots/gifs-for-sprint4/validation/validated-css.png)
+
+### HTML - Homepage (homepage.jinja)
+
+![Image of Homepage HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-homepage.png)
+
+### HTML - Components Page (components.jinja)
+
+![Image of Components HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-components.png)
+
+### HTML - Configurations Page (configurations.jinja)
+
+![Image of Configurations HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configurations.png)
+
+### HTML - Configuration Page (configuration.jinja)
+![Image of Configuration HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configuration.png)
+
+### HTML - New Config Page - 1 (select_motherboard.jinja)
+![Image of New Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-newconfig.png)
+
+### HTML - New Config Page - 2 (new_configuration.jinja)
+![Image of New Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-2.png)
+
+### HTML - New Config Page - 3 (new_configuration.jinja)
+![Image of New Config (page 3) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-3.png)
+
+
+### HTML - Edit Config Page - 1 (select_motherboard.jinja)
+![Image of Edit Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform.png)
+
+### HTML - Edot Config Page - 2 (new_configuration.jinja)
+![Image of Edit Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform-2.png)
 
 ## Sprint Review
 
