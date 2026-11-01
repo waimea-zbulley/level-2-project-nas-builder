@@ -50,18 +50,43 @@ I have improved the layout of the icon as well as switching the edit and delete 
 
 ![Configuration page with icons for edit and delete and improved layout.](screenshots/gifs-for-sprint4/5-configurations.png)
 
-## Testing Updated Homepage
+## Trialing of navigation bar
+
+### Inital design
+![alt text](3.png)
+
+## Testing highlighting of buttons
+
+### Initial highlighting of back buttons
+![Inital dull backbutton highlighting](screenshots/gifs-for-sprint4/highlighting-backbutton-inital.png)
+
+### Improved orange highlighting of back button with better icon
+
+![Improved orange and better icon back button](screenshots/gifs-for-sprint4/highlighting-backbutton-improved.png)
+
+### Same ideas applied to delete & edit buttons based off stakeholder feedback
+
+![Edit button with pencil icon and orange colourng](screenshots/gifs-for-sprint4/highlighting-editbutton.png)
+![](screenshots/gifs-for-sprint4/highlighting-deletebutton.png)
+
+"Initial look on PC.  The add and back buttons don’t stand out , recommend increasing size and perhaps density of icon. Suggested adding highlighting to edit (orange) and delete (red) .  Experimented with adding the work ‘add’ with the + but decided it wasn’t needed" -Gareth
+
+### Hovering on configuration
+
+![Darker hovered configuration compared to lighter non-hovered](screenshots/gifs-for-sprint4/highlighint-configuration.png)
+
+"The subtle colour change when hovering over a configuration makes it more obvious that it is clickable" - Gareth
+
+
+## Testing Homepage
 
 This is a screenshot of my new homepage which now has properly styled buttons
 
-![Initial updated homepage](screenshots/gifs-for-sprint4/updated-homepage.png)
+![Initial homepage design](screenshots/gifs-for-sprint4/homepage.png)
 
-
-<!-- ### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE** -->
+### Updated homepage
+I have updated the homepage as my stakeholder pointed out that it was not up to the same standard as the rest of the website
+![Update homepage design](screenshots/gifs-for-sprint4/homepage-updated.png)
 
 
 ## Testing FEATURE NAME HERE
@@ -77,52 +102,55 @@ Replace this text with notes any improvements you made as a result of the testin
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
-## ETC...
+# Proof for HTML, CSS & Python validation
 
-## Proof for HTML, CSS & Python validation
+## CSS
 
-### CSS (styles.css)
-
+### styles.css
 ![Image of CSS validated from CSS validator](screenshots/gifs-for-sprint4/validation/validated-css.png)
 
-### HTML - Homepage (homepage.jinja)
+## HTML
+
+### Homepage (homepage.jinja)
 
 ![Image of Homepage HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-homepage.png)
 
-### HTML - Components Page (components.jinja)
+### Components Page (components.jinja)
 
 ![Image of Components HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-components.png)
 
-### HTML - Configurations Page (configurations.jinja)
+### Configurations Page (configurations.jinja)
 
 ![Image of Configurations HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configurations.png)
 
-### HTML - Configuration Page (configuration.jinja)
+### Configuration Page (configuration.jinja)
 
 ![Image of Configuration HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configuration.png)
 
-### HTML - New Config Page - 1 (select_motherboard.jinja)
+### New Config Page - 1 (select_motherboard.jinja)
 
 ![Image of New Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-newconfig.png)
 
-### HTML - New Config Page - 2 (new_configuration.jinja)
+### New Config Page - 2 (new_configuration.jinja)
 
 ![Image of New Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-2.png)
 
-### HTML - New Config Page - 3 (final_config.jinja)
+### New Config Page - 3 (final_config.jinja)
 
 ![Image of New Config (page 3) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-3.png)
 
 
-### HTML - Edit Config Page - 1 (edit_components.jinja)
+### Edit Config Page - 1 (edit_components.jinja)
 
 ![Image of Edit Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform.png)
 
-### HTML - Edot Config Page - 2 (final_config_edit.jinja)
+### Edit Config Page - 2 (final_config_edit.jinja)
 
 ![Image of Edit Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform-2.png)
 
-### Python PEP8 Validation
+## Python
+
+### \_\_init\_\_.py
 
 ![PEP8 validation](screenshots/gifs-for-sprint4/validation/pep8-validation.png)
 All runtime errors are not ture problems but rather related to the way that the project is setup as they are pulled externally, none of my actual code has any runtime errors within it.
