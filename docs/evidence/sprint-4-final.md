@@ -79,9 +79,10 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ## ETC...
 
-## Proof for HTML & CSS validation
+## Proof for HTML, CSS & Python validation
 
 ### CSS (styles.css)
+
 ![Image of CSS validated from CSS validator](screenshots/gifs-for-sprint4/validation/validated-css.png)
 
 ### HTML - Homepage (homepage.jinja)
@@ -97,29 +98,42 @@ Replace this text with notes any improvements you made as a result of the testin
 ![Image of Configurations HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configurations.png)
 
 ### HTML - Configuration Page (configuration.jinja)
+
 ![Image of Configuration HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configuration.png)
 
 ### HTML - New Config Page - 1 (select_motherboard.jinja)
+
 ![Image of New Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-newconfig.png)
 
 ### HTML - New Config Page - 2 (new_configuration.jinja)
+
 ![Image of New Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-2.png)
 
 ### HTML - New Config Page - 3 (final_config.jinja)
+
 ![Image of New Config (page 3) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-3.png)
 
 
 ### HTML - Edit Config Page - 1 (edit_components.jinja)
+
 ![Image of Edit Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform.png)
 
 ### HTML - Edot Config Page - 2 (final_config_edit.jinja)
+
 ![Image of Edit Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform-2.png)
 
 ### Python PEP8 Validation
+
 ![PEP8 validation](screenshots/gifs-for-sprint4/validation/pep8-validation.png)
 All runtime errors are not ture problems but rather related to the way that the project is setup as they are pulled externally, none of my actual code has any runtime errors within it.
 
 Whilst there are many styling errors in my code I belive that they are not relevent as fixing most of them will result in worse readability of the project, I have stuck to PEP8 convention where it makes sense to do so but not at the cost of readability.
+
+### Validators used
+ - CSS Validator - https://jigsaw.w3.org/css-validator/
+ - HTML Validator - https://validator.w3.org/#validate-by-input
+ - Python/PEP8 Validator - https://mypythontools.com/tools/python/validator/
+
 ## Sprint Review
 
 Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
