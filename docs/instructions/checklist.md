@@ -64,7 +64,7 @@ Use advanced techniques to develop an informed database means **all the criteria
 Use advanced techniques to develop a refined database means **all of the criteria for Merit**, plus:
 
 1. You have made iterative improvements throughout the design, development and testing process:
-   - [ ] You have refined features of the DB (the schema and the UI) over **multiple iterations**
+   - [x] You have refined features of the DB (the schema and the UI) over **multiple iterations**
    - [x] Each iteration is **clearly documented**, showing testing and resulting refinements
 
 2. You must have used efficient tools and techniques in the system's production:
@@ -93,21 +93,21 @@ Use advanced techniques to develop a digital media outcome means that, taking in
    - [x] Define the **key functionality** of the proposed system
 
 2. You must use appropriate advanced tools and techniques, for example:
-   - [ ] You have used **non-core functionality** of tools / libraries (i.e. you have extended these beyond their supplied defaults)
-   - [ ] You have applied **industry standards or guidelines** (e.g. PEP 8 style guide for Python)
-   - [ ] Your UI uses a **responsive design** for use on multiple devices
-   - [ ] You have **integrated original media assets** into your work, as needed
-   - [ ] You **handle data dynamically**, making your system interactive
-   - [ ] You have **automated aspects of your system** through scripts (e.g. Python)
+   - [x] You have used **non-core functionality** of tools / libraries (i.e. you have extended these beyond their supplied defaults)
+   - [x] You have applied **industry standards or guidelines** (e.g. PEP 8 style guide for Python)
+   - [x] Your UI uses a **responsive design** for use on multiple devices
+   - [x] You have **integrated original media assets** into your work, as needed
+   - [x] You **handle data dynamically**, making your system interactive
+   - [x] You have **automated aspects of your system** through scripts (e.g. Python)
 
 3. You must apply appropriate data integrity and testing procedures:
-   - [ ] All webpage text should be checked for **accuracy** (e.g. spell-checked)
-   - [ ] Any **data shown is as expected** (i.e. matches database / calculated values)
+   - [x] All webpage text should be checked for **accuracy** (e.g. spell-checked)
+   - [x] Any **data shown is as expected** (i.e. matches database / calculated values)
 
 4. You need to explain and address relevant implications:
-   - [ ] Identify the **implications most relevant** to your project
-   - [ ] Explain **what the implications mean** and **why each is relevant** to your project
-   - [ ] Explain **how each implication will impact your specific project** (considerations / choices / designs)
+   - [x] Identify the **implications most relevant** to your project
+   - [x] Explain **what the implications mean** and **why each is relevant** to your project
+   - [x] Explain **how each implication will impact your specific project** (considerations / choices / designs)
 
 
 *Note: You must satisfy **all** of the criteria above to pass*
@@ -118,12 +118,12 @@ Use advanced techniques to develop a digital media outcome means that, taking in
 Use advanced techniques to develop an informed digital media outcome means **all the criteria for Achieved**, plus:
 
 1. You should use information from testing procedures to improve the quality of your web site:
-   - [ ] Show **evidence of your testing**, particularly with end-users
-   - [ ] Show the **improvements made** as a result
+   - [x] Show **evidence of your testing**, particularly with end-users
+   - [x] Show the **improvements made** as a result
 
 2. You have used testing tools to help improve your web site:
-   - [ ] You have used **code validation** tools for generated HTML and CSS
-   - [ ] You have **fixed any issues** identified
+   - [x] You have used **code validation** tools for generated HTML and CSS
+   - [x] You have **fixed any issues** identified
 
 3. You need to address relevant implications:
    - [ ] At the end of your project, you need to **explain what you did in your project to address each implication**
@@ -134,15 +134,15 @@ Use advanced techniques to develop an informed digital media outcome means **all
 Use advanced techniques to develop a refined digital media outcome means **all of the criteria for Merit**, plus:
 
 1. You have made iterative improvements throughout the design, development and testing process:
-   - [ ] You have refined features of the web site (layout, theme, etc.) over **multiple iterations**
-   - [ ] Each iteration is **clearly documented**, showing testing and resulting refinements
+   - [x] You have refined features of the web site (layout, theme, etc.) over **multiple iterations**
+   - [x] Each iteration is **clearly documented**, showing testing and resulting refinements
 
 2. You have used efficient tools and techniques in the web site's production:
-   - [ ] You have effectively used **version control**
-   - [ ] Your git **commits are regular with descriptive commit messages**
-   - [ ] You have **effectively used tools** like DrawSQL, Figma, VS Code, Turso SQL editor, etc. to help develop the outcome
-   - [ ] You have made good use of **templates** (Jinja) to organise and structure content
-   - [ ] Your code is **commented** as needed
+   - [x] You have effectively used **version control**
+   - [x] Your git **commits are regular with descriptive commit messages**
+   - [x] You have **effectively used tools** like DrawSQL, Figma, VS Code, Turso SQL editor, etc. to help develop the outcome
+   - [x] You have made good use of **templates** (Jinja) to organise and structure content
+   - [x] Your code is **commented** as needed
    - [ ] You have **optimised media assets** (e.g. image sizing)
 
 
