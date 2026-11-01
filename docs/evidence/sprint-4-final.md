@@ -112,7 +112,9 @@ I have updated the page to feel much closer to the rest of the website and have 
 ## Testing configuration page
 
 ### Configuration page design
+![Configuration page](screenshots/sprint4-evidence/configuration-page.png)
 
+I have designed this configuration page to well reflect the components in an easily understandable way to the user, i have user underlining for the links to show that they are clickable and icons to signify the component to something more relatable to the user.
 
 ## Other Changes
 
@@ -145,6 +147,25 @@ Decimal places on the quick overview for configurations is unecasary as these ma
 ![popout menu](screenshots/sprint4-evidence/popout-menu.png)
 
 This menu is far more compact and scales far better to other form factors than having these items listed at the top
+
+### Astricks next to madatory items on the form
+
+![](screenshots/sprint4-evidence/astricks-mandatory.png)
+
+# Videos from my Dad's Ipad (showing multiple device compatablility)
+
+
+![Video creating configuration](screenshots/sprint4-evidence/ipad-videos/creating-configuration-ipad-video.gif)
+
+This video shows the process of creating a configuration on an ipad
+
+![Video editing and viewing configuration](screenshots/sprint4-evidence/ipad-videos/configuration-page-ipad-video.gif)
+
+This configuration shows the procrss of viewing and editing a configuration on an ipad
+
+![componet page](screenshots/sprint4-evidence/ipad-videos/component-page-ipad-video.gif)
+
+This video shows the process of viewing the component page on an ipad as well as using the menu
 
 # Proof for HTML, CSS & Python validation
 
@@ -208,5 +229,7 @@ Whilst there are many styling errors in my code I belive that they are not relev
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+This sprint has gone well, I have used stakeholder feedback as I go to develop and craft my website to the requirements of my endusers, this leads to a well desgined website avalible and fully functional on my target devices.
+
+
 
