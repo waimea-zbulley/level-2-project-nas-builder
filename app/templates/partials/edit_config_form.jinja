@@ -116,7 +116,7 @@
         <label class="quantityitem">
             <span class="formTitle">QTY<span class="requiredItem">*</span></span>
             <input type="number" name="ramqty" class="quantity" id="ramqty" value="{{ config.ram_qty }}" max="{{ mb.ram_slots }}" min="1">
-            <span class="maxQuantity">Max: {{ config.ram_qty }}</span>
+            <span class="maxQuantity">Max: {{ mb.ram_slots  }}</span>
         </label>
     </fieldset>
 
@@ -140,7 +140,7 @@
         <label class="quantityitem">
             QTY
             <input type="number" name="hddqty" value="{{ config.hard_drive_qty }}" class="quantity" id="hddqty" max="{{ mb.sata_ports }}" min="0">
-            <span class="maxQuantity">Max: {{ config.hard_drive_qty }}</span>
+            <span class="maxQuantity">Max: {{ mb.sata_ports }}</span>
         </label>
 
     </fieldset>
@@ -165,7 +165,7 @@
         <label class="quantityitem">
             QTY
             <input type="number" value="{{ config.solid_drive_qty }}" class="quantity" name="ssdqty" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
-            <span class="maxQuantity">Max: {{ config.solid_drive_qty }}</span>
+            <span class="maxQuantity">Max: {{ mb.m2_ports }}</span>
         </label>
     </fieldset>
 

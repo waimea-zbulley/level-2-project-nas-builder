@@ -56,6 +56,7 @@
         <label>
             <span class="formTitle">QTY<span class="requiredItem">*</span></span>
             <input type="number" name="ramqty" class="quantity" id="ramqty" value="1" max="{{ mb.ram_slots }}" min="1">
+            <span class="maxQuantity">Max: {{ mb.ram_slots  }}</span>
         </label>
     </fieldset>
 
@@ -75,6 +76,7 @@
         <label>
             QTY
             <input type="number" name="hddqty" class="quantity" id="hddqty" value="0" max="{{ mb.sata_ports }}" min="0">
+            <span class="maxQuantity">Max: {{ mb.sata_ports }}</span>
         </label>
         {# <label>Total Capacity<input id="totalHddStorage" value="0" type="number" name="totalHddStorage" readonly></label> #}
 
@@ -95,6 +97,7 @@
         <label>
             QTY
             <input type="number" class="quantity" name="ssdqty" value="0" id="ssdqty" max="{{ mb.m2_ports }}" min="0">
+            <span class="maxQuantity">Max: {{ mb.m2_ports }}</span>
         </label>
     </fieldset>
 
