@@ -173,6 +173,8 @@ This configuration shows the procrss of viewing and editing a configuration on a
 
 This video shows the process of viewing the component page on an ipad as well as using the 
 
+"I found the way you can view each component and then select one and it takes you to the appropriate pb tech page - showing full tech specs very useful" -Gareth
+
 # Proof for HTML, CSS & Python validation
 
 ## CSS
@@ -237,5 +239,6 @@ Whilst there are many styling errors in my code I belive that they are not relev
 
 This sprint has gone well, I have used stakeholder feedback as I go to develop and craft my website to the requirements of my endusers, this leads to a well desgined website avalible and fully functional on my target devices.
 
+"Great dedication, the review captures well the improvements you have made both to functionality and use ability of the application. You have hit all the goals of the sprint." - Gareth
 
 

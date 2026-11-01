@@ -28,7 +28,7 @@ Use advanced techniques to develop a database means that, taking into account th
 4. You should use appropriate tools and advanced techniques to present the data:
    - [x] Creating **customised data displays from multiple tables** for web pages
    - [x] **Dynamically linking data** between the database and web pages
-   - [ ] Applying **data access permissions** as appropriate (user accounts)
+   - [x] Applying **data access permissions** as appropriate (user accounts)
 
 5. You must apply appropriate data integrity and testing procedures:
    - [x] Show that any **presented data is correct** (e.g. matches database values / calculations)
