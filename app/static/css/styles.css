@@ -8,20 +8,16 @@
     --text-col-secondary:#0f1315;
 
     --back-col:         #283032;
-    --back-col-sec:     #283032;
-    --back-col-sec-trans:     #688e99;
     --back-col-panel:    #688e99;
     --back-col-panel-sec:    #a6babf;
 
     --hover-col-positive:    #568a52;
-    --hover-col-negative:    rgb(189, 85, 75);
-    --hover-col-neutral:    rgb(190, 138, 90);
+    --hover-col-negative:    #bd554b;
+    --hover-col-neutral:    #be8a5a;
     --hover-col-primary:    #4d7883;
     --hover-col-accent:    #1f1b1d;
     --hover-col-component:    #84a3bc;
 
-    
-    --primary:          #829ba2;
 
     --nav-bar-colour:    #3f3035;
     
@@ -32,6 +28,30 @@
 
     --item-heght:       6rem;
     --item-margin:       1rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-col: #263438;
+    --text-col-secondary: #263438;
+
+    --back-col: #F0F3F2;
+    --back-col-panel: #C5DADD;
+    --back-col-panel-sec: #DCE9EB;
+
+    --hover-col-positive: #568A52;
+    --hover-col-negative: #BD554B;
+    --hover-col-neutral: #ba7534;
+    --hover-col-primary: #547F89;
+    --hover-col-accent: #E5DADD;
+    --hover-col-component: #A6C2C9;
+
+    --nav-bar-colour: #E8E0E2;
+    --accent-col: #D5C6CA;
+
+
+
+  }
 }
 
 
@@ -66,7 +86,7 @@ main {
     max-width: 50rem;
     margin-inline: auto;
     padding-top: 0rem;
-    background-color: var(--back-col-sec);
+    background-color: var(--back-col);
 }
 
 a, a:visited, a:active {

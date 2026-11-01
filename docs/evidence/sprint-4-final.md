@@ -150,6 +150,12 @@ This menu is far more compact and scales far better to other form factors than h
 
 ### Astricks next to madatory items on the form
 
+### Light mode
+![First light mode screenshot](screenshots/sprint4-evidence/light-mode-1.png)
+![Second light mode screenshot](screenshots/sprint4-evidence/light-mode-2.png)
+![Third light mode screenshot](screenshots/sprint4-evidence/light-mode-3.png)
+
+### Astricks on mandatory items in form menu
 ![](screenshots/sprint4-evidence/astricks-mandatory.png)
 
 # Videos from my Dad's Ipad (showing multiple device compatablility)
@@ -165,7 +171,7 @@ This configuration shows the procrss of viewing and editing a configuration on a
 
 ![componet page](screenshots/sprint4-evidence/ipad-videos/component-page-ipad-video.gif)
 
-This video shows the process of viewing the component page on an ipad as well as using the menu
+This video shows the process of viewing the component page on an ipad as well as using the 
 
 # Proof for HTML, CSS & Python validation
 
