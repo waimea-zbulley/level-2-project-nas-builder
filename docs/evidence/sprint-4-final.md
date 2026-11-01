@@ -22,58 +22,69 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 
 My orignal page for configurations at the start of the print
 
-![Initial coniguration page](screenshots/gifs-for-sprint4/1-configurations.png)
+![Initial coniguration page](screenshots/sprint4-evidence/1-configurations.png)
 
 ### Changes / Improvements 1
 
 I have changed the background to match across the whole page based on my stakeholders feedback
 
-![Configuration page background changed](screenshots/gifs-for-sprint4/2-configurations.png)
+![Configuration page background changed](screenshots/sprint4-evidence/2-configurations.png)
 
 
 ### Changes / Improvements 2
 
 My stakeholder commented on the requirement for better contrast as well as improving the astetic of the new configuration and back buttons, this has been done in this improvment.
 
-![Configuration page improved contrast](screenshots/gifs-for-sprint4/3-configurations.png)
+![Configuration page improved contrast](screenshots/sprint4-evidence/3-configurations.png)
 
 
 ### Changes / Improvements 3
 
 I have implemented icons to my configurations allowing the user to more easily and vissualy destinguish between their configurations
 
-![Configuration page with icons for configurations](screenshots/gifs-for-sprint4/4-configurations.png)
+![Configuration page with icons for configurations](screenshots/sprint4-evidence/4-configurations.png)
 
 ### Changes / Improvements 4 
 
 I have improved the layout of the icon as well as switching the edit and delete names for icons making a simpler and clearer design.
 
-![Configuration page with icons for edit and delete and improved layout.](screenshots/gifs-for-sprint4/5-configurations.png)
+![Configuration page with icons for edit and delete and improved layout.](screenshots/sprint4-evidence/5-configurations.png)
 
 ## Trialing of navigation bar
 
-### Inital design
-![alt text](3.png)
+### Inital design of nav panel (bottom)
+![Inital design of bottom nav panel](screenshots/sprint4-evidence/nav-panel-1.png)
+
+### Nav panel with better contrast
+![Second design of bottom nav panel](screenshots/sprint4-evidence/nav-panel-2.png)
+I have improved the constrast by using my accent/secondary website colour(the same one seen at the top of the page)
+
+### Nav panel with icons
+![Third design of bottom nav panel](screenshots/sprint4-evidence/nav-panel-3.png)
+
+### Larger and better icon choice
+![Third design of bottom nav panel](screenshots/sprint4-evidence/nav-panel-4.png)
+These icons provide a larger and clearer usability of the page
 
 ## Testing highlighting of buttons
 
 ### Initial highlighting of back buttons
-![Inital dull backbutton highlighting](screenshots/gifs-for-sprint4/highlighting-backbutton-inital.png)
+![Inital dull backbutton highlighting](screenshots/sprint4-evidence/highlighting-backbutton-inital.png)
 
 ### Improved orange highlighting of back button with better icon
 
-![Improved orange and better icon back button](screenshots/gifs-for-sprint4/highlighting-backbutton-improved.png)
+![Improved orange and better icon back button](screenshots/sprint4-evidence/highlighting-backbutton-improved.png)
 
 ### Same ideas applied to delete & edit buttons based off stakeholder feedback
 
-![Edit button with pencil icon and orange colourng](screenshots/gifs-for-sprint4/highlighting-editbutton.png)
-![](screenshots/gifs-for-sprint4/highlighting-deletebutton.png)
+![Edit button with pencil icon and orange colourng](screenshots/sprint4-evidence/highlighting-editbutton.png)
+![Screenshot showing trash can and red colouring](screenshots/sprint4-evidence/highlighting-deletebutton.png)
 
 "Initial look on PC.  The add and back buttons don’t stand out , recommend increasing size and perhaps density of icon. Suggested adding highlighting to edit (orange) and delete (red) .  Experimented with adding the work ‘add’ with the + but decided it wasn’t needed" -Gareth
 
 ### Hovering on configuration
 
-![Darker hovered configuration compared to lighter non-hovered](screenshots/gifs-for-sprint4/highlighint-configuration.png)
+![Darker hovered configuration compared to lighter non-hovered](screenshots/sprint4-evidence/highlighint-configuration.png)
 
 "The subtle colour change when hovering over a configuration makes it more obvious that it is clickable" - Gareth
 
@@ -82,77 +93,110 @@ I have improved the layout of the icon as well as switching the edit and delete 
 
 This is a screenshot of my new homepage which now has properly styled buttons
 
-![Initial homepage design](screenshots/gifs-for-sprint4/homepage.png)
+![Initial homepage design](screenshots/sprint4-evidence/homepage.png)
 
 ### Updated homepage
 I have updated the homepage as my stakeholder pointed out that it was not up to the same standard as the rest of the website
-![Update homepage design](screenshots/gifs-for-sprint4/homepage-updated.png)
+![Update homepage design](screenshots/sprint4-evidence/homepage-updated.png)
 
 
-## Testing FEATURE NAME HERE
+## Testing component page
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+### Inital comnponent page design
+![Inital component page design](screenshots/sprint4-evidence/component-page-1.png)
+This inital design feels very narrow and does not fit the astetic of the rest of my website very well with far less round corners and the lack of any highlighting
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Updated component page design](screenshots/sprint4-evidence/component-page-2.png)
+I have updated the page to feel much closer to the rest of the website and have switch the layout to only contain 2 sections for each part rather than three. As well as adding highlihgting.
 
-### Changes / Improvements
+## Testing configuration page
 
-Replace this text with notes any improvements you made as a result of the testing.
+### Configuration page design
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
+## Other Changes
+
+### Bottom of page
+![Screnshot of bottom of page](screenshots/sprint4-evidence/bottomofpage.png)
+
+I have ensured that while I have elements on the bottom of my page that do overlap with items that they do not overlap with anything when the page is fully scrolled as demonstrated by the screenshot.
+
+### Increasing size of quantity fields
+![larger quantity field size](screenshots/sprint4-evidence/increased-qty-size.png)
+
+"Using IPad to view , all functionality worked except the  quantity box was too small , could not see two digit numbers, suggest increasing qty box size" -Gareth
+
+### Showing max for the quantity fields on form options
+
+![Screenshot showing example of max qty display](screenshots/sprint4-evidence/max-qty.png)
+
+I have made this change based off feedback given by my stakeholder feedback.
+
+"Resizing qty box now looks good on iPad , would be good if you had the maximum selectable qty beside each applicable box" -Gareth
+
+### Removing decimal places from configurations
+
+![Removed decimal places](screenshots/sprint4-evidence/removed-decimal-places.png)
+
+Decimal places on the quick overview for configurations is unecasary as these machines are multiple thousands of dollars (these decimals are avalible in the expanded view)
+
+### Popout menu
+
+![popout menu](screenshots/sprint4-evidence/popout-menu.png)
+
+This menu is far more compact and scales far better to other form factors than having these items listed at the top
 
 # Proof for HTML, CSS & Python validation
 
 ## CSS
 
 ### styles.css
-![Image of CSS validated from CSS validator](screenshots/gifs-for-sprint4/validation/validated-css.png)
+![Image of CSS validated from CSS validator](screenshots/sprint4-evidence/validation/validated-css.png)
 
 ## HTML
 
 ### Homepage (homepage.jinja)
 
-![Image of Homepage HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-homepage.png)
+![Image of Homepage HTML validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-homepage.png)
 
 ### Components Page (components.jinja)
 
-![Image of Components HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-components.png)
+![Image of Components HTML validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-components.png)
 
 ### Configurations Page (configurations.jinja)
 
-![Image of Configurations HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configurations.png)
+![Image of Configurations HTML validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-configurations.png)
 
 ### Configuration Page (configuration.jinja)
 
-![Image of Configuration HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-configuration.png)
+![Image of Configuration HTML validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-configuration.png)
 
 ### New Config Page - 1 (select_motherboard.jinja)
 
-![Image of New Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-newconfig.png)
+![Image of New Config HTML (page 1) validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-newconfig.png)
 
 ### New Config Page - 2 (new_configuration.jinja)
 
-![Image of New Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-2.png)
+![Image of New Config (page 2) HTML validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-form-2.png)
 
 ### New Config Page - 3 (final_config.jinja)
 
-![Image of New Config (page 3) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-3.png)
+![Image of New Config (page 3) HTML validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-form-3.png)
 
 
 ### Edit Config Page - 1 (edit_components.jinja)
 
-![Image of Edit Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform.png)
+![Image of Edit Config HTML (page 1) validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-editform.png)
 
 ### Edit Config Page - 2 (final_config_edit.jinja)
 
-![Image of Edit Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform-2.png)
+![Image of Edit Config (page 2) HTML validated from HTML validator](screenshots/sprint4-evidence/validation/validated-html-editform-2.png)
 
 ## Python
 
 ### \_\_init\_\_.py
 
-![PEP8 validation](screenshots/gifs-for-sprint4/validation/pep8-validation.png)
+![PEP8 validation](screenshots/sprint4-evidence/validation/pep8-validation.png)
 All runtime errors are not ture problems but rather related to the way that the project is setup as they are pulled externally, none of my actual code has any runtime errors within it.
 
 Whilst there are many styling errors in my code I belive that they are not relevent as fixing most of them will result in worse readability of the project, I have stuck to PEP8 convention where it makes sense to do so but not at the cost of readability.
