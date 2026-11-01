@@ -105,14 +105,14 @@ Replace this text with notes any improvements you made as a result of the testin
 ### HTML - New Config Page - 2 (new_configuration.jinja)
 ![Image of New Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-2.png)
 
-### HTML - New Config Page - 3 (new_configuration.jinja)
+### HTML - New Config Page - 3 (final_config.jinja)
 ![Image of New Config (page 3) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-form-3.png)
 
 
-### HTML - Edit Config Page - 1 (select_motherboard.jinja)
+### HTML - Edit Config Page - 1 (edit_components.jinja)
 ![Image of Edit Config HTML (page 1) validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform.png)
 
-### HTML - Edot Config Page - 2 (new_configuration.jinja)
+### HTML - Edot Config Page - 2 (final_config_edit.jinja)
 ![Image of Edit Config (page 2) HTML validated from HTML validator](screenshots/gifs-for-sprint4/validation/validated-html-editform-2.png)
 
 ### Python PEP8 Validation
