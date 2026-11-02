@@ -81,16 +81,21 @@ My site does not collect any peronsally identifyiable information making it saft
 
 
 ## Overall Review
-
-Replace these words with a brief review of how the project went in terms of:
 - What went well?
+
 I am mostly happy with the end product and I have kept up good communitcation with my stakeholder the whole time ensuring a product that my stakeholder is also happy with
 - What didn't go so well?
+
 I majorly understimated the complexity of my project leading it to taking far longer than i would have imagined and putting alot of pressure on the end of the project
 - How did the testing/trialling impact the final system?
+
 The trialling and testing had a large part on the final system. I fully redesigned the way that I did my forms so that they were multi page while continuing to communitcate with my stakeholder ensuring they are happpy with the changes. I have tried to stick as best as possible where applicable to the design specifications.
 - What would you do differently if you could?
+
 I would like to manage my time better getting done with the logic earlier so that I am able to focus on my front end in a better manor being able to fufill some of my specs a little bit better.
 
 ## Final stakeholder comment
-
+"You have shown great commitment, this was a far bigger task than you could have imagined in the beginning.  The constant refinements and attention to detail has made this a great success.
+All the initial requirements have been ticked off and you have listened to feedback throughout and incorporated it in each sprint.
+The end product is very functional and works well on both platforms I have tested it on(IPad and PC)
+Great work" -Gareth
