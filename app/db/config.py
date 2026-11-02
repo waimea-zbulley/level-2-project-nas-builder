@@ -64,8 +64,7 @@ class Motherboards:
             pcie_ports INTEGER NOT NULL,
             m2_ports INTEGER NOT NULL,
             ram_gen TEXT NOT NULL,
-            ram_slots INTEGER NOT NULL,
-            image TEXT
+            ram_slots INTEGER NOT NULL
         )
     """
 
@@ -89,8 +88,7 @@ class HardDrives:
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
             capacity INTEGER NOT NULL,
-            rpm INTEGER NOT NULL,
-            image TEXT
+            rpm INTEGER NOT NULL
         )
     """
 
@@ -114,8 +112,7 @@ class Cpus:
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
             platform TEXT NOT NULL,
-            maxram INTEGER NOT NULL,
-            image TEXT
+            maxram INTEGER NOT NULL
         )
     """
 
@@ -140,8 +137,7 @@ class SolidDrives:
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
             capacity INTEGER NOT NULL,
-            speed INTEGER NOT NULL,
-            image TEXT
+            speed INTEGER NOT NULL
         )
     """
     SEED_DATA = """
@@ -164,8 +160,7 @@ class Ram:
             url  TEXT NOT NULL,
             capacity INTEGER NOT NULL,
             generation TEXT NOT NULL,
-            speed INTEGER NOT NULL,
-            image TEXT
+            speed INTEGER NOT NULL
         )
     """
     SEED_DATA = """
@@ -186,8 +181,7 @@ class Gpus:
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            powerdraw INTEGER NOT NULL,
-            image TEXT
+            powerdraw INTEGER NOT NULL
         )
     """
 
@@ -208,8 +202,7 @@ class Cases:
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            hard_drive_trays INTEGER NOT NULL,
-            image TEXT
+            hard_drive_trays INTEGER NOT NULL
         )
     """
     SEED_DATA = """
@@ -248,8 +241,7 @@ class NetworkCard:
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            speed REAL NOT NULL,
-            image TEXT
+            speed REAL NOT NULL
         )
     """
 
@@ -270,8 +262,7 @@ class PowerSupply:
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
             url  TEXT NOT NULL,
-            power INTEGER NOT NULL,
-            image TEXT
+            power INTEGER NOT NULL
         )
     """
 
@@ -290,8 +281,7 @@ class OS:
             id      INTEGER PRIMARY KEY AUTOINCREMENT,
             name   TEXT NOT NULL,
             cost    REAL NOT NULL,
-            url  TEXT NOT NULL,
-            image TEXT
+            url  TEXT NOT NULL
         )
     """
 

@@ -555,7 +555,7 @@ def show_newconf():
     mbs = get_mbs()
 
     return render_template(
-        "pages/select_motherboard.jinja",
+        "pages/new_config_1.jinja",
         mbs = mbs
     )
 
@@ -594,7 +594,7 @@ def show_newconf_stage2():
 
 
     return render_template(
-        "pages/new_configuration.jinja",
+        "pages/new_config_2.jinja",
         mb = mb,
         cpus = cpus,
         ram = ram,
@@ -664,7 +664,7 @@ def config_pick_stage3():
     
 
     return render_template(
-        "pages/final_config.jinja",
+        "pages/new_config_3.jinja",
         mb = mb,
         cpu = cpu,
         ram = ram,
@@ -746,7 +746,7 @@ def edit_config(id):
         name = get_name_edit(id,)
 
         return render_template(
-            "/pages/edit_components.jinja",
+            "/pages/edit_config_1.jinja",
             config = config,
             mb = mb,
             ssds = ssds,
@@ -819,7 +819,7 @@ def edit_final(id):
     config = get_config_edit(id,)
 
     return render_template(
-        "pages/final_config_edit.jinja",
+        "pages/edit_config_2.jinja",
         config = config,
         mb = mb,
         cpu = cpu,
