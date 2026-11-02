@@ -7,7 +7,9 @@
     {# Field for powersupply selection #}
     <fieldset class="formItem">
         <label>
-            <span class="formTitle">Powersupply<span class="requiredItem">*</span></span>
+            <span class="formTitle">Powersupply<span class="requiredItem">*</span>
+                <span title="A powersupply is what supplies the power to the components within your build. You can only select compatable powersupplys from this menu"><i data-lucide="info"></i></span>
+            </span>
             <select name="psu" class="priced">
                 {% for psu in psus %}
                     {# If statement to retrive the currently selected psu from the old config. 
@@ -25,7 +27,9 @@
     {# Field for Operating System selection #}
     <fieldset class="formItem">
         <label>
-            <span class="formTitle">Operating System<span class="requiredItem">*</span></span>
+            <span class="formTitle">Operating System<span class="requiredItem">*</span>
+                <span title="An operating system is the software that the build will run. TrueNAS is a free software good for most thing, some users may want to use Unraid to expand thier capabilites."><i data-lucide="info"></i></span>
+            </span>
             <select name="os" class="priced">
                 {% for os in oses %}
                     {% if os.id == config.os %}

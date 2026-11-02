@@ -53,22 +53,44 @@ I have met my usability implications well by ensuring I have kept the design of 
 #### CPU Tooltip
 ![CPU tooltip image](screenshots/sprint-review-evidence/CPU-Tooltip.png)
 
+I have provided proper navigation for those who use keyboard navigation as well as ensuring my icons can work on screen readers using aria-label, this means that a variety of users even those with imparment are able to use my website
 
-### NAME OF IMPLICATION 4
+#### Aria label
+![keyboard nav example](screenshots/sprint-review-evidence/accesibility1.png)
 
-Replace this text with notes about what you did during the project to address the implication - design features, etc.
+#### Navigation
+![keyboard nav example](screenshots/sprint-review-evidence/accesability2.png)
+
+I have shown User Control and freedom as users are free to go back and edit their changes later as shown in previous sections.
+I have shown help and documentation via the tooltips on the form options.
+I have shown match between system and real world by the through use of relatible icons to the user.
 
 
-### NAME OF IMPLICATION 5
+### Accessibility
 
-Replace this text with notes about what you did during the project to address the implication - design features, etc.
+I have produced UI with a good colour contrast both in dark and light mode, likely with slightly better contrast in light mode. This allows morse users to use my site as colourblindness should not affect the usability of my website. There is labels/alt text where required for those using screen readers allowing users with full vision imparement to comfortably use my site.
+
+My website is usable on all of my target devices (prodomintly desktop and tablet) as well as working acceptably on mobile tough being optimised for the other platforms.
+
+I have used logical input fields so that users of any skill level should not be overwhelmed using my website.
+
+
+### Privacy
+
+My site does not collect any peronsally identifyiable information making it saftey concious for users. Users are also able to remove builds from the database simply through the UI meaning that if for some reason a user does no longer wish for their build info to be avalible it can be simply removed.
 
 
 ## Overall Review
 
 Replace these words with a brief review of how the project went in terms of:
 - What went well?
+I am mostly happy with the end product and I have kept up good communitcation with my stakeholder the whole time ensuring a product that my stakeholder is also happy with
 - What didn't go so well?
+I majorly understimated the complexity of my project leading it to taking far longer than i would have imagined and putting alot of pressure on the end of the project
 - How did the testing/trialling impact the final system?
+The trialling and testing had a large part on the final system. I fully redesigned the way that I did my forms so that they were multi page while continuing to communitcate with my stakeholder ensuring they are happpy with the changes. I have tried to stick as best as possible where applicable to the design specifications.
 - What would you do differently if you could?
+I would like to manage my time better getting done with the logic earlier so that I am able to focus on my front end in a better manor being able to fufill some of my specs a little bit better.
+
+## Final stakeholder comment
 

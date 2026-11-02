@@ -131,7 +131,9 @@
     {# Select field for Hard Drive #}
     <fieldset class="multiFormItem">
         <label class="multiItem">
-            Hard Drive
+            <span class="formTitle">Hard Drive
+                <span title="The hard drive is a form of storage, hard drives are typically a cheaper storage option these days but come in larger storage sizes with the trade off of being a bit slower than other options (Solid state drives)."><i data-lucide="info"></i></span>
+            </span>
             <select id="hdd"  name="hdd" class="priced hdd">
                 <option value="" data-price="0">None</option>
                 {% for hdd in hdds %}
@@ -156,7 +158,9 @@
     {# Select field for SSD #}
     <fieldset class="multiFormItem">
         <label class="multiItem">
-            SSD
+            <span class="formTitle">SSD
+                <span title="An SSD is a form of storage which is considerbly more expensive than hard drives but also has major speed and relability benifits making it a good choice for NAS's for things such as video editing NAS. SSD's are unecassary for general storage"><i data-lucide="info"></i></span>
+            </span>
             <select id="ssd"  name="ssd" class="priced">
                 <option value="" data-price="0">None</option>
                 {% for ssd in ssds %}
@@ -180,7 +184,9 @@
     {# Select Option for Graphics card #}
     <fieldset class="formItem">
         <label>
-            Graphics Card
+            <span class="formTitle">Graphics Card
+                <span title="A graphics card is a form of processor good specificly for graphical tasks. A graphics card is only really necassry if you intend to run intense workloads on your NAS such as rendering."><i data-lucide="info"></i></span>
+            </span>
             <select id="gpu" name="gpu" class="priced power">
                 <option value="" data-power="0" data-price="0">None</option>
                 {% for gpu in gpus%}
@@ -215,7 +221,9 @@
     {# Drop down selection for Network Cards #}
     <fieldset class="formItem">
         <label>
-            Network Card
+            <span class="formTitle">Network Card
+                <span title="A network card is a device which allows you to add more network ports to your NAS usally with a higher speed than the avalible port on the motherboard"><i data-lucide="info"></i></span>
+            </span>
             <select id="nwcards" name="nwcard" class="priced ">
                 <option value="" data-price="0">None</option>
                 {% for nwcard in nwcards %}
