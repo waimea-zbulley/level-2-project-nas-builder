@@ -15,11 +15,7 @@
     --hover-col-negative:    #bd554b;
     --hover-col-neutral:    #be8a5a;
     --hover-col-primary:    #4d7883;
-    --hover-col-accent:    #1f1b1d;
     --hover-col-component:    #84a3bc;
-
-
-    --nav-bar-colour:    #3f3035;
     
 
     --border-col:       #355;
@@ -41,12 +37,10 @@
 
     --hover-col-positive: #568A52;
     --hover-col-negative: #BD554B;
-    --hover-col-neutral: #ba7534;
+    --hover-col-neutral: #f2c356;
     --hover-col-primary: #547F89;
-    --hover-col-accent: #E5DADD;
     --hover-col-component: #A6C2C9;
 
-    --nav-bar-colour: #E8E0E2;
     --accent-col: #D5C6CA;
 
 
@@ -127,7 +121,7 @@ body > header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: var(--nav-bar-colour);
+    background-color: var(--accent-col);
 
     nav {
         gap: 1rem;
@@ -370,7 +364,7 @@ main > h1 {
         color: var(--text-col);
         text-align: center;
         padding: 0rem;
-        background-color: var(--nav-bar-colour);
+        background-color: var(--accent-col);
         border: #0f1315 0.15rem solid;
         box-shadow: 0px 0px 0.7rem #0f1315ac;
         cursor: pointer;
