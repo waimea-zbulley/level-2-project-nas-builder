@@ -569,6 +569,14 @@ main > h1 {
         border: solid 0.1rem black;
         background-color: var(--back-col-panel-sec);
     }
+    #motherboard {
+        display: flex;
+        flex-direction: column;
+        .formTitle {
+            flex-direction: row;
+        }
+    }
+    
 }
 
 /* styling specificly for boot drive displaying */

@@ -9,7 +9,9 @@
     {# Field to show Bootdrive #}
     <fieldset class="bootdrive"> 
         <label>
-            <span class="formTitle">Boot Drive<span class="requiredItem">*</span></span>
+            <span class="formTitle">Boot Drive<span class="requiredItem">*</span>
+                <span title="The boot drive is the device that the system will boot off, this device is picked for you as it is not relevant to your system."><i data-lucide="info"></i></span>
+            </span>
             <span class="bootName">{{ ssds[0].name }} - ${{ ssds[0].cost }}</span>
         </label>
     </fieldset>
@@ -17,7 +19,9 @@
     {# Cpu form option #}
     <fieldset class="formItem">
         <label>
-            <span class="formTitle">CPU<span class="requiredItem">*</span></span>
+            <span class="formTitle">CPU<span class="requiredItem">*</span>
+                <span title="The CPU is the main processor of the system, this is important for faster file transfers and some other intense tasks. For general storage virtualy any CPU will be totaly fine"><i data-lucide="info"></i></span>
+            </span>
             <select id="cpu" name="cpu" class="priced power" required >
                 <option value="" data-power="0" data-price="0" disabled selected >-- choose one --</option>
                 {% for cpu in cpus %}
@@ -30,7 +34,9 @@
     {# Select field for CPU Cooler #}
     <fieldset class="formItem">
         <label>
-            <span class="formTitle">CPU Cooler<span class="requiredItem">*</span></span>
+            <span class="formTitle">CPU Cooler<span class="requiredItem">*</span>
+                <span title="The CPU cooler is the device that ensures that the CPU's temperature stays under controll, a more expensive CPU Cooler would be recomended with a better CPU"><i data-lucide="info"></i></span>
+            </span>
             <select id="coolers" name="cooler" class="priced" required>
                 <option value="" data-price="0" disabled selected >-- choose one --</option>
                     {% for cooler in coolers %}
@@ -44,7 +50,9 @@
     {# RAM form option #}
     <fieldset class="multiFormItem">
         <label class="multiItem">
-            <span class="formTitle">RAM<span class="requiredItem">*</span></span>
+            <span class="formTitle">RAM<span class="requiredItem">*</span>
+                    <span title="RAM is the component that keeps the data of any actively running tasks, ram is important for ensuring files are readily accesable quickly. A larger amount of ram would be recomended for a NAS for tasks such as video editing files."><i data-lucide="info"></i></span>
+            </span>
             <select id="ram"  name="ram" class="priced" required >
                 <option value="" data-price="0" disabled selected >-- choose one --</option>
                 {% for ram in ram %}

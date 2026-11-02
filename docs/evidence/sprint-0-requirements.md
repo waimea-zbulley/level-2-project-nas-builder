@@ -40,7 +40,7 @@ This is important to my system as my software needs to be applicable to the peop
 I will need to make sure that my software is accesable to any users that may want to use it, this means that it needs to be easy to use with a simple interface, it also needs to allow complexity so that more profecient users don't find it far too simple. My language should be simple and have plenty of explanation/depth, my target audiance is likely old teenagers-adult, however there will be quite a variance of technological capeabilities so having well explained content is important. My site is likely to be accessed on desktop, tablet and phone so it needs to be easily usable on all of these platforms.
 
 I need to:
- - Ensure my website is usable on phone, tablet and desktop.
+ - Ensure my website is usable on tablet and desktop.
  - Make sure my language is simple and has adiquate explanation on more complicated things.
  - Have simpler and more complex things to cater to users of all technological capeability.
  - It needs to be accesable to anyone with any imparement.
@@ -125,7 +125,6 @@ This is relevent to my system because if I am keeping data that is not relevant 
 
 I will:
  - Not be collect personally identifyable information (all I will be storing is presaved builds)
- - Allow people to download the build information (maybe in csv form)
  - Allow people to delete made content/builds
 
 "As a security proffesional - It is very important that consideration is given to any personal identifialble information(PII) that you collect, any information that you collect that relates to individual must be relavent to the service provided and can not be reused for other purposes. If it is nesaccary to store data this must be done in a secure fashion, and an individual should always have the ability to ask for a copy of stored data and request the 'right to be forgotten' which means removing any data collected."
