@@ -5,8 +5,9 @@ This is an app that assists the user in selecting the parts for a home use orien
 
 The app has the following key features:
 - Ability to create/edit/delete a custom configuration of NAS (Network Attached Storage)
-- Have the build fully compatable based off the chosen motherboard to ensure that userss have a smooth experinece with creating a compatable build
+- Have the build fully compatible based off the chosen motherboard to ensure that users have a smooth experience with creating a compatible build
 - Ability to view all components in and out of NAS from the database, with links to their store of origin.
+- An intuitive UI meaning that users intuitively flow through my website
 
 ## Live site
 https://level-2-project-nas-builder.onrender.com/
