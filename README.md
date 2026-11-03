@@ -1,5 +1,10 @@
+# NAS Builder
+
+- By Zach Bulley
 
 ## Project Description
+
+
 
 This is an app that assists the user in selecting the parts for a home use oriented NAS
 
@@ -13,6 +18,7 @@ The app has the following key features:
 https://level-2-project-nas-builder.onrender.com/
 
 ## Supporting Documents
+*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-zbulley.github.io/level-2-project-nas-builder/)*
 
 Task Instructions:
 - [Instruction documents](docs/instructions/)
@@ -34,7 +40,6 @@ Project Evidence
 - [Jinja2](https://jinja.palletsprojects.com/templates/) for page templating
     ...
 
-*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-zbulley.github.io/level-2-project-nas-builder/)*
 
 
 ## Project Structure
