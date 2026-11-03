@@ -75,6 +75,12 @@ My website is usable on all of my target devices (prodomintly desktop and tablet
 I have used logical input fields so that users of any skill level should not be overwhelmed using my website.
 I have made sure that my website is fully navigatable by keyboard with and a keyboard reader, this means that all users will be able to use my website.
 
+Example of accesability with keyboard hovering
+![keyboard hover tab](image-2.png)
+
+Showing of aria labels/naming in inspect
+![accesability inspect](image-3.png)
+
 
 ### Privacy
 
