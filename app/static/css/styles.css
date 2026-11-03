@@ -90,19 +90,19 @@ a, a:visited, a:active {
 
 
 /* Hovering functionality -------------------------------------- */
-a.positive-hover:hover, button.positive-hover:hover {
+a.positive-hover:hover, button.positive-hover:hover, a.positive-hover:focus, button.positive-hover:focus {
     background-color: var(--hover-col-positive) !important;
 }
-a.negative-hover:hover, button.negative-hover:hover {
+a.negative-hover:hover, button.negative-hover:hover, a.negative-hover:focus, button.negative-hover:focus {
     background-color: var(--hover-col-negative) !important;
 }
-a.neutral-hover:hover, button.negative-hover:hover {
+a.neutral-hover:hover, button.neutral-hover:hover, a.neutral-hover:focus, button.neutral-hover:focus {
     background-color: var(--hover-col-neutral) !important;
 }
-a.primary-hover:hover, button.neutal-hover:hover {
+a.primary-hover:hover, button.primary-hover:hover, a.primary-hover:focus, button.primary-hover:focus {
     background-color: var(--hover-col-primary) !important;
 }
-a.accent-hover:hover, button.accent-hover:hover {
+a.accent-hover:hover, button.accent-hover:hover, a.accent-hover:focus, button.accent-hover:focus {
     background-color: var(--hover-col-accent) !important;
 }
 /* ----------------------------------------------------------- */
@@ -248,7 +248,7 @@ main > h1 {
             background-color: var(--back-col-panel-sec);
             color: var(--text-col-secondary);
         }
-        .component:hover {
+        .component:hover, .component:focus {
             background-color: var(--hover-col-component);
             color: var(--text-col-secondary);
         }
@@ -267,7 +267,7 @@ main > h1 {
     text-decoration: none;
     
     /* If text is hovered over highlight whole configuration */
-    .config:has(h2.name a:hover) {
+    .config:has(h2.name a:hover), .config:has(h2.name a:focus) {
         background-color: var(--hover-col-primary);
     /* Individual configuration */
     }

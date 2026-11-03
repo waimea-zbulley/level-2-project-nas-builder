@@ -27,17 +27,17 @@
 
 <body>
 
-    <header>
+    <header aria-label="nav bar">
 
         <a href="/" aria-label="Home">
             <i data-lucide="house"></i>
         </a>
 
         <nav aria-label="Nav Menu">
-            <span><i data-lucide="menu" class="nav-icon"></i></span>
+            <span><i tabindex=0 aria-label="menu button" data-lucide="menu" class="nav-icon"></i></span>
             <div class="nav-panel">
-                <a href="/configurations">Configurations</a>
-                <a href="/components">Components</a>
+                <a aria-label="configurations link" href="/configurations">Configurations</a>
+                <a aria-label="components link" href="/components">Components</a>
             </div>
         </nav>
         
@@ -46,7 +46,7 @@
     {# Show flash messages from any previous events #}
     {% include "partials/messages.jinja" %}
 
-    <main>
+    <main aria-label="main content">
 
         {% block content %}
         {% endblock %}
