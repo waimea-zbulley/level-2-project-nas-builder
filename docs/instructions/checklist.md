@@ -56,7 +56,7 @@ Use advanced techniques to develop an informed database means **all the criteria
    - [x] Your database **queries are well-written and efficient**
 
 3. You need to address relevant implications:
-   - [ ] At the end of your project, you need to **explain what you did in your project to address each implication**
+   - [x] At the end of your project, you need to **explain what you did in your project to address each implication**
 
 
 ## Excellence Criteria
@@ -126,7 +126,7 @@ Use advanced techniques to develop an informed digital media outcome means **all
    - [x] You have **fixed any issues** identified
 
 3. You need to address relevant implications:
-   - [ ] At the end of your project, you need to **explain what you did in your project to address each implication**
+   - [x] At the end of your project, you need to **explain what you did in your project to address each implication**
 
 
 ## Excellence Criteria
@@ -143,6 +143,6 @@ Use advanced techniques to develop a refined digital media outcome means **all o
    - [x] You have **effectively used tools** like DrawSQL, Figma, VS Code, Turso SQL editor, etc. to help develop the outcome
    - [x] You have made good use of **templates** (Jinja) to organise and structure content
    - [x] Your code is **commented** as needed
-   - [ ] You have **optimised media assets** (e.g. image sizing)
+   - [x] You have **optimised media assets** (e.g. image sizing)
 
 

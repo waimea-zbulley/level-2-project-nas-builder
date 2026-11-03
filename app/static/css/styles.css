@@ -56,7 +56,7 @@ html {
     background-color: var(--back-col);
     color: var(--text-col);
 
-    font-family: system-ui, sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 
