@@ -73,6 +73,7 @@ I have produced UI with a good colour contrast both in dark and light mode, like
 My website is usable on all of my target devices (prodomintly desktop and tablet) as well as working acceptably on mobile tough being optimised for the other platforms.
 
 I have used logical input fields so that users of any skill level should not be overwhelmed using my website.
+I have made sure that my website is fully navigatable by keyboard with and a keyboard reader, this means that all users will be able to use my website.
 
 
 ### Privacy
